@@ -11,6 +11,9 @@ import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
+
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
@@ -38,6 +41,9 @@ public class LoginPageJF extends JFrame {
 			public void run() {
 				try {
 					LoginPageJF frame = new LoginPageJF();
+					Image icon = Toolkit.getDefaultToolkit().getImage("\\icon.png"); 
+					frame.setIconImage(icon);
+					frame.getContentPane().setLayout(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
