@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Font;
@@ -16,11 +17,17 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class LoginPageJF extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField usernameField;
 	private JPasswordField passwordField;
 
 	/**
@@ -73,10 +80,10 @@ public class LoginPageJF extends JFrame {
 		lblSignIn.setBounds(495, 39, 275, 66);
 		panel.add(lblSignIn);
 		
-		textField = new JTextField();
-		textField.setBounds(473, 149, 186, 26);
-		panel.add(textField);
-		textField.setColumns(10);
+		usernameField = new JTextField();
+		usernameField.setBounds(473, 149, 186, 26);
+		panel.add(usernameField);
+		usernameField.setColumns(10);
 		
 		passwordField = new JPasswordField();
 		passwordField.setBounds(473, 228, 186, 26);
@@ -93,6 +100,38 @@ public class LoginPageJF extends JFrame {
 		panel.add(lblPassword);
 		
 		JButton btnSignUp = new JButton("Sign Up");
+		btnSignUp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				try {
+					//open connection
+					Class.forName("com.mysql.jdbc.Driver");
+					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gi_project?useLegacyDatetimeCode=false&serverTimezone=UTC","root","manolo");
+					
+					String username = usernameField.getText();
+					String password = passwordField.getText();
+					
+					Statement stm = con.createStatement();
+					//consulta mysql para poder iniciar
+					String sql = "select * from logins where username='"+username+"' and password='"+password+"'";
+					ResultSet rs = stm.executeQuery(sql);
+					
+					if(rs.next()) {
+						dispose();
+						
+						passwordField.setText(null);
+						usernameField.setText(null);
+					}else {
+						JOptionPane.showMessageDialog(null, "Detalles de logueo invalidos","Error de logueo",JOptionPane.ERROR_MESSAGE);
+						passwordField.setText(null);
+						usernameField.setText(null);
+					}
+					
+				}catch(Exception e) {
+					System.out.println(e.getMessage());
+				}
+			}
+		});
 		btnSignUp.setBackground(Color.WHITE);
 		btnSignUp.setForeground(Color.BLACK);
 		btnSignUp.setFont(new Font("Open Sans Semibold", Font.BOLD, 14));
