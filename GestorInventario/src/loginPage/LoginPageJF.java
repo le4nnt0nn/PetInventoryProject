@@ -110,28 +110,9 @@ public class LoginPageJF extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				try {
-					//open connection
-					Class.forName("com.mysql.jdbc.Driver");
-					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gi_project?useLegacyDatetimeCode=false&serverTimezone=UTC","root","manolo");
-					
-					String username = usernameField.getText();
-					String password = passwordField.getText();
-					
-					Statement stm = con.createStatement();
-					//consulta mysql para poder iniciar
-					String sql = "select * from logins where username='"+username+"' and password='"+password+"'";
-					ResultSet rs = stm.executeQuery(sql);
-					
-					if(rs.next()) {
-						dispose();
-						
-						passwordField.setText(null);
-						usernameField.setText(null);
-					}else {
-						JOptionPane.showMessageDialog(null, "Detalles de logueo invalidos","Error de logueo",JOptionPane.ERROR_MESSAGE);
-						passwordField.setText(null);
-						usernameField.setText(null);
-					}
+					dispose();
+					MagicAnimation mag = new MagicAnimation();
+					mag.show();
 					
 				}catch(Exception e) {
 					System.out.println(e.getMessage());
