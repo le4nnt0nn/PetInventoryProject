@@ -42,11 +42,8 @@ public class LoginPageJF extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LoginPageJF frame = new LoginPageJF();
-					Image icon = Toolkit.getDefaultToolkit().getImage("\\icon.png"); 
-					frame.setIconImage(icon);
-					frame.getContentPane().setLayout(null);
-					frame.setVisible(true);
+					
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -117,8 +114,12 @@ public class LoginPageJF extends JFrame {
 
 					if(rs.next()) {
 						dispose();
-						SucessfulLogin suc = new SucessfulLogin();
+						SuccessfulLogin suc = new SuccessfulLogin();
 						suc.show();
+						Image icon = Toolkit.getDefaultToolkit().getImage("\\icon.png"); 
+						suc.setIconImage(icon);
+						suc.getContentPane().setLayout(null);
+						suc.setVisible(true);
 						passwordField.setText(null);
 						usernameField.setText(null);
 					}else {

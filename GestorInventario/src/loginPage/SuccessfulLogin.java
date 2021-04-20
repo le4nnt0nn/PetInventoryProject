@@ -10,11 +10,14 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class SucessfulLogin extends JFrame {
+public class SuccessfulLogin extends JFrame {
 
 	private JPanel contentPane;
 
@@ -26,7 +29,6 @@ public class SucessfulLogin extends JFrame {
 			public void run() {
 				try {
 					
-					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -37,7 +39,7 @@ public class SucessfulLogin extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public SucessfulLogin() {
+	public SuccessfulLogin() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 758, 426);
 		contentPane = new JPanel();
@@ -52,8 +54,8 @@ public class SucessfulLogin extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel lblBird = new JLabel("");
-		lblBird.setIcon(new ImageIcon(SucessfulLogin.class.getResource("/loginPage/littleBird.gif")));
-		lblBird.setBounds(240, 112, 343, 192);
+		lblBird.setIcon(new ImageIcon(SuccessfulLogin.class.getResource("/loginPage/littleBird.gif")));
+		lblBird.setBounds(240, 151, 343, 192);
 		panel.add(lblBird);
 		
 		JLabel lblSucessful = new JLabel("SUCCESSFUL LOGIN");
@@ -76,7 +78,12 @@ public class SucessfulLogin extends JFrame {
 		btnContinue.setForeground(Color.BLACK);
 		btnContinue.setFont(new Font("Open Sans Semibold", Font.BOLD, 14));
 		btnContinue.setBackground(Color.WHITE);
-		btnContinue.setBounds(308, 85, 118, 31);
+		btnContinue.setBounds(308, 109, 118, 31);
 		panel.add(btnContinue);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(152, 251, 152));
+		panel_1.setBounds(0, 0, 742, 192);
+		panel.add(panel_1);
 	}
 }
