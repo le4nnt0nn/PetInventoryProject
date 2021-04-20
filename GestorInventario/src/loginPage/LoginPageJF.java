@@ -123,7 +123,12 @@ public class LoginPageJF extends JFrame {
 						passwordField.setText(null);
 						usernameField.setText(null);
 					}else {
-						JOptionPane.showMessageDialog(null, "Detalles de logueo invalidos","Error de logueo",JOptionPane.ERROR_MESSAGE);
+						FailedLogin fail = new FailedLogin();
+						fail.show();
+						Image icon = Toolkit.getDefaultToolkit().getImage("\\icon.png"); 
+						fail.setIconImage(icon);
+						fail.getContentPane().setLayout(null);
+						fail.setVisible(true);
 						passwordField.setText(null);
 						usernameField.setText(null);
 					}
