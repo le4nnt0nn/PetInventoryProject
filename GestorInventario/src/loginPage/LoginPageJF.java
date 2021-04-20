@@ -1,5 +1,7 @@
 package loginPage;
 
+import bbdd.conexion;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -111,8 +113,6 @@ public class LoginPageJF extends JFrame {
 				
 				try {
 					dispose();
-					MagicAnimation mag = new MagicAnimation();
-					mag.show();
 					
 				}catch(Exception e) {
 					System.out.println(e.getMessage());

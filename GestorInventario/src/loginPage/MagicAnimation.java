@@ -22,9 +22,10 @@ public class MagicAnimation extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MagicAnimation frame = new MagicAnimation();
+					
 					//frame.setVisible(true);
 					for(int i=0; i<=100; i++) {
+						MagicAnimation frame = new MagicAnimation();
 						Thread.sleep(40);
 						if(i==100) {
 							System.exit(0);
