@@ -10,8 +10,11 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class MagicAnimation extends JFrame {
+public class SucessfulLogin extends JFrame {
 
 	private JPanel contentPane;
 
@@ -23,14 +26,6 @@ public class MagicAnimation extends JFrame {
 			public void run() {
 				try {
 					
-					//frame.setVisible(true);
-					for(int i=0; i<=100; i++) {
-						MagicAnimation frame = new MagicAnimation();
-						Thread.sleep(40);
-						if(i==100) {
-							System.exit(0);
-						}
-					}
 					
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,7 +37,7 @@ public class MagicAnimation extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public MagicAnimation() {
+	public SucessfulLogin() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 758, 426);
 		contentPane = new JPanel();
@@ -57,14 +52,31 @@ public class MagicAnimation extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel lblBird = new JLabel("");
-		lblBird.setIcon(new ImageIcon(MagicAnimation.class.getResource("/loginPage/littleBird.gif")));
+		lblBird.setIcon(new ImageIcon(SucessfulLogin.class.getResource("/loginPage/littleBird.gif")));
 		lblBird.setBounds(240, 112, 343, 192);
 		panel.add(lblBird);
 		
-		JLabel lblLoading = new JLabel("LOADING");
-		lblLoading.setForeground(Color.DARK_GRAY);
-		lblLoading.setFont(new Font("Open Sans", Font.BOLD, 36));
-		lblLoading.setBounds(273, 45, 185, 28);
-		panel.add(lblLoading);
+		JLabel lblSucessful = new JLabel("SUCCESSFUL LOGIN");
+		lblSucessful.setForeground(Color.DARK_GRAY);
+		lblSucessful.setFont(new Font("Open Sans", Font.BOLD, 36));
+		lblSucessful.setBounds(193, 46, 390, 28);
+		panel.add(lblSucessful);
+		
+		JButton btnContinue = new JButton("Continue");
+		btnContinue.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				try {
+					dispose();
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		btnContinue.setForeground(Color.BLACK);
+		btnContinue.setFont(new Font("Open Sans Semibold", Font.BOLD, 14));
+		btnContinue.setBackground(Color.WHITE);
+		btnContinue.setBounds(308, 85, 118, 31);
+		panel.add(btnContinue);
 	}
 }

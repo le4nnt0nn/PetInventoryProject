@@ -112,7 +112,20 @@ public class LoginPageJF extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				try {
-					dispose();
+					
+					ResultSet rs = conexion.EjecutarSentencia("select * from logins where username='"+usernameField.getText()+"' and password='"+passwordField.getText()+"';");	
+
+					if(rs.next()) {
+						dispose();
+						SucessfulLogin suc = new SucessfulLogin();
+						suc.show();
+						passwordField.setText(null);
+						usernameField.setText(null);
+					}else {
+						JOptionPane.showMessageDialog(null, "Detalles de logueo invalidos","Error de logueo",JOptionPane.ERROR_MESSAGE);
+						passwordField.setText(null);
+						usernameField.setText(null);
+					}
 					
 				}catch(Exception e) {
 					System.out.println(e.getMessage());
