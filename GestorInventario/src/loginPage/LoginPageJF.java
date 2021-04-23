@@ -117,12 +117,13 @@ public class LoginPageJF extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				try {
-					
+					Sound sound = new Sound();
 					ResultSet rs = conexion.EjecutarSentencia("select * from logins where username='"+usernameField.getText()+"' and password='"+passwordField.getText()+"';");	
 
 					if(rs.next()) {
 						dispose();
 						SuccessfulLogin suc = new SuccessfulLogin();
+						sound.successfulLogin();
 						suc.show();
 						Image icon = Toolkit.getDefaultToolkit().getImage("\\icon.png"); 
 						suc.setIconImage(icon);
@@ -132,6 +133,7 @@ public class LoginPageJF extends JFrame {
 						usernameField.setText(null);
 					}else {
 						FailedLogin fail = new FailedLogin();
+						sound.fail_login();
 						fail.show();
 						Image icon = Toolkit.getDefaultToolkit().getImage("\\icon.png"); 
 						fail.setIconImage(icon);
