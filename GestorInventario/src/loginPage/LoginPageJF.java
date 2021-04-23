@@ -141,6 +141,7 @@ public class LoginPageJF extends JFrame {
 						fail.setVisible(true);
 						passwordField.setText(null);
 						usernameField.setText(null);
+						dispose();
 					}
 					
 				}catch(Exception e) {
