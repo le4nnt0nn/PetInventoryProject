@@ -1,6 +1,7 @@
 package loginPage;
 
 import bbdd.conexion;
+import sounds.Sound;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -105,6 +106,13 @@ public class LoginPageJF extends JFrame {
 		panel.add(lblPassword);
 		
 		JButton btnSignUp = new JButton("Sign Up");
+		btnSignUp.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Sound sound = new Sound();
+				sound.button_sound();
+			}
+		});
 		btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
