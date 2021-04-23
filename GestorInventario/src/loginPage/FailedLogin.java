@@ -1,11 +1,15 @@
 package loginPage;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import sounds.Sound;
+
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Color;
@@ -14,6 +18,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class FailedLogin extends JFrame {
 
@@ -64,6 +70,13 @@ public class FailedLogin extends JFrame {
 		panel.add(lblDog);
 		
 		JButton btnRetry = new JButton("Retry");
+		btnRetry.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				Sound sound = new Sound();
+				sound.button_sound();
+			}
+		});
 		btnRetry.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
