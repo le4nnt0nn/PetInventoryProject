@@ -112,6 +112,11 @@ public class LoginPageJF extends JFrame {
 				Sound sound = new Sound();
 				sound.button_sound();
 			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				Sound sound = new Sound();
+				sound.button_sound();
+			}
 		});
 		btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

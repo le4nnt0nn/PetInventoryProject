@@ -14,6 +14,9 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -80,6 +83,11 @@ public class FailedLogin extends JFrame {
 		btnRetry.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
+				LoginPageJF frame = new LoginPageJF();
+				Image icon = Toolkit.getDefaultToolkit().getImage("\\icon.png"); 
+				frame.setIconImage(icon);
+				frame.getContentPane().setLayout(null);
+				frame.setVisible(true);
 			}
 		});
 		btnRetry.setForeground(Color.BLACK);
