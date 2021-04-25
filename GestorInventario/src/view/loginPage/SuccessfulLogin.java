@@ -1,4 +1,4 @@
-package loginPage;
+package view.loginPage;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -59,7 +59,7 @@ public class SuccessfulLogin extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel lblBird = new JLabel("");
-		lblBird.setIcon(new ImageIcon(SuccessfulLogin.class.getResource("/loginPage/littleBird.gif")));
+		lblBird.setIcon(new ImageIcon(SuccessfulLogin.class.getResource("/images/littleBird.gif")));
 		lblBird.setBounds(240, 151, 343, 192);
 		panel.add(lblBird);
 		

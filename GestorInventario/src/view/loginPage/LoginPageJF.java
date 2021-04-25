@@ -1,4 +1,4 @@
-package loginPage;
+package view.loginPage;
 
 import bbdd.conexion;
 import sounds.Sound;
@@ -76,7 +76,7 @@ public class LoginPageJF extends JFrame {
 		panel.add(lblLogin);
 		
 		JLabel lblGIF = new JLabel("");
-		lblGIF.setIcon(new ImageIcon(LoginPageJF.class.getResource("/loginPage/GIF_EddieCoghlan.gif")));
+		lblGIF.setIcon(new ImageIcon(LoginPageJF.class.getResource("/images/GIF_EddieCoghlan.gif")));
 		lblGIF.setBounds(0, 0, 363, 387);
 		panel.add(lblGIF);
 		
@@ -130,7 +130,7 @@ public class LoginPageJF extends JFrame {
 						SuccessfulLogin suc = new SuccessfulLogin();
 						sound.successfulLogin();
 						suc.show();
-						Image icon = Toolkit.getDefaultToolkit().getImage("\\icon.png"); 
+						Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
 						suc.setIconImage(icon);
 						suc.getContentPane().setLayout(null);
 						suc.setVisible(true);
@@ -140,7 +140,7 @@ public class LoginPageJF extends JFrame {
 						FailedLogin fail = new FailedLogin();
 						sound.fail_login();
 						fail.show();
-						Image icon = Toolkit.getDefaultToolkit().getImage("\\icon.png"); 
+						Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
 						fail.setIconImage(icon);
 						fail.getContentPane().setLayout(null);
 						fail.setVisible(true);

@@ -1,4 +1,4 @@
-package loginPage;
+package view.loginPage;
 
 import java.awt.BorderLayout;
 
@@ -70,7 +70,7 @@ public class FailedLogin extends JFrame {
 		panel.add(lblFailedLogin);
 		
 		JLabel lblDog = new JLabel("");
-		lblDog.setIcon(new ImageIcon(FailedLogin.class.getResource("/loginPage/failed.gif")));
+		lblDog.setIcon(new ImageIcon(FailedLogin.class.getResource("/images/failed.gif")));
 		lblDog.setBounds(10, 11, 426, 365);
 		panel.add(lblDog);
 		

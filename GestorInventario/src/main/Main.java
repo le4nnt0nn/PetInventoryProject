@@ -1,11 +1,12 @@
 package main;
 
 import java.awt.EventQueue;
+
 import java.awt.Image;
 import java.awt.Toolkit;
 
 import bbdd.conexion;
-import loginPage.LoginPageJF;
+import view.loginPage.*;
 import utils.GenerateFrame;
 
 public class Main {
