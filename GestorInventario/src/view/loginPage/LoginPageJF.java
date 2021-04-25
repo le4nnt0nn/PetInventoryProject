@@ -2,6 +2,7 @@ package view.loginPage;
 
 import bbdd.conexion;
 import sounds.Sound;
+import utils.GenerateFrame;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -35,6 +36,8 @@ public class LoginPageJF extends JFrame {
 	private JPanel contentPane;
 	private JTextField usernameField;
 	private JPasswordField passwordField;
+	
+	GenerateFrame gen = new GenerateFrame();
 
 	/**
 	 * Launch the application.
@@ -43,8 +46,7 @@ public class LoginPageJF extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					
-					
+	
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -122,28 +124,16 @@ public class LoginPageJF extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				try {
-					Sound sound = new Sound();
+
 					ResultSet rs = conexion.EjecutarSentencia("select * from logins where username='"+usernameField.getText()+"' and password='"+passwordField.getText()+"';");	
 
 					if(rs.next()) {
 						dispose();
-						SuccessfulLogin suc = new SuccessfulLogin();
-						sound.successfulLogin();
-						suc.show();
-						Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
-						suc.setIconImage(icon);
-						suc.getContentPane().setLayout(null);
-						suc.setVisible(true);
+						gen.genSucLogin();
 						passwordField.setText(null);
 						usernameField.setText(null);
 					}else {
-						FailedLogin fail = new FailedLogin();
-						sound.fail_login();
-						fail.show();
-						Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
-						fail.setIconImage(icon);
-						fail.getContentPane().setLayout(null);
-						fail.setVisible(true);
+						gen.genFailLogin();
 						passwordField.setText(null);
 						usernameField.setText(null);
 						dispose();

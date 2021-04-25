@@ -13,13 +13,15 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+		//Generador de frame
+		GenerateFrame gen = new GenerateFrame();
+		
 		//conexion a bbdd
 		conexion.Conectar();
 		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GenerateFrame gen = new GenerateFrame();
 					gen.genLogin();
 				} catch (Exception e) {
 					e.printStackTrace();
