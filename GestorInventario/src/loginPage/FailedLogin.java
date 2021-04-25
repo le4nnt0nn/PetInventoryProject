@@ -2,6 +2,7 @@ package loginPage;
 
 import java.awt.BorderLayout;
 
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -9,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import sounds.Sound;
+import utils.GenerateFrame;
 
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
@@ -83,11 +85,8 @@ public class FailedLogin extends JFrame {
 		btnRetry.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				LoginPageJF frame = new LoginPageJF();
-				Image icon = Toolkit.getDefaultToolkit().getImage("\\icon.png"); 
-				frame.setIconImage(icon);
-				frame.getContentPane().setLayout(null);
-				frame.setVisible(true);
+				GenerateFrame gen = new GenerateFrame();
+				gen.genLogin();
 			}
 		});
 		btnRetry.setForeground(Color.BLACK);

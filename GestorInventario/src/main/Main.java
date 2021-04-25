@@ -6,6 +6,7 @@ import java.awt.Toolkit;
 
 import bbdd.conexion;
 import loginPage.LoginPageJF;
+import utils.GenerateFrame;
 
 public class Main {
 	
@@ -17,11 +18,8 @@ public class Main {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LoginPageJF frame = new LoginPageJF();
-					Image icon = Toolkit.getDefaultToolkit().getImage("\\icon.png"); 
-					frame.setIconImage(icon);
-					frame.getContentPane().setLayout(null);
-					frame.setVisible(true);
+					GenerateFrame gen = new GenerateFrame();
+					gen.genLogin();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
