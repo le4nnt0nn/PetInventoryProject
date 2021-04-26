@@ -9,6 +9,11 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import javax.swing.JButton;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MainPageJF extends JFrame {
 
@@ -47,8 +52,8 @@ public class MainPageJF extends JFrame {
 		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(60, 179, 113));
 		panel_1.setBounds(0, 0, 742, 83);
+		panel_1.setBackground(new Color(60, 179, 113));
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
@@ -57,5 +62,30 @@ public class MainPageJF extends JFrame {
 		lblAdminMode.setFont(new Font("Open Sans", Font.BOLD, 36));
 		lblAdminMode.setBounds(248, 11, 275, 66);
 		panel_1.add(lblAdminMode);
+		
+		JButton btnPets = new JButton("");
+		btnPets.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnPets.setIcon(new ImageIcon(MainPageJF.class.getResource("/images/buttonPetsRedo.png")));
+		btnPets.setBounds(66, 156, 128, 151);
+		btnPets.setBorder(BorderFactory.createEmptyBorder());
+		btnPets.setContentAreaFilled(false);
+		panel.add(btnPets);
+		
+		JButton btnClients = new JButton("");
+		btnClients.setIcon(new ImageIcon(MainPageJF.class.getResource("/images/ButtonClientsRedo.png")));
+		btnClients.setContentAreaFilled(false);
+		btnClients.setBorder(BorderFactory.createEmptyBorder());
+		btnClients.setBounds(301, 156, 128, 151);
+		panel.add(btnClients);
+		
+		JButton btnPurchases = new JButton("");
+		btnPurchases.setIcon(new ImageIcon(MainPageJF.class.getResource("/images/buttonPurchasesRedo.png")));
+		btnPurchases.setContentAreaFilled(false);
+		btnPurchases.setBorder(BorderFactory.createEmptyBorder());
+		btnPurchases.setBounds(538, 156, 128, 151);
+		panel.add(btnPurchases);
 	}
 }
