@@ -43,5 +43,6 @@ public class MainPageJF extends JFrame {
 		panel.setBackground(new Color(144, 238, 144));
 		panel.setBounds(0, 0, 742, 387);
 		contentPane.add(panel);
+		panel.setLayout(null);
 	}
 }
