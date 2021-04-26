@@ -7,6 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
 
 public class MainPageJF extends JFrame {
 
@@ -19,8 +21,7 @@ public class MainPageJF extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MainPageJF frame = new MainPageJF();
-					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -44,5 +45,17 @@ public class MainPageJF extends JFrame {
 		panel.setBounds(0, 0, 742, 387);
 		contentPane.add(panel);
 		panel.setLayout(null);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(60, 179, 113));
+		panel_1.setBounds(0, 0, 742, 83);
+		panel.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblAdminMode = new JLabel("ADMIN MODE");
+		lblAdminMode.setForeground(Color.WHITE);
+		lblAdminMode.setFont(new Font("Open Sans", Font.BOLD, 36));
+		lblAdminMode.setBounds(248, 11, 275, 66);
+		panel_1.add(lblAdminMode);
 	}
 }
