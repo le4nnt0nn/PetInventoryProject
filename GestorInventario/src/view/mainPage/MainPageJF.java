@@ -5,7 +5,11 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
+
+import sounds.Sound;
+
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -14,6 +18,8 @@ import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class MainPageJF extends JFrame {
 
@@ -51,6 +57,23 @@ public class MainPageJF extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
+		JButton btnPets = new JButton("");
+		btnPets.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				Sound sound = new Sound();
+				sound.button_sound();
+				btnPets.setSize(128, 165);
+			}
+			public void mouseExited(MouseEvent e) {
+				btnPets.setSize(128, 151);
+			}
+		});
+		btnPets.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(0, 0, 742, 83);
 		panel_1.setBackground(new Color(60, 179, 113));
@@ -63,29 +86,79 @@ public class MainPageJF extends JFrame {
 		lblAdminMode.setBounds(248, 11, 275, 66);
 		panel_1.add(lblAdminMode);
 		
-		JButton btnPets = new JButton("");
-		btnPets.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		JButton btnClients = new JButton("");
+		btnClients.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				Sound sound = new Sound();
+				sound.button_sound();
+				btnClients.setSize(128, 165);
+			}
+			public void mouseExited(MouseEvent e) {
+				btnClients.setSize(128, 151);
 			}
 		});
+		btnClients.setIcon(new ImageIcon(MainPageJF.class.getResource("/images/ButtonClientsRedo.png")));
+		btnClients.setContentAreaFilled(false);
+		btnClients.setBorder(BorderFactory.createEmptyBorder());
+		btnClients.setBounds(301, 156, 128, 151);
+		panel.add(btnClients);
 		btnPets.setIcon(new ImageIcon(MainPageJF.class.getResource("/images/buttonPetsRedo.png")));
 		btnPets.setBounds(66, 156, 128, 151);
 		btnPets.setBorder(BorderFactory.createEmptyBorder());
 		btnPets.setContentAreaFilled(false);
 		panel.add(btnPets);
 		
-		JButton btnClients = new JButton("");
-		btnClients.setIcon(new ImageIcon(MainPageJF.class.getResource("/images/ButtonClientsRedo.png")));
-		btnClients.setContentAreaFilled(false);
-		btnClients.setBorder(BorderFactory.createEmptyBorder());
-		btnClients.setBounds(301, 156, 128, 151);
-		panel.add(btnClients);
-		
 		JButton btnPurchases = new JButton("");
+		btnPurchases.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				Sound sound = new Sound();
+				sound.button_sound();
+				btnPurchases.setSize(128, 165);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btnPurchases.setSize(128, 151);
+			}
+		});
 		btnPurchases.setIcon(new ImageIcon(MainPageJF.class.getResource("/images/buttonPurchasesRedo.png")));
 		btnPurchases.setContentAreaFilled(false);
 		btnPurchases.setBorder(BorderFactory.createEmptyBorder());
 		btnPurchases.setBounds(538, 156, 128, 151);
 		panel.add(btnPurchases);
+		
+		JPanel panel_right = new JPanel();
+		panel_right.setBackground(new Color(152, 251, 152));
+		panel_right.setBounds(538, 156, 128, 151);
+		panel.add(panel_right);
+		
+		JPanel panel_left = new JPanel();
+		panel_left.setBackground(new Color(152, 251, 152));
+		panel_left.setBounds(66, 156, 128, 151);
+		panel.add(panel_left);
+		
+		JPanel panel_center = new JPanel();
+		panel_center.setBackground(new Color(152, 251, 152));
+		panel_center.setBounds(301, 156, 128, 151);
+		panel.add(panel_center);
+		
+		JLabel lblPets = new JLabel("Pets");
+		lblPets.setForeground(Color.DARK_GRAY);
+		lblPets.setFont(new Font("Open Sans Semibold", Font.PLAIN, 22));
+		lblPets.setBounds(101, 124, 54, 21);
+		panel.add(lblPets);
+		
+		JLabel lblClients = new JLabel("Clients");
+		lblClients.setForeground(Color.DARK_GRAY);
+		lblClients.setFont(new Font("Open Sans Semibold", Font.PLAIN, 22));
+		lblClients.setBounds(328, 124, 73, 21);
+		panel.add(lblClients);
+		
+		JLabel lblPurchases = new JLabel("Purchases");
+		lblPurchases.setForeground(Color.DARK_GRAY);
+		lblPurchases.setFont(new Font("Open Sans Semibold", Font.PLAIN, 22));
+		lblPurchases.setBounds(538, 124, 128, 21);
+		panel.add(lblPurchases);
 	}
 }
