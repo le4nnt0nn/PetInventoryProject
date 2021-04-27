@@ -129,6 +129,11 @@ public class MainPageJF extends JFrame {
 				btnPurchases.setSize(128, 151);
 			}
 		});
+		btnPurchases.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new GenerateFrame().genPurchasePage();
+			}
+		});
 		btnPurchases.setIcon(new ImageIcon(MainPageJF.class.getResource("/images/buttonPurchasesRedo.png")));
 		btnPurchases.setContentAreaFilled(false);
 		btnPurchases.setBorder(BorderFactory.createEmptyBorder());

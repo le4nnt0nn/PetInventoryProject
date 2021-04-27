@@ -7,6 +7,7 @@ import view.loginPage.*;
 import view.mainPage.MainPageJF;
 import view.mainPage.clientPage;
 import view.mainPage.petPage;
+import view.mainPage.purchasePage;
 import sounds.Sound;
 
 public class GenerateFrame {
@@ -63,5 +64,13 @@ public class GenerateFrame {
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
-	}	
+	}
+	
+	public static void genPurchasePage() {
+		purchasePage frame = new purchasePage();
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		frame.setIconImage(icon);
+		frame.getContentPane().setLayout(null);
+		frame.setVisible(true);
+	}
 }
