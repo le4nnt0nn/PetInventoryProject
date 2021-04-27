@@ -71,6 +71,7 @@ public class MainPageJF extends JFrame {
 		});
 		btnPets.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				new Sound().enteredOption();
 				new GenerateFrame().genPetPage();
 			}
 		});
@@ -100,6 +101,7 @@ public class MainPageJF extends JFrame {
 		});
 		btnClients.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				new Sound().enteredOption();
 				new GenerateFrame().genClientPage();
 			}
 		});
@@ -128,6 +130,7 @@ public class MainPageJF extends JFrame {
 		});
 		btnPurchases.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				new Sound().enteredOption();
 				new GenerateFrame().genPurchasePage();
 			}
 		});
