@@ -5,6 +5,8 @@ import java.awt.Toolkit;
 
 import view.loginPage.*;
 import view.mainPage.MainPageJF;
+import view.mainPage.clientPage;
+import view.mainPage.petPage;
 import sounds.Sound;
 
 public class GenerateFrame {
@@ -46,4 +48,20 @@ public class GenerateFrame {
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
 	}
+	
+	public static void genPetPage() {
+		petPage frame = new petPage();
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		frame.setIconImage(icon);
+		frame.getContentPane().setLayout(null);
+		frame.setVisible(true);
+	}
+	
+	public static void genClientPage() {
+		clientPage frame = new clientPage();
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		frame.setIconImage(icon);
+		frame.getContentPane().setLayout(null);
+		frame.setVisible(true);
+	}	
 }

@@ -9,6 +9,7 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
 import sounds.Sound;
+import utils.GenerateFrame;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -71,6 +72,7 @@ public class MainPageJF extends JFrame {
 		});
 		btnPets.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				new GenerateFrame().genPetPage();
 			}
 		});
 		
@@ -96,6 +98,11 @@ public class MainPageJF extends JFrame {
 			}
 			public void mouseExited(MouseEvent e) {
 				btnClients.setSize(128, 151);
+			}
+		});
+		btnClients.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new GenerateFrame().genClientPage();
 			}
 		});
 		btnClients.setIcon(new ImageIcon(MainPageJF.class.getResource("/images/ButtonClientsRedo.png")));
