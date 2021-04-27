@@ -61,6 +61,11 @@ public class clientPage extends JFrame {
 		panel.setBounds(0, 0, 742, 387);
 		contentPane_1.add(panel);
 		
+		JLabel lblGIF = new JLabel("");
+		lblGIF.setIcon(new ImageIcon(clientPage.class.getResource("/images/doggie_client.gif")));
+		lblGIF.setBounds(23, 72, 373, 258);
+		panel.add(lblGIF);
+		
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);
 		panel_1.setBackground(new Color(152, 251, 152));
