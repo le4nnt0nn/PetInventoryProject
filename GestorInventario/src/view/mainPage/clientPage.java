@@ -76,8 +76,7 @@ public class clientPage extends JFrame {
 		btnShow.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				Sound sound = new Sound();
-				sound.button_sound();
+				new Sound().button_sound();
 				btnShow.setSize(122, 90);
 			}
 			@Override
@@ -95,8 +94,7 @@ public class clientPage extends JFrame {
 		btnAddClient.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				Sound sound = new Sound();
-				sound.button_sound();
+				new Sound().button_sound();
 			}
 		});
 		btnAddClient.setForeground(Color.BLACK);
@@ -109,8 +107,7 @@ public class clientPage extends JFrame {
 		btnUpdateClient.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				Sound sound = new Sound();
-				sound.button_sound();
+				new Sound().button_sound();
 			}
 		});
 		btnUpdateClient.setForeground(Color.BLACK);

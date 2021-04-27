@@ -7,12 +7,9 @@ import javax.sound.sampled.Clip;
 
 public class Sound {
 	
-	public Sound() {
-		
-	}
 	
 	//Normal button sound
-	public void button_sound() {
+	public static void button_sound() {
 		try {
 			File sound = new File("src\\sounds\\pressButton.wav");
 			Clip c = AudioSystem.getClip();
@@ -25,7 +22,7 @@ public class Sound {
 	}
 	
 	//Fail login sound
-	public void fail_login() {
+	public static void fail_login() {
 		try {
 			File sound = new File("src\\sounds\\failLogin.wav");
 			Clip c = AudioSystem.getClip();
@@ -38,9 +35,22 @@ public class Sound {
 	}
 	
 	//Successful login sound
-	public void successfulLogin() {
+	public static void successfulLogin() {
 		try {
 			File sound = new File("src\\sounds\\successfulLogin.wav");
+			Clip c = AudioSystem.getClip();
+			c.open(AudioSystem.getAudioInputStream(sound));
+			c.start();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	//Entered option sound
+	public static void enteredOption() {
+		try {
+			File sound = new File("src\\sounds\\enteredOption.wav");
 			Clip c = AudioSystem.getClip();
 			c.open(AudioSystem.getAudioInputStream(sound));
 			c.start();

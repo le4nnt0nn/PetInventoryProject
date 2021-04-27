@@ -76,8 +76,7 @@ public class purchasePage extends JFrame {
 		btnShow.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				Sound sound = new Sound();
-				sound.button_sound();
+				new Sound().button_sound();
 				btnShow.setSize(122, 90);
 			}
 			@Override
@@ -95,8 +94,7 @@ public class purchasePage extends JFrame {
 		btnAddPurchase.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				Sound sound = new Sound();
-				sound.button_sound();
+				new Sound().button_sound();
 			}
 		});
 		btnAddPurchase.setForeground(Color.BLACK);
@@ -109,8 +107,7 @@ public class purchasePage extends JFrame {
 		btnUpdatePurchase.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				Sound sound = new Sound();
-				sound.button_sound();
+				new Sound().button_sound();
 			}
 		});
 		btnUpdatePurchase.setForeground(Color.BLACK);

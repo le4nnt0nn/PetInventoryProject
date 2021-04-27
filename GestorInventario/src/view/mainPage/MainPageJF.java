@@ -62,8 +62,7 @@ public class MainPageJF extends JFrame {
 		btnPets.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				Sound sound = new Sound();
-				sound.button_sound();
+				new Sound().button_sound();
 				btnPets.setSize(128, 165);
 			}
 			public void mouseExited(MouseEvent e) {
@@ -92,8 +91,7 @@ public class MainPageJF extends JFrame {
 		btnClients.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				Sound sound = new Sound();
-				sound.button_sound();
+				new Sound().button_sound();
 				btnClients.setSize(128, 165);
 			}
 			public void mouseExited(MouseEvent e) {
@@ -120,8 +118,7 @@ public class MainPageJF extends JFrame {
 		btnPurchases.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				Sound sound = new Sound();
-				sound.button_sound();
+				new Sound().button_sound();
 				btnPurchases.setSize(128, 165);
 			}
 			@Override

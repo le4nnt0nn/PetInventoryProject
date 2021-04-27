@@ -69,8 +69,7 @@ public class petPage extends JFrame {
 		btnShow.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				Sound sound = new Sound();
-				sound.button_sound();
+				new Sound().button_sound();
 				btnShow.setSize(122, 90);
 			}
 			@Override
@@ -88,8 +87,7 @@ public class petPage extends JFrame {
 		btnAddPet.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				Sound sound = new Sound();
-				sound.button_sound();
+				new Sound().button_sound();
 			}
 		});
 		btnAddPet.setForeground(Color.BLACK);
@@ -102,8 +100,7 @@ public class petPage extends JFrame {
 		btnUpdatePet.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				Sound sound = new Sound();
-				sound.button_sound();
+				new Sound().button_sound();
 			}
 		});
 		btnUpdatePet.setForeground(Color.BLACK);

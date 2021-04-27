@@ -75,8 +75,7 @@ public class SuccessfulLogin extends JFrame {
 		btnContinue.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				Sound sound = new Sound();
-				sound.button_sound();
+				new Sound().button_sound();
 			}
 		});
 		btnContinue.addActionListener(new ActionListener() {
