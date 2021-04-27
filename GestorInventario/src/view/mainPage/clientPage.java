@@ -120,8 +120,7 @@ public class clientPage extends JFrame {
 		btnDeleteClient.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				Sound sound = new Sound();
-				sound.button_sound();
+				new Sound().button_sound();
 			}
 		});
 		btnDeleteClient.setForeground(Color.BLACK);

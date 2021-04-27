@@ -113,8 +113,7 @@ public class petPage extends JFrame {
 		btnDeletePet.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				Sound sound = new Sound();
-				sound.button_sound();
+				new Sound().button_sound();
 			}
 		});
 		btnDeletePet.setForeground(Color.BLACK);

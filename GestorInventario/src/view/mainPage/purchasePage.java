@@ -120,8 +120,7 @@ public class purchasePage extends JFrame {
 		btnDeletePurchase.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				Sound sound = new Sound();
-				sound.button_sound();
+				new Sound().button_sound();
 			}
 		});
 		btnDeletePurchase.setForeground(Color.BLACK);
