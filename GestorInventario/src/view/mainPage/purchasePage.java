@@ -17,6 +17,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 public class purchasePage extends JFrame {
 
@@ -59,6 +60,11 @@ public class purchasePage extends JFrame {
 		panel.setBackground(new Color(144, 238, 144));
 		panel.setBounds(0, 0, 742, 387);
 		contentPane_1.add(panel);
+		
+		JLabel lblGIF = new JLabel("");
+		lblGIF.setIcon(new ImageIcon(purchasePage.class.getResource("/images/doggie_purchasePage.gif")));
+		lblGIF.setBounds(22, 77, 373, 258);
+		panel.add(lblGIF);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);

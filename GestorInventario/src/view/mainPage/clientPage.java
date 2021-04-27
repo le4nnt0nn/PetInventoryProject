@@ -62,7 +62,7 @@ public class clientPage extends JFrame {
 		contentPane_1.add(panel);
 		
 		JLabel lblGIF = new JLabel("");
-		lblGIF.setIcon(new ImageIcon(clientPage.class.getResource("/images/doggie_client.gif")));
+		lblGIF.setIcon(new ImageIcon(clientPage.class.getResource("/images/doggie_clientPage.gif")));
 		lblGIF.setBounds(23, 72, 373, 258);
 		panel.add(lblGIF);
 		
