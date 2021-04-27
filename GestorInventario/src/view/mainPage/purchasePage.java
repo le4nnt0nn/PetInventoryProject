@@ -63,7 +63,7 @@ public class purchasePage extends JFrame {
 		
 		JLabel lblGIF = new JLabel("");
 		lblGIF.setIcon(new ImageIcon(purchasePage.class.getResource("/images/doggie_purchasePage.gif")));
-		lblGIF.setBounds(22, 77, 373, 258);
+		lblGIF.setBounds(53, 77, 373, 258);
 		panel.add(lblGIF);
 		
 		JPanel panel_1 = new JPanel();
