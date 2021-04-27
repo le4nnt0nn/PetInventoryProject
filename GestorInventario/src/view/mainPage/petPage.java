@@ -54,6 +54,11 @@ public class petPage extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(petPage.class.getResource("/images/doggie_petPage.gif")));
+		lblNewLabel.setBounds(21, 59, 373, 258);
+		panel.add(lblNewLabel);
+		
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);
 		panel_1.setBackground(new Color(152, 251, 152));
