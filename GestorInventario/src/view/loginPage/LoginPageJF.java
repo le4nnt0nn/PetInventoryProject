@@ -3,6 +3,7 @@ package view.loginPage;
 import bbdd.conexion;
 import sounds.Sound;
 import utils.GenerateFrame;
+import beans.User;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
