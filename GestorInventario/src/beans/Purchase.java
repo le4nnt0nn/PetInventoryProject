@@ -5,16 +5,16 @@ import java.sql.Date;
 public class Purchase {
 
 	private int idPurchase;
-    private int idClient;
+    private int idUser;
     private int idPet;
     private Date datePurchase;
     private double totalPrice;
 
     public Purchase() {}
 
-    public Purchase(int idPurchase, int idClient, int idPet, Date datePurchase, double totalPrice) {
+    public Purchase(int idPurchase, int idUser, int idPet, Date datePurchase, double totalPrice) {
         this.idPurchase = idPurchase;
-        this.idClient = idClient;
+        this.idUser = idUser;
         this.idPet = idPet;
         this.datePurchase = datePurchase;
         this.totalPrice = totalPrice;
@@ -28,12 +28,12 @@ public class Purchase {
         this.idPurchase = idPurchase;
     }
 
-    public int getIdClient() {
-        return idClient;
+    public int getIdUser() {
+        return idUser;
     }
 
-    public void setIdClient(int idClient) {
-        this.idClient = idClient;
+    public void setIdClient(int idUser) {
+        this.idUser = idUser;
     }
 
     public int getIdPet() {
