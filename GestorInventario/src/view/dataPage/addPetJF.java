@@ -1,6 +1,7 @@
 package view.dataPage;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -8,12 +9,18 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import beans.Pet;
+
 import java.awt.Color;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+import model.Pets;
 
 public class addPetJF extends JFrame {
 
@@ -33,8 +40,7 @@ public class addPetJF extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					addPetJF frame = new addPetJF();
-					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -127,6 +133,22 @@ public class addPetJF extends JFrame {
 		panel.add(lblPrice);
 		
 		JButton btnNewButton = new JButton("Finish");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				//Info to Object Pet
+				int idPet = Integer.parseInt(textFieldId.getText());
+				String species = textFieldSpecies.getText();
+				String breed = textFieldBreed.getText();
+				String sex = textFieldSex.getText();
+				int age = Integer.parseInt(textFieldAge.getText());
+				double price = Double.parseDouble(textFieldPrice.getText());
+				
+				Pet pet = new Pet(idPet,species,breed,sex,age,price);
+				new Pets().addPet(pet);
+				System.out.println("NICE");
+			}
+		});
 		btnNewButton.setForeground(Color.BLACK);
 		btnNewButton.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnNewButton.setBounds(311, 324, 89, 23);

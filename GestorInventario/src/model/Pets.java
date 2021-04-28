@@ -10,7 +10,7 @@ import beans.Pet;
 
 public class Pets {
 	
-	public void addPet(Pet pet) {
+	public static void addPet(Pet pet) {
 		int idPet = pet.getIdPet();
 		String species = pet.getSpecies();
 		String breed = pet.getBreed();
@@ -18,7 +18,25 @@ public class Pets {
 		int age = pet.getAge();
 		double price = pet.getPrice();
 		
-		conexion.EjecutarUpdate("INSERT INTO pets VALUES ('"+idPet+"','"+species+"','"+breed+"','"+sex+"','"+age+"','"+price+"';");
+		conexion.EjecutarUpdate("INSERT INTO pets VALUES ('"+idPet+"','"+species+"','"+breed+"','"+sex+"','"+age+"','"+price+"');");
+		
+	}
+	
+	public static void updatePet(Pet pet) {
+		int idPet = pet.getIdPet();
+		String species = pet.getSpecies();
+		String breed = pet.getBreed();
+		String sex = pet.getSex();
+		int age = pet.getAge();
+		double price = pet.getPrice();
+		
+		conexion.EjecutarUpdate("UPDATE pets SET idPet='"+idPet+"',species='"+species+"',breed='"+breed+"',sex='"+sex+"','"+age+"',price='"+price+"' where idPet='"+idPet+"';");
+		
+	}
+	
+	public static void deletePet(Pet pet) {
+	
+		conexion.EjecutarUpdate("DELETE FROM pets WHERE idPet='"+pet.getIdPet()+"';");
 		
 	}
 	
@@ -44,9 +62,9 @@ public class Pets {
 		return null;
 	}
 	
-	public ArrayList<Pet> catchAllPets() {
+	public static ArrayList<Pet> catchAllPets() {
 		ArrayList<Pet> pets = new ArrayList<Pet>();
-		ResultSet rs = conexion.EjecutarSentencia("SELECT * FROM alumnos;");
+		ResultSet rs = conexion.EjecutarSentencia("SELECT * FROM pets;");
 		try {
 			
 			while(rs.next()) {

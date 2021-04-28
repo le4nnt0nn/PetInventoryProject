@@ -1,6 +1,7 @@
 package view.mainPage;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -8,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import sounds.Sound;
+import utils.GenerateFrame;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -17,6 +19,8 @@ import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class petPage extends JFrame {
 
@@ -84,6 +88,11 @@ public class petPage extends JFrame {
 		panel_1.add(btnShow);
 		
 		JButton btnAddPet = new JButton("Add Pet");
+		btnAddPet.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new GenerateFrame().genAddPetPage();
+			}
+		});
 		btnAddPet.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
