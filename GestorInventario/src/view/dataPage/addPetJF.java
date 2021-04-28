@@ -139,14 +139,13 @@ public class addPetJF extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				//Info to Object Pet
-				int idPet = Integer.parseInt(textFieldId.getText());
 				String species = textFieldSpecies.getText();
 				String breed = textFieldBreed.getText();
 				String sex = textFieldSex.getText();
 				int age = Integer.parseInt(textFieldAge.getText());
 				double price = Double.parseDouble(textFieldPrice.getText());
 				
-				Pet pet = new Pet(idPet,species,breed,sex,age,price);
+				Pet pet = new Pet(species,breed,sex,age,price);
 				new Pets().addPet(pet);
 				
 				new GenerateFrame().genSucAction();

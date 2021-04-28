@@ -11,14 +11,13 @@ import beans.Pet;
 public class Pets {
 	
 	public static void addPet(Pet pet) {
-		int idPet = pet.getIdPet();
 		String species = pet.getSpecies();
 		String breed = pet.getBreed();
 		String sex = pet.getSex();
 		int age = pet.getAge();
 		double price = pet.getPrice();
 		
-		conexion.EjecutarUpdate("INSERT INTO pets VALUES ('"+idPet+"','"+species+"','"+breed+"','"+sex+"','"+age+"','"+price+"');");
+		conexion.EjecutarUpdate("INSERT INTO pets (species,breed,sex,age,price) VALUES ('"+species+"','"+breed+"','"+sex+"','"+age+"','"+price+"');");
 		
 	}
 	
