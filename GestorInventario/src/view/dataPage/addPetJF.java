@@ -28,7 +28,6 @@ public class addPetJF extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
-	private JTextField textFieldId;
 	private JTextField textFieldSpecies;
 	private JTextField textFieldBreed;
 	private JTextField textFieldAge;
@@ -78,11 +77,6 @@ public class addPetJF extends JFrame {
 		lblAddPet.setBounds(275, 11, 178, 20);
 		panel.add(lblAddPet);
 		
-		textFieldId = new JTextField();
-		textFieldId.setBounds(259, 76, 207, 20);
-		panel.add(textFieldId);
-		textFieldId.setColumns(10);
-		
 		textFieldSpecies = new JTextField();
 		textFieldSpecies.setBounds(259, 126, 207, 20);
 		panel.add(textFieldSpecies);
@@ -103,11 +97,6 @@ public class addPetJF extends JFrame {
 		textFieldPrice.setBounds(380, 276, 86, 20);
 		panel.add(textFieldPrice);
 		textFieldPrice.setColumns(10);
-		
-		JLabel lblID = new JLabel("ID");
-		lblID.setFont(new Font("Open Sans", Font.BOLD, 13));
-		lblID.setBounds(346, 59, 70, 14);
-		panel.add(lblID);
 		
 		JLabel lblSpecies = new JLabel("SPECIES");
 		lblSpecies.setFont(new Font("Open Sans", Font.BOLD, 13));
