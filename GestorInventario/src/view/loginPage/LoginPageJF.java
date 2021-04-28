@@ -119,9 +119,12 @@ public class LoginPageJF extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				try {
-
+					
+					//!ESTO IRÍA EN EL MODELO DE USERS
 					ResultSet rs = conexion.EjecutarSentencia("select * from logins where username='"+usernameField.getText()+"' and password='"+passwordField.getText()+"';");	
-
+					
+					
+					//!LA LÓGICA DE LOGIN IRÍA EN CONTROLADOR
 					if(rs.next()) {
 						dispose();
 						gen.genSucLogin();
