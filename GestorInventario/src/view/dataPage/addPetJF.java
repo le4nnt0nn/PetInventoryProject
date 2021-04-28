@@ -2,6 +2,7 @@ package view.dataPage;
 
 import java.awt.BorderLayout;
 
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -21,6 +22,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import model.Pets;
+import utils.GenerateFrame;
 
 public class addPetJF extends JFrame {
 
@@ -146,7 +148,8 @@ public class addPetJF extends JFrame {
 				
 				Pet pet = new Pet(idPet,species,breed,sex,age,price);
 				new Pets().addPet(pet);
-				System.out.println("NICE");
+				
+				new GenerateFrame().genSucAction();
 			}
 		});
 		btnNewButton.setForeground(Color.BLACK);

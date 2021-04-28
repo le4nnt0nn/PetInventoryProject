@@ -6,9 +6,20 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import sounds.Sound;
+import utils.GenerateFrame;
+
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.JButton;
 
 public class successfulAction extends JFrame {
 
@@ -21,8 +32,7 @@ public class successfulAction extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					successfulAction frame = new successfulAction();
-					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -34,7 +44,7 @@ public class successfulAction extends JFrame {
 	 * Create the frame.
 	 */
 	public successfulAction() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 758, 426);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -47,9 +57,45 @@ public class successfulAction extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(successfulAction.class.getResource("/images/doggieSuccAction.gif")));
-		lblNewLabel.setBounds(174, 55, 402, 300);
-		panel.add(lblNewLabel);
+		JLabel lblGIF = new JLabel("");
+		lblGIF.setIcon(new ImageIcon(successfulAction.class.getResource("/images/doggieSuccAction.gif")));
+		lblGIF.setBounds(34, 29, 402, 300);
+		panel.add(lblGIF);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(0, 204, 102));
+		panel_1.setBounds(336, 11, 396, 365);
+		panel.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblSucText = new JLabel("SUCCESSFUL ACTION");
+		lblSucText.setForeground(Color.DARK_GRAY);
+		lblSucText.setFont(new Font("Open Sans", Font.BOLD, 36));
+		lblSucText.setBounds(18, 39, 368, 50);
+		panel_1.add(lblSucText);
+		
+		JLabel lblSuccDesc = new JLabel("Action completed successfully");
+		lblSuccDesc.setForeground(Color.WHITE);
+		lblSuccDesc.setFont(new Font("Open Sans", Font.PLAIN, 14));
+		lblSuccDesc.setBounds(105, 164, 209, 40);
+		panel_1.add(lblSuccDesc);
+		
+		JButton btnOK = new JButton("OK");
+		btnOK.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnOK.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+			}
+		});
+		btnOK.setForeground(Color.BLACK);
+		btnOK.setFont(new Font("Open Sans Semibold", Font.BOLD, 14));
+		btnOK.setBackground(Color.WHITE);
+		btnOK.setBounds(145, 106, 118, 31);
+		panel_1.add(btnOK);
 	}
 }
