@@ -12,7 +12,7 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-public class addUser extends JFrame {
+public class addUserJF extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textFieldRole;
@@ -31,7 +31,7 @@ public class addUser extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					addUser frame = new addUser();
+					addUserJF frame = new addUserJF();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +43,7 @@ public class addUser extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public addUser() {
+	public addUserJF() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 758, 426);
 		contentPane = new JPanel();
