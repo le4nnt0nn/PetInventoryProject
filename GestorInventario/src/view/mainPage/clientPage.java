@@ -79,8 +79,7 @@ public class clientPage extends JFrame {
 		JButton btnShow = new JButton("");
 		btnShow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-				//LISTAR USUARIOS
+				new GenerateFrame().genListUsers();
 			}
 		});
 		btnShow.addMouseListener(new MouseAdapter() {

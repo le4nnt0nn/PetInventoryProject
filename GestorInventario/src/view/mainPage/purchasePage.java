@@ -79,8 +79,7 @@ public class purchasePage extends JFrame {
 		JButton btnShow = new JButton("");
 		btnShow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-				//LISTAR PURCHASES
+				new GenerateFrame().genListPurchases();
 			}
 		});
 		btnShow.addMouseListener(new MouseAdapter() {

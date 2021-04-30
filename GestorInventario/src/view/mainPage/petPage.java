@@ -72,8 +72,7 @@ public class petPage extends JFrame {
 		JButton btnShow = new JButton("");
 		btnShow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-				//LISTAR PETS
+				new GenerateFrame().genListPets();
 			}
 		});
 		btnShow.addMouseListener(new MouseAdapter() {
