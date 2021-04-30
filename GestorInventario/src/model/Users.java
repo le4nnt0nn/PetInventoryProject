@@ -6,8 +6,7 @@ import java.util.ArrayList;
 
 import bbdd.conexion;
 import beans.User;
-import beans.User;
-import beans.User;
+
 
 public class Users {
 	
@@ -42,7 +41,7 @@ public class Users {
 	
 	public static void deleteUser(User user) {
 		
-		conexion.EjecutarUpdate("DELETE FROM user WHERE idUser='"+user.getIdUser()+"';");
+		conexion.EjecutarUpdate("DELETE FROM users WHERE idUser='"+user.getIdUser()+"';");
 		
 	}
 	
