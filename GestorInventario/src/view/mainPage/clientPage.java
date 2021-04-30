@@ -77,6 +77,12 @@ public class clientPage extends JFrame {
 		panel.add(panel_1);
 		
 		JButton btnShow = new JButton("");
+		btnShow.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				//LISTAR USUARIOS
+			}
+		});
 		btnShow.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
