@@ -77,6 +77,7 @@ public class listPets extends JFrame {
 		table.setModel(new DefaultTableModel(
 			new Pet[][] {
 				
+				//COMPLETAR TABLA
 			},
 			new String[] {
 				"idPet", "Species", "Breed", "Sex", "Age", "Price"
