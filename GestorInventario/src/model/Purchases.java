@@ -14,10 +14,10 @@ public class Purchases {
 	public static void addPurchase(Purchase purchase) {
 		int idUser = purchase.getIdUser();
 		int idPet = purchase.getIdPet();
-		Date date = purchase.getDatePurchase();
+		Date datePurchase = purchase.getDatePurchase();
 		double totalPrice = purchase.getTotalPrice();
 		
-		conexion.EjecutarUpdate("INSERT INTO purchases (idUser, idPet, date, totalPrice) VALUES ('"+idUser+"','"+idPet+"','"+date+"','"+totalPrice+"');");
+		conexion.EjecutarUpdate("INSERT INTO purchases (idUser, idPet, datePurchase, totalPrice) VALUES ('"+idUser+"','"+idPet+"','"+datePurchase+"','"+totalPrice+"');");
 		
 	}
 	

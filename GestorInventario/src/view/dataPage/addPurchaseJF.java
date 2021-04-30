@@ -118,22 +118,19 @@ public class addPurchaseJF extends JFrame {
 				
 				
 				
-				SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy", Locale.UK);
+				SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 				//Info to Object Purchase
-				Date datePurchase =  null;
-				int idUser = Integer.parseInt(textFieldIdUser.getText());
-				int idPet = Integer.parseInt(textFieldIdPet.getText());
 				try {
-					datePurchase = formatter.parse(textFieldDatePurchase.getText());
+					int idUser = Integer.parseInt(textFieldIdUser.getText());
+					int idPet = Integer.parseInt(textFieldIdPet.getText());
+					Date datePurchase = formatter.parse(textFieldDatePurchase.getText());
+					double totalPrice = Double.parseDouble(textFieldTotalPrice.getText());
+					Purchase purchase = new Purchase(idUser, idPet, datePurchase, totalPrice);
+					new Purchases().addPurchase(purchase);
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				double totalPrice = Double.parseDouble(textFieldTotalPrice.getText());
-		
-				Purchase purchase = new Purchase(idUser, idPet, datePurchase, totalPrice);
-				new Purchases().addPurchase(purchase);
-				
 				new GenerateFrame().genSucAction();
 			}
 		});
