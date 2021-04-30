@@ -25,6 +25,17 @@ public class User {
         this.birth = birth;
         this.phone = phone;
     }
+    
+    public User(String username, String password, String role, String name, String lastname, String address, String birth, int phone) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.name = name;
+        this.lastname = lastname;
+        this.address = address;
+        this.birth = birth;
+        this.phone = phone;
+    }
 
     public int getIdUser() {
         return idUser;

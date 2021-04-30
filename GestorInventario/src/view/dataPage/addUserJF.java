@@ -6,11 +6,20 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import beans.Pet;
+import beans.User;
+import model.Pets;
+import model.Users;
+import utils.GenerateFrame;
+
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class addUserJF extends JFrame {
 
@@ -31,8 +40,7 @@ public class addUserJF extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					addUserJF frame = new addUserJF();
-					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -44,7 +52,7 @@ public class addUserJF extends JFrame {
 	 * Create the frame.
 	 */
 	public addUserJF() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 758, 426);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -156,6 +164,30 @@ public class addUserJF extends JFrame {
 		panel.add(lblPhone);
 		
 		JButton btnFinish = new JButton("Finish");
+		btnFinish.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				//Info to Object User
+				
+				//User Zone
+				String role = textFieldRole.getText();
+				String username = textFieldUsername.getText();
+				String password = textFieldPassw.getText();
+				
+				//Client Zone
+				String name = textFieldName.getText();
+				String lastname = textFieldLastName.getText();
+				String address = textFieldAddress.getText();
+				String birth = textFieldBirth.getText();
+				int phone = Integer.parseInt(textFieldPhone.getText());
+				
+				User user = new User(username,password,role,name,lastname,address,birth,phone);
+				new Users().addUser(user);
+				
+				new GenerateFrame().genSucAction();
+				
+			}
+		});
 		btnFinish.setForeground(Color.BLACK);
 		btnFinish.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnFinish.setBounds(312, 342, 89, 23);
