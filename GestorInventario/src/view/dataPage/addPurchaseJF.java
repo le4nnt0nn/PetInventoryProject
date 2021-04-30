@@ -121,6 +121,9 @@ public class addPurchaseJF extends JFrame {
 				int idUser = Integer.parseInt(textFieldIdUser.getText());
 				int idPet = Integer.parseInt(textFieldIdPet.getText());
 				//Date datePurchase = (java.sql.Date)formatter.parse(textFieldDatePurchase.getText());
+				
+				//PASAR FECHA A ST (EJ "2008-01-12")
+				
 				java.sql.Date datePurchase = java.sql.Date.valueOf(textFieldDatePurchase.getText());
 				double totalPrice = Double.parseDouble(textFieldTotalPrice.getText());
 				Purchase purchase = new Purchase(idUser, idPet, datePurchase, totalPrice);
