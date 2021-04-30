@@ -6,6 +6,9 @@ import java.awt.Toolkit;
 import view.dataPage.addPetJF;
 import view.dataPage.addPurchaseJF;
 import view.dataPage.addUserJF;
+import view.dataPage.listPets;
+import view.dataPage.listPurchases;
+import view.dataPage.listUsers;
 import view.loginPage.*;
 import view.mainPage.MainPageJF;
 import view.mainPage.clientPage;
@@ -107,6 +110,30 @@ public class GenerateFrame {
 	
 	public static void genAddPurchasePage() {
 		addPurchaseJF frame = new addPurchaseJF();
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		frame.setIconImage(icon);
+		frame.getContentPane().setLayout(null);
+		frame.setVisible(true);
+	}
+	
+	public static void genListPets() {
+		listPets frame = new listPets();
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		frame.setIconImage(icon);
+		frame.getContentPane().setLayout(null);
+		frame.setVisible(true);
+	}
+	
+	public static void genListUsers() {
+		listUsers frame = new listUsers();
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		frame.setIconImage(icon);
+		frame.getContentPane().setLayout(null);
+		frame.setVisible(true);
+	}
+	
+	public static void genListPurchases() {
+		listPurchases frame = new listPurchases();
 		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
