@@ -19,6 +19,7 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -121,13 +122,19 @@ public class addPurchaseJF extends JFrame {
 				//Info to Object Purchase
 				int idUser = Integer.parseInt(textFieldIdUser.getText());
 				int idPet = Integer.parseInt(textFieldIdPet.getText());
-				Date datePurchase = formatter.parse(textFieldDatePurchase.getText());
+				try {
+					Date datePurchase = formatter.parse(textFieldDatePurchase.getText());
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				double totalPrice = Double.parseDouble(textFieldTotalPrice.getText());
-				
+				/*FALLO
 				Purchase purchase = new Purchase(idUser, idPet, datePurchase, totalPrice);
 				new Purchases().addPurchase(purchase);
 				
 				new GenerateFrame().genSucAction();
+				*/
 			}
 		});
 		btnFinish.setForeground(Color.BLACK);
