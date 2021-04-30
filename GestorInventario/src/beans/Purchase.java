@@ -19,6 +19,13 @@ public class Purchase {
         this.datePurchase = datePurchase;
         this.totalPrice = totalPrice;
     }
+    
+    public Purchase(int idUser, int idPet, Date datePurchase, double totalPrice) {
+        this.idUser = idUser;
+        this.idPet = idPet;
+        this.datePurchase = datePurchase;
+        this.totalPrice = totalPrice;
+    }
 
     public int getIdPurchase() {
         return idPurchase;
