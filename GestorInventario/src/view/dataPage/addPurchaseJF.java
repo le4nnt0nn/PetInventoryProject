@@ -119,11 +119,13 @@ public class addPurchaseJF extends JFrame {
 				
 				
 				SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+				
+				
 				//Info to Object Purchase
 				try {
 					int idUser = Integer.parseInt(textFieldIdUser.getText());
 					int idPet = Integer.parseInt(textFieldIdPet.getText());
-					Date datePurchase = formatter.parse(textFieldDatePurchase.getText());
+					Date datePurchase = (java.sql.Date)formatter.parse(textFieldDatePurchase.getText());
 					double totalPrice = Double.parseDouble(textFieldTotalPrice.getText());
 					Purchase purchase = new Purchase(idUser, idPet, datePurchase, totalPrice);
 					new Purchases().addPurchase(purchase);
