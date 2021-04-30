@@ -29,7 +29,7 @@ public class Pets {
 		int age = pet.getAge();
 		double price = pet.getPrice();
 		
-		conexion.EjecutarUpdate("UPDATE pets SET idPet='"+idPet+"',species='"+species+"',breed='"+breed+"',sex='"+sex+"','"+age+"',price='"+price+"' where idPet='"+idPet+"';");
+		conexion.EjecutarUpdate("UPDATE pets SET species='"+species+"',breed='"+breed+"',sex='"+sex+"',age='"+age+"',price='"+price+"' where idPet='"+idPet+"';");
 		
 	}
 	
@@ -39,7 +39,7 @@ public class Pets {
 		
 	}
 	
-	public Pet catchPet(int idPetSelected) {
+	public Pet getPet(int idPetSelected) {
 		ResultSet rs = conexion.EjecutarSentencia("SELECT * FROM pets WHERE idPet='"+idPetSelected+"';");
 		try {
 			
@@ -61,7 +61,7 @@ public class Pets {
 		return null;
 	}
 	
-	public static ArrayList<Pet> catchAllPets() {
+	public static ArrayList<Pet> getAllPets() {
 		ArrayList<Pet> pets = new ArrayList<Pet>();
 		ResultSet rs = conexion.EjecutarSentencia("SELECT * FROM pets;");
 		try {
