@@ -18,12 +18,6 @@ public class Table {
 			ResultSetMetaData rsMd = rs.getMetaData();
 			int columns = rsMd.getColumnCount();
 			
-			model.addColumn("idPet");
-			model.addColumn("Species");
-			model.addColumn("Breed");
-			model.addColumn("Sex");
-			model.addColumn("Age");
-			model.addColumn("Price");
 			
 			while(rs.next()) {
 				
