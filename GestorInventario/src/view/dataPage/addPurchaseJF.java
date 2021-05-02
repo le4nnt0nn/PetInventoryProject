@@ -126,6 +126,7 @@ public class addPurchaseJF extends JFrame {
 				new Pets().deletePet(idPet);
 				
 				new GenerateFrame().genSucAction();
+				
 			}
 		});
 		btnFinish.setForeground(Color.BLACK);
