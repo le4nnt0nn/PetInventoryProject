@@ -1,6 +1,7 @@
 package view.dataPage;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -9,11 +10,17 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.sql.ResultSet;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import com.mysql.cj.jdbc.result.ResultSetMetaData;
+
+import controller.Table;
+import bbdd.conexion;
 import beans.Pet;
 import model.Pets;
 
@@ -73,15 +80,11 @@ public class listPets extends JFrame {
 		panel.add(btnSearch);
 		
 		table = new JTable();
-		table.setModel(new DefaultTableModel(
-			new Pet[][] {
-				
-				//COMPLETAR TABLA
-			},
-			new String[] {
-				"idPet", "Species", "Breed", "Sex", "Age", "Price"
-			}
-		));
+		
+		//Modelo
+		new Table().showTablePets(table);
+		
+		
 		table.setBounds(45, 109, 552, 241);
 		panel.add(table);
 	}
