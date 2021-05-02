@@ -82,7 +82,8 @@ public class listPets extends JFrame {
 		table = new JTable();
 		
 		//Modelo
-		new Table().showTable(table, "SELECT * FROM pets;");
+		String[] petsColumns = {"idPet","Species","Breed","Sex","Age","Price"};
+		new Table().showTable(table, "SELECT * FROM pets;",petsColumns);
 		
 		
 		table.setBounds(45, 109, 552, 241);

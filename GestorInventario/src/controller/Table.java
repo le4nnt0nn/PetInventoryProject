@@ -8,7 +8,7 @@ import bbdd.conexion;
 
 public class Table {
 
-	public static JTable showTable(JTable table, String sql) {
+	public static JTable showTable(JTable table, String sql, String[]colNames) {
 		try {
 			DefaultTableModel model = new DefaultTableModel();
 			table.setModel(model);
@@ -18,6 +18,10 @@ public class Table {
 			ResultSetMetaData rsMd = rs.getMetaData();
 			int columns = rsMd.getColumnCount();
 			
+
+			for(int i=0; i<colNames.length;i++) {
+				model.addColumn(i);
+			}
 			
 			while(rs.next()) {
 				

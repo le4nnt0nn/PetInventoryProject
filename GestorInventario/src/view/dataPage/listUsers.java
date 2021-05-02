@@ -73,7 +73,8 @@ public class listUsers extends JFrame {
 		
 		table = new JTable();
 		//Modelo
-		new Table().showTable(table, "SELECT * FROM users;");
+		String[] usersColumns = {"idUser","Username","Passwrod","Role","Name","Lastname","Address","Birth","Phone"};
+		new Table().showTable(table, "SELECT * FROM users;",usersColumns);
 		
 		table.setBounds(45, 109, 552, 241);
 		panel.add(table);

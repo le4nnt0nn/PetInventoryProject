@@ -74,7 +74,8 @@ public class listPurchases extends JFrame {
 		table = new JTable();
 		
 		//Modelo
-		new Table().showTable(table, "SELECT * FROM purchases;");
+		String[] purchasesColumns = {"idPurchase","idUser","idPet","datePurchase","TotalPrice"};
+		new Table().showTable(table, "SELECT * FROM purchases;",purchasesColumns);
 		
 		table.setBounds(45, 109, 552, 241);
 		panel.add(table);
