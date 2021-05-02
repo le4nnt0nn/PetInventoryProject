@@ -33,9 +33,9 @@ public class Pets {
 		
 	}
 	
-	public static void deletePet(Pet pet) {
+	public static void deletePet(int idPet) {
 	
-		conexion.EjecutarUpdate("DELETE FROM pets WHERE idPet='"+pet.getIdPet()+"';");
+		conexion.EjecutarUpdate("DELETE FROM pets WHERE idPet='"+idPet+"';");
 		
 	}
 	

@@ -123,6 +123,7 @@ public class addPurchaseJF extends JFrame {
 				
 				Purchase purchase = new Purchase(idUser, idPet, datePurchase, totalPrice);
 				new Purchases().addPurchase(purchase);
+				new Pets().deletePet(idPet);
 				
 				new GenerateFrame().genSucAction();
 			}
