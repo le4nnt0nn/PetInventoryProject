@@ -7,12 +7,12 @@ public class Purchase {
 	private int idPurchase;
     private int idUser;
     private int idPet;
-    private Date datePurchase;
+    private String datePurchase;
     private double totalPrice;
 
     public Purchase() {}
 
-    public Purchase(int idPurchase, int idUser, int idPet, Date datePurchase, double totalPrice) {
+    public Purchase(int idPurchase, int idUser, int idPet, String datePurchase, double totalPrice) {
         this.idPurchase = idPurchase;
         this.idUser = idUser;
         this.idPet = idPet;
@@ -20,7 +20,7 @@ public class Purchase {
         this.totalPrice = totalPrice;
     }
     
-    public Purchase(int idUser, int idPet, Date datePurchase, double totalPrice) {
+    public Purchase(int idUser, int idPet, String datePurchase, double totalPrice) {
         this.idUser = idUser;
         this.idPet = idPet;
         this.datePurchase = datePurchase;
@@ -51,11 +51,11 @@ public class Purchase {
         this.idPet = idPet;
     }
 
-    public Date getDatePurchase() {
+    public String getDatePurchase() {
         return datePurchase;
     }
 
-    public void setDatePurchase(Date datePurchase) {
+    public void setDatePurchase(String datePurchase) {
         this.datePurchase = datePurchase;
     }
 

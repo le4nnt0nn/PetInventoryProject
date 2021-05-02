@@ -14,7 +14,7 @@ public class Purchases {
 	public static void addPurchase(Purchase purchase) {
 		int idUser = purchase.getIdUser();
 		int idPet = purchase.getIdPet();
-		Date datePurchase = purchase.getDatePurchase();
+		String datePurchase = purchase.getDatePurchase();
 		double totalPrice = purchase.getTotalPrice();
 		
 		conexion.EjecutarUpdate("INSERT INTO purchases (idUser, idPet, datePurchase, totalPrice) VALUES ('"+idUser+"','"+idPet+"','"+datePurchase+"','"+totalPrice+"');");
@@ -25,7 +25,7 @@ public class Purchases {
 		int idPurchase = purchase.getIdPurchase();
 		int idUser = purchase.getIdUser();
 		int idPet = purchase.getIdPet();
-		Date date = purchase.getDatePurchase();
+		String date = purchase.getDatePurchase();
 		double totalPrice = purchase.getTotalPrice();
 		
 		conexion.EjecutarUpdate("UPDATE purchases SET idUser='"+idUser+"',idPet='"+idPet+"',date='"+date+"',totalPrice='"+totalPrice+"';");
@@ -46,7 +46,7 @@ public Purchase getPurchase(int idPurchaseSelected) {
 			int idPurchase = rs.getInt("idPurchase");
 			int idUser = rs.getInt("idUser");
 			int idPet = rs.getInt("idPet");
-			Date date = rs.getDate("date");
+			String date = rs.getString("date");
 			double totalPrice = rs.getDouble("totalPrice");
 			Purchase caughtPurchase = new Purchase(idPurchase, idUser, idPet, date, totalPrice);
 			return caughtPurchase;
@@ -68,7 +68,7 @@ public static ArrayList<Purchase> getAllPurchases() {
 			int idPurchase = rs.getInt("idPurchase");
 			int idUser = rs.getInt("idUser");
 			int idPet = rs.getInt("idPet");
-			Date date = rs.getDate("date");
+			String date = rs.getString("date");
 			double totalPrice = rs.getDouble("totalPrice");
 			purchases.add(new Purchase(idPurchase, idUser, idPet, date, totalPrice));
 		}
