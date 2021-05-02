@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import controller.Table;
+
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -69,6 +72,10 @@ public class listPurchases extends JFrame {
 		panel.add(btnSearch);
 		
 		table = new JTable();
+		
+		//Modelo
+		new Table().showTable(table, "SELECT * FROM purchases");
+		
 		table.setBounds(45, 109, 552, 241);
 		panel.add(table);
 	}

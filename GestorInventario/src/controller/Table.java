@@ -8,13 +8,13 @@ import bbdd.conexion;
 
 public class Table {
 
-	public static JTable showTablePets(JTable table) {
+	public static JTable showTable(JTable table, String sql) {
 		try {
 			DefaultTableModel model = new DefaultTableModel();
 			table.setModel(model);
 			
 			ResultSet rs = null;
-			rs = new conexion().EjecutarSentencia("SELECT * FROM pets");
+			rs = new conexion().EjecutarSentencia(sql);
 			ResultSetMetaData rsMd = rs.getMetaData();
 			int columns = rsMd.getColumnCount();
 			
