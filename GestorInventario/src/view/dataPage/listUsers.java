@@ -231,7 +231,7 @@ public class listUsers extends JFrame {
 		});
 		btnLastname.setForeground(Color.BLACK);
 		btnLastname.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
-		btnLastname.setBounds(109, 37, 99, 23);
+		btnLastname.setBounds(109, 37, 112, 23);
 		panel.add(btnLastname);
 		
 		btnBirth = new JButton("Birth");

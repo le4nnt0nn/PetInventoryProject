@@ -119,6 +119,11 @@ public class purchasePage extends JFrame {
 		panel_1.add(btnAddPurchase);
 		
 		JButton btnUpdatePurchase = new JButton("Update Purchase");
+		btnUpdatePurchase.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new GenerateFrame().genUpdatePurchases();
+			}
+		});
 		btnUpdatePurchase.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {

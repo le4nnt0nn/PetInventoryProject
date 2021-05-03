@@ -17,6 +17,9 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTable;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -35,6 +38,10 @@ public class listPurchases extends JFrame {
 	private JLabel lblIdpet;
 	private JLabel lblDatepurchase;
 	private JLabel lblPrice;
+	private JLabel lblOrderBy;
+	private JButton btnPrice;
+	private JButton btnDate;
+	private JButton btnIdpet;
 
 	/**
 	 * Launch the application.
@@ -71,7 +78,7 @@ public class listPurchases extends JFrame {
 		JLabel lblListPurchasesMode = new JLabel("List Purchases MODE");
 		lblListPurchasesMode.setForeground(Color.DARK_GRAY);
 		lblListPurchasesMode.setFont(new Font("Open Sans", Font.BOLD, 24));
-		lblListPurchasesMode.setBounds(214, 11, 251, 20);
+		lblListPurchasesMode.setBounds(239, 11, 251, 20);
 		panel.add(lblListPurchasesMode);
 		
 		textField = new JTextField();
@@ -162,5 +169,61 @@ public class listPurchases extends JFrame {
 		lblPrice.setFont(new Font("Open Sans", Font.BOLD, 11));
 		lblPrice.setBounds(559, 225, 46, 14);
 		panel.add(lblPrice);
+		
+		lblOrderBy = new JLabel("Order by");
+		lblOrderBy.setFont(new Font("Open Sans", Font.BOLD, 14));
+		lblOrderBy.setBounds(71, 11, 112, 20);
+		panel.add(lblOrderBy);
+		
+		btnPrice = new JButton("Price");
+		btnPrice.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM purchases order by TotalPrice;",purchasesColumns);
+			}
+		});
+		btnPrice.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnPrice.setForeground(Color.BLACK);
+		btnPrice.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		btnPrice.setBounds(109, 32, 112, 23);
+		panel.add(btnPrice);
+		
+		btnDate = new JButton("Date");
+		btnDate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM purchases order by datePurchase;",purchasesColumns);
+			}
+		});
+		btnDate.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnDate.setForeground(Color.BLACK);
+		btnDate.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		btnDate.setBounds(59, 70, 89, 23);
+		panel.add(btnDate);
+		
+		btnIdpet = new JButton("idPet");
+		btnIdpet.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM purchases order by idPet;",purchasesColumns);
+			}
+		});
+		btnIdpet.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnIdpet.setForeground(Color.BLACK);
+		btnIdpet.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		btnIdpet.setBounds(10, 32, 89, 23);
+		panel.add(btnIdpet);
 	}
 }
