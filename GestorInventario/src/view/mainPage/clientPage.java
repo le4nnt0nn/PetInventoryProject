@@ -118,6 +118,11 @@ public class clientPage extends JFrame {
 		panel_1.add(btnAddClient);
 		
 		JButton btnUpdateClient = new JButton("Update Client");
+		btnUpdateClient.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new GenerateFrame().genUpdateUsers();
+			}
+		});
 		btnUpdateClient.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {

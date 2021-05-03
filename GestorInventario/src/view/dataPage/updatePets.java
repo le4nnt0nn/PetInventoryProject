@@ -74,7 +74,7 @@ public class updatePets extends JFrame {
 		JLabel lblListPetsMODE = new JLabel("Update Pets MODE");
 		lblListPetsMODE.setForeground(Color.DARK_GRAY);
 		lblListPetsMODE.setFont(new Font("Open Sans", Font.BOLD, 24));
-		lblListPetsMODE.setBounds(253, 11, 237, 20);
+		lblListPetsMODE.setBounds(253, 11, 237, 38);
 		panel.add(lblListPetsMODE);
 		
 		textField = new JTextField();
