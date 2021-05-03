@@ -111,6 +111,11 @@ public class petPage extends JFrame {
 		panel_1.add(btnAddPet);
 		
 		JButton btnUpdatePet = new JButton("Update Pet");
+		btnUpdatePet.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new GenerateFrame().genUpdatePets();
+			}
+		});
 		btnUpdatePet.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
