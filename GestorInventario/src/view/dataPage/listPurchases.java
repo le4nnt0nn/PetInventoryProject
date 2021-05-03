@@ -77,7 +77,7 @@ public class listPurchases extends JFrame {
 		String[] purchasesColumns = {"idPurchase","idUser","idPet","datePurchase","TotalPrice"};
 		new Table().showTable(table, "SELECT * FROM purchases;",purchasesColumns);
 		
-		table.setBounds(45, 109, 552, 241);
+		table.setBounds(10, 109, 509, 241);
 		panel.add(table);
 	}
 

@@ -86,7 +86,7 @@ public class listPets extends JFrame {
 		new Table().showTable(table, "SELECT * FROM pets;",petsColumns);
 		
 		
-		table.setBounds(45, 109, 552, 241);
+		table.setBounds(10, 109, 509, 241);
 		panel.add(table);
 	}
 }
