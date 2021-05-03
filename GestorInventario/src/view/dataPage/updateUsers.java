@@ -117,7 +117,7 @@ public class updateUsers extends JFrame {
 		String[] usersColumns = {"idUser","Username","Passwrod","Role","Name","Lastname","Address","Birth","Phone"};
 		new Table().showTable(table, "SELECT * FROM users;",usersColumns);
 		
-		table.setBounds(10, 109, 509, 241);
+		table.setBounds(10, 109, 534, 241);
 		panel.add(table);
 		
 		JButton btnUpdate = new JButton("Update");
@@ -245,6 +245,62 @@ public class updateUsers extends JFrame {
 		lblPhone.setFont(new Font("Open Sans", Font.BOLD, 11));
 		lblPhone.setBounds(566, 324, 46, 14);
 		panel.add(lblPhone);
+		
+		JLabel lblOrderBy = new JLabel("Order by");
+		lblOrderBy.setFont(new Font("Open Sans", Font.BOLD, 14));
+		lblOrderBy.setBounds(71, 16, 112, 20);
+		panel.add(lblOrderBy);
+		
+		JButton btnLastname = new JButton("Lastname");
+		btnLastname.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM users order by Lastname;",usersColumns);
+			}
+		});
+		btnLastname.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnLastname.setForeground(Color.BLACK);
+		btnLastname.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		btnLastname.setBounds(109, 37, 99, 23);
+		panel.add(btnLastname);
+		
+		JButton btnBirth = new JButton("Birth");
+		btnBirth.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM users order by Birth;",usersColumns);
+			}
+		});
+		btnBirth.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnBirth.setForeground(Color.BLACK);
+		btnBirth.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		btnBirth.setBounds(59, 75, 89, 23);
+		panel.add(btnBirth);
+		
+		JButton btnRole = new JButton("Role");
+		btnRole.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM users order by Role;",usersColumns);
+			}
+		});
+		btnRole.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnRole.setForeground(Color.BLACK);
+		btnRole.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		btnRole.setBounds(10, 37, 89, 23);
+		panel.add(btnRole);
 	}
 
 }

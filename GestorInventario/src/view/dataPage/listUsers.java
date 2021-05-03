@@ -17,6 +17,9 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTable;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -34,6 +37,10 @@ public class listUsers extends JFrame {
 	private JTextField textField_7;
 	private JTextField textField_8;
 	private JTextField textField_9;
+	private JLabel lblOrderBy;
+	private JButton btnLastname;
+	private JButton btnBirth;
+	private JButton btnRole;
 
 	/**
 	 * Launch the application.
@@ -112,7 +119,7 @@ public class listUsers extends JFrame {
 		String[] usersColumns = {"idUser","Username","Passwrod","Role","Name","Lastname","Address","Birth","Phone"};
 		new Table().showTable(table, "SELECT * FROM users;",usersColumns);
 		
-		table.setBounds(10, 109, 509, 241);
+		table.setBounds(10, 109, 535, 241);
 		panel.add(table);
 		
 		textField_1 = new JTextField();
@@ -204,6 +211,62 @@ public class listUsers extends JFrame {
 		lblPhone.setFont(new Font("Open Sans", Font.BOLD, 11));
 		lblPhone.setBounds(564, 337, 46, 14);
 		panel.add(lblPhone);
+		
+		lblOrderBy = new JLabel("Order by");
+		lblOrderBy.setFont(new Font("Open Sans", Font.BOLD, 14));
+		lblOrderBy.setBounds(71, 16, 112, 20);
+		panel.add(lblOrderBy);
+		
+		btnLastname = new JButton("Lastname");
+		btnLastname.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM users order by Lastname;",usersColumns);
+			}
+		});
+		btnLastname.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnLastname.setForeground(Color.BLACK);
+		btnLastname.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		btnLastname.setBounds(109, 37, 99, 23);
+		panel.add(btnLastname);
+		
+		btnBirth = new JButton("Birth");
+		btnBirth.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM users order by Birth;",usersColumns);
+			}
+		});
+		btnBirth.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnBirth.setForeground(Color.BLACK);
+		btnBirth.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		btnBirth.setBounds(59, 75, 89, 23);
+		panel.add(btnBirth);
+		
+		btnRole = new JButton("Role");
+		btnRole.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM users order by Role;",usersColumns);
+			}
+		});
+		btnRole.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnRole.setForeground(Color.BLACK);
+		btnRole.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		btnRole.setBounds(10, 37, 89, 23);
+		panel.add(btnRole);
 		
 	}
 }
