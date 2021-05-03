@@ -205,5 +205,61 @@ public class updatePets extends JFrame {
 		btnUpdate.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnUpdate.setBounds(577, 302, 89, 23);
 		panel.add(btnUpdate);
+		
+		JLabel lblOrderBy = new JLabel("Order by");
+		lblOrderBy.setFont(new Font("Open Sans", Font.BOLD, 14));
+		lblOrderBy.setBounds(71, 16, 112, 20);
+		panel.add(lblOrderBy);
+		
+		JButton btnAge = new JButton("Age");
+		btnAge.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM pets order by Age;",petsColumns);
+			}
+		});
+		btnAge.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnAge.setForeground(Color.BLACK);
+		btnAge.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		btnAge.setBounds(109, 37, 89, 23);
+		panel.add(btnAge);
+		
+		JButton btnPrice = new JButton("Price");
+		btnPrice.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM pets order by Price;",petsColumns);
+			}
+		});
+		btnPrice.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnPrice.setForeground(Color.BLACK);
+		btnPrice.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		btnPrice.setBounds(59, 75, 89, 23);
+		panel.add(btnPrice);
+		
+		JButton btnSpecies = new JButton("Species");
+		btnSpecies.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM pets order by Species;",petsColumns);
+			}
+		});
+		btnSpecies.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnSpecies.setForeground(Color.BLACK);
+		btnSpecies.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		btnSpecies.setBounds(10, 37, 89, 23);
+		panel.add(btnSpecies);
 	}
 }

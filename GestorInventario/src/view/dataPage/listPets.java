@@ -192,23 +192,6 @@ public class listPets extends JFrame {
 		lblPrice.setBounds(560, 253, 60, 14);
 		panel.add(lblPrice);
 		
-		JButton btnSpecies = new JButton("Species");
-		btnSpecies.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				new Table().showTable(table, "SELECT * FROM pets order by Species;",petsColumns);
-			}
-		});
-		btnSpecies.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				new Sound().button_sound();
-			}
-		});
-		btnSpecies.setForeground(Color.BLACK);
-		btnSpecies.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
-		btnSpecies.setBounds(10, 37, 89, 23);
-		panel.add(btnSpecies);
-		
 		JLabel lblOrderBy = new JLabel("Order by");
 		lblOrderBy.setFont(new Font("Open Sans", Font.BOLD, 14));
 		lblOrderBy.setBounds(71, 16, 112, 20);
@@ -247,5 +230,22 @@ public class listPets extends JFrame {
 		btnPrice.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnPrice.setBounds(59, 75, 89, 23);
 		panel.add(btnPrice);
+		
+		JButton btnSpecies = new JButton("Species");
+		btnSpecies.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM pets order by Species;",petsColumns);
+			}
+		});
+		btnSpecies.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnSpecies.setForeground(Color.BLACK);
+		btnSpecies.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		btnSpecies.setBounds(10, 37, 89, 23);
+		panel.add(btnSpecies);
 	}
 }
