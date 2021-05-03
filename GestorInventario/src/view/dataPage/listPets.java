@@ -23,12 +23,26 @@ import controller.Table;
 import bbdd.conexion;
 import beans.Pet;
 import model.Pets;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class listPets extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textFieldSearch;
 	private JTable table;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
+	private JLabel lblIdpet;
+	private JLabel lblSpecies;
+	private JLabel lblBreed;
+	private JLabel lblSex;
+	private JLabel lblAge;
+	private JLabel lblPrice;
 
 	/**
 	 * Launch the application.
@@ -80,6 +94,20 @@ public class listPets extends JFrame {
 		panel.add(btnSearch);
 		
 		table = new JTable();
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				DefaultTableModel model2 = (DefaultTableModel)table.getModel();
+				int selectedRowIndex = table.getSelectedRow();
+				
+				textField.setText(model2.getValueAt(selectedRowIndex, 0).toString());
+				textField_1.setText(model2.getValueAt(selectedRowIndex, 1).toString());
+				textField_2.setText(model2.getValueAt(selectedRowIndex, 2).toString());
+				textField_3.setText(model2.getValueAt(selectedRowIndex, 3).toString());
+				textField_4.setText(model2.getValueAt(selectedRowIndex, 4).toString());
+				textField_5.setText(model2.getValueAt(selectedRowIndex, 5).toString());
+			}
+		});
 		
 		//Modelo
 		String[] petsColumns = {"idPet","Species","Breed","Sex","Age","Price"};
@@ -88,5 +116,65 @@ public class listPets extends JFrame {
 		
 		table.setBounds(10, 109, 509, 241);
 		panel.add(table);
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBounds(619, 109, 55, 20);
+		panel.add(textField);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(619, 140, 89, 20);
+		panel.add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(619, 168, 89, 20);
+		panel.add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(619, 194, 55, 20);
+		panel.add(textField_3);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(619, 222, 89, 20);
+		panel.add(textField_4);
+		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		textField_5.setBounds(619, 250, 89, 20);
+		panel.add(textField_5);
+		
+		lblIdpet = new JLabel("idPet");
+		lblIdpet.setFont(new Font("Open Sans", Font.BOLD, 11));
+		lblIdpet.setBounds(560, 112, 46, 14);
+		panel.add(lblIdpet);
+		
+		lblSpecies = new JLabel("Species");
+		lblSpecies.setFont(new Font("Open Sans", Font.BOLD, 11));
+		lblSpecies.setBounds(560, 143, 60, 14);
+		panel.add(lblSpecies);
+		
+		lblBreed = new JLabel("Breed");
+		lblBreed.setFont(new Font("Open Sans", Font.BOLD, 11));
+		lblBreed.setBounds(560, 171, 55, 14);
+		panel.add(lblBreed);
+		
+		lblSex = new JLabel("Sex");
+		lblSex.setFont(new Font("Open Sans", Font.BOLD, 11));
+		lblSex.setBounds(560, 197, 46, 14);
+		panel.add(lblSex);
+		
+		lblAge = new JLabel("Age");
+		lblAge.setFont(new Font("Open Sans", Font.BOLD, 11));
+		lblAge.setBounds(560, 225, 46, 14);
+		panel.add(lblAge);
+		
+		lblPrice = new JLabel("Price");
+		lblPrice.setFont(new Font("Open Sans", Font.BOLD, 11));
+		lblPrice.setBounds(560, 253, 60, 14);
+		panel.add(lblPrice);
 	}
 }
