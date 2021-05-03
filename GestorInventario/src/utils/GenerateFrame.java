@@ -10,6 +10,7 @@ import view.dataPage.listPets;
 import view.dataPage.listPurchases;
 import view.dataPage.listUsers;
 import view.dataPage.updatePets;
+import view.dataPage.updatePurchases;
 import view.dataPage.updateUsers;
 import view.loginPage.*;
 import view.mainPage.MainPageJF;
@@ -152,6 +153,14 @@ public class GenerateFrame {
 	
 	public static void genUpdateUsers() {
 		updateUsers frame = new updateUsers();
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		frame.setIconImage(icon);
+		frame.getContentPane().setLayout(null);
+		frame.setVisible(true);
+	}
+	
+	public static void genUpdatePurchases() {
+		updatePurchases frame = new updatePurchases();
 		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);

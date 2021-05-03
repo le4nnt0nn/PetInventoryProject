@@ -2,6 +2,7 @@ package controller;
 import java.sql.*;
 
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 import bbdd.conexion;
@@ -41,4 +42,5 @@ public class Table {
 		return table;
 		
 	}
+	
 }

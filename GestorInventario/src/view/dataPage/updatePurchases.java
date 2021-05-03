@@ -44,8 +44,8 @@ public class updatePurchases extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					updatePurchases frame = new updatePurchases();
-					frame.setVisible(true);
+					
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

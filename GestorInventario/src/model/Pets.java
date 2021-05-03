@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.swing.JTextField;
+
 import bbdd.conexion;
 import beans.Pet;
 
@@ -81,4 +83,5 @@ public class Pets {
 		}
 		return pets;
 	}
+	
 }
