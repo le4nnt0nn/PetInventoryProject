@@ -84,6 +84,7 @@ public class updateUsers extends JFrame {
 		panel.add(textField);
 		
 		JButton btnSearch = new JButton("Search");
+		btnSearch.setBackground(Color.WHITE);
 		btnSearch.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -121,6 +122,7 @@ public class updateUsers extends JFrame {
 		panel.add(table);
 		
 		JButton btnUpdate = new JButton("Update");
+		btnUpdate.setBackground(Color.WHITE);
 		btnUpdate.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -252,6 +254,7 @@ public class updateUsers extends JFrame {
 		panel.add(lblOrderBy);
 		
 		JButton btnLastname = new JButton("Lastname");
+		btnLastname.setBackground(Color.WHITE);
 		btnLastname.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Table().showTable(table, "SELECT * FROM users order by Lastname;",usersColumns);
@@ -269,6 +272,7 @@ public class updateUsers extends JFrame {
 		panel.add(btnLastname);
 		
 		JButton btnBirth = new JButton("Birth");
+		btnBirth.setBackground(Color.WHITE);
 		btnBirth.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Table().showTable(table, "SELECT * FROM users order by Birth;",usersColumns);
@@ -286,6 +290,7 @@ public class updateUsers extends JFrame {
 		panel.add(btnBirth);
 		
 		JButton btnRole = new JButton("Role");
+		btnRole.setBackground(Color.WHITE);
 		btnRole.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Table().showTable(table, "SELECT * FROM users order by Role;",usersColumns);

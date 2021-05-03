@@ -92,6 +92,7 @@ public class listPets extends JFrame {
 		textFieldSearch.setColumns(10);
 		
 		JButton btnSearch = new JButton("Search");
+		btnSearch.setBackground(Color.WHITE);
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -198,6 +199,7 @@ public class listPets extends JFrame {
 		panel.add(lblOrderBy);
 		
 		JButton btnAge = new JButton("Age");
+		btnAge.setBackground(Color.WHITE);
 		btnAge.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Table().showTable(table, "SELECT * FROM pets order by Age;",petsColumns);
@@ -215,6 +217,7 @@ public class listPets extends JFrame {
 		panel.add(btnAge);
 		
 		JButton btnPrice = new JButton("Price");
+		btnPrice.setBackground(Color.WHITE);
 		btnPrice.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Table().showTable(table, "SELECT * FROM pets order by Price;",petsColumns);
@@ -232,6 +235,7 @@ public class listPets extends JFrame {
 		panel.add(btnPrice);
 		
 		JButton btnSpecies = new JButton("Species");
+		btnSpecies.setBackground(Color.WHITE);
 		btnSpecies.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Table().showTable(table, "SELECT * FROM pets order by Species;",petsColumns);

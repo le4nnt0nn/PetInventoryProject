@@ -87,6 +87,7 @@ public class listPurchases extends JFrame {
 		panel.add(textField);
 		
 		JButton btnSearch = new JButton("Search");
+		btnSearch.setBackground(Color.WHITE);
 		btnSearch.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -176,6 +177,7 @@ public class listPurchases extends JFrame {
 		panel.add(lblOrderBy);
 		
 		btnPrice = new JButton("Price");
+		btnPrice.setBackground(Color.WHITE);
 		btnPrice.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Table().showTable(table, "SELECT * FROM purchases order by TotalPrice;",purchasesColumns);
@@ -193,6 +195,7 @@ public class listPurchases extends JFrame {
 		panel.add(btnPrice);
 		
 		btnDate = new JButton("Date");
+		btnDate.setBackground(Color.WHITE);
 		btnDate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Table().showTable(table, "SELECT * FROM purchases order by datePurchase;",purchasesColumns);
@@ -210,6 +213,7 @@ public class listPurchases extends JFrame {
 		panel.add(btnDate);
 		
 		btnIdpet = new JButton("idPet");
+		btnIdpet.setBackground(Color.WHITE);
 		btnIdpet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Table().showTable(table, "SELECT * FROM purchases order by idPet;",purchasesColumns);

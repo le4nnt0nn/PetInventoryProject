@@ -86,6 +86,7 @@ public class listUsers extends JFrame {
 		panel.add(textField);
 		
 		JButton btnSearch = new JButton("Search");
+		btnSearch.setBackground(Color.WHITE);
 		btnSearch.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -218,6 +219,7 @@ public class listUsers extends JFrame {
 		panel.add(lblOrderBy);
 		
 		btnLastname = new JButton("Lastname");
+		btnLastname.setBackground(Color.WHITE);
 		btnLastname.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Table().showTable(table, "SELECT * FROM users order by Lastname;",usersColumns);
@@ -235,6 +237,7 @@ public class listUsers extends JFrame {
 		panel.add(btnLastname);
 		
 		btnBirth = new JButton("Birth");
+		btnBirth.setBackground(Color.WHITE);
 		btnBirth.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Table().showTable(table, "SELECT * FROM users order by Birth;",usersColumns);
@@ -252,6 +255,7 @@ public class listUsers extends JFrame {
 		panel.add(btnBirth);
 		
 		btnRole = new JButton("Role");
+		btnRole.setBackground(Color.WHITE);
 		btnRole.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Table().showTable(table, "SELECT * FROM users order by Role;",usersColumns);

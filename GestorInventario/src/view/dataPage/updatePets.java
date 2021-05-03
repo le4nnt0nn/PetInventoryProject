@@ -84,6 +84,7 @@ public class updatePets extends JFrame {
 		panel.add(textField);
 		
 		JButton btnSearch = new JButton("Search");
+		btnSearch.setBackground(Color.WHITE);
 		btnSearch.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -178,6 +179,7 @@ public class updatePets extends JFrame {
 		panel.add(lblPrice);
 		
 		JButton btnUpdate = new JButton("Update");
+		btnUpdate.setBackground(Color.WHITE);
 		btnUpdate.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -212,6 +214,7 @@ public class updatePets extends JFrame {
 		panel.add(lblOrderBy);
 		
 		JButton btnAge = new JButton("Age");
+		btnAge.setBackground(Color.WHITE);
 		btnAge.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Table().showTable(table, "SELECT * FROM pets order by Age;",petsColumns);
@@ -229,6 +232,7 @@ public class updatePets extends JFrame {
 		panel.add(btnAge);
 		
 		JButton btnPrice = new JButton("Price");
+		btnPrice.setBackground(Color.WHITE);
 		btnPrice.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Table().showTable(table, "SELECT * FROM pets order by Price;",petsColumns);
@@ -246,6 +250,7 @@ public class updatePets extends JFrame {
 		panel.add(btnPrice);
 		
 		JButton btnSpecies = new JButton("Species");
+		btnSpecies.setBackground(Color.WHITE);
 		btnSpecies.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Table().showTable(table, "SELECT * FROM pets order by Species;",petsColumns);
