@@ -12,6 +12,7 @@ import beans.Purchase;
 import controller.Table;
 import model.Pets;
 import model.Purchases;
+import sounds.Sound;
 import utils.GenerateFrame;
 
 import java.awt.Color;
@@ -81,6 +82,12 @@ public class updatePurchases extends JFrame {
 		panel.add(textField);
 		
 		JButton btnSearch = new JButton("Search");
+		btnSearch.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
 		btnSearch.setForeground(Color.BLACK);
 		btnSearch.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnSearch.setBounds(508, 59, 89, 23);
@@ -108,6 +115,12 @@ public class updatePurchases extends JFrame {
 		panel.add(table);
 		
 		JButton btnUpdate = new JButton("Update");
+		btnUpdate.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int idPurchase = Integer.parseInt(textField_1.getText());

@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import controller.Table;
+import sounds.Sound;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -79,6 +80,12 @@ public class listPurchases extends JFrame {
 		panel.add(textField);
 		
 		JButton btnSearch = new JButton("Search");
+		btnSearch.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
 		btnSearch.setForeground(Color.BLACK);
 		btnSearch.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnSearch.setBounds(508, 59, 89, 23);

@@ -12,6 +12,7 @@ import javax.swing.table.DefaultTableModel;
 import beans.Pet;
 import controller.Table;
 import model.Pets;
+import sounds.Sound;
 import utils.GenerateFrame;
 
 import java.awt.Color;
@@ -83,6 +84,12 @@ public class updatePets extends JFrame {
 		panel.add(textField);
 		
 		JButton btnSearch = new JButton("Search");
+		btnSearch.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
 		btnSearch.setForeground(Color.BLACK);
 		btnSearch.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnSearch.setBounds(508, 59, 89, 23);
@@ -171,6 +178,12 @@ public class updatePets extends JFrame {
 		panel.add(lblPrice);
 		
 		JButton btnUpdate = new JButton("Update");
+		btnUpdate.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				

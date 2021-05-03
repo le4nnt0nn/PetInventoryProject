@@ -23,6 +23,8 @@ import controller.Table;
 import bbdd.conexion;
 import beans.Pet;
 import model.Pets;
+import sounds.Sound;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -88,6 +90,12 @@ public class listPets extends JFrame {
 		textFieldSearch.setColumns(10);
 		
 		JButton btnSearch = new JButton("Search");
+		btnSearch.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
 		btnSearch.setForeground(Color.BLACK);
 		btnSearch.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnSearch.setBounds(508, 59, 89, 23);
