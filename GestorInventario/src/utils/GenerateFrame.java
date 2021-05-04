@@ -31,6 +31,7 @@ public class GenerateFrame {
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
+		frame.setTitle("Login Page");
 	}
 	
 	public static void genSucLogin() {
@@ -42,6 +43,7 @@ public class GenerateFrame {
 		suc.setIconImage(icon);
 		suc.getContentPane().setLayout(null);
 		suc.setVisible(true);
+		suc.setTitle("Succesful Login !");
 	}
 	
 	public static void genSucAction() {
@@ -53,6 +55,7 @@ public class GenerateFrame {
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
+		frame.setTitle("Successful Action !");
 	}
 	
 	public static void genFailLogin() {
@@ -64,6 +67,7 @@ public class GenerateFrame {
 		fail.setIconImage(icon);
 		fail.getContentPane().setLayout(null);
 		fail.setVisible(true);
+		fail.setTitle("Failed Login ...");
 	}
 	
 	public static void genMainPage() {
@@ -72,6 +76,7 @@ public class GenerateFrame {
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
+		frame.setTitle("Main Page");
 	}
 	
 	public static void genPetPage() {
@@ -80,6 +85,7 @@ public class GenerateFrame {
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
+		frame.setTitle("Pet Page");
 	}
 	
 	public static void genClientPage() {
@@ -88,6 +94,7 @@ public class GenerateFrame {
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
+		frame.setTitle("Client Page");
 	}
 	
 	public static void genPurchasePage() {
@@ -96,6 +103,7 @@ public class GenerateFrame {
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
+		frame.setTitle("Purchase Page");
 	}
 	
 	public static void genAddPetPage() {
@@ -104,6 +112,7 @@ public class GenerateFrame {
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
+		frame.setTitle("Add Pet Page");
 	}
 	
 	public static void genAddUserPage() {
@@ -112,6 +121,7 @@ public class GenerateFrame {
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
+		frame.setTitle("Add User Page");
 	}
 	
 	public static void genAddPurchasePage() {
@@ -120,6 +130,7 @@ public class GenerateFrame {
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
+		frame.setTitle("Add Purchase Page");
 	}
 	
 	public static void genListPets() {
@@ -128,6 +139,7 @@ public class GenerateFrame {
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
+		frame.setTitle("List Pets Page");
 	}
 	
 	public static void genListUsers() {
@@ -136,6 +148,7 @@ public class GenerateFrame {
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
+		frame.setTitle("List Users Page");
 	}
 	
 	public static void genListPurchases() {
@@ -144,6 +157,7 @@ public class GenerateFrame {
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
+		frame.setTitle("List Purchases Page");
 	}
 	
 	public static void genUpdatePets() {
@@ -152,6 +166,7 @@ public class GenerateFrame {
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
+		frame.setTitle("Update Pets Page");
 	}
 	
 	public static void genUpdateUsers() {
@@ -160,6 +175,7 @@ public class GenerateFrame {
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
+		frame.setTitle("Update Users Page");
 	}
 	
 	public static void genUpdatePurchases() {
@@ -168,6 +184,7 @@ public class GenerateFrame {
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
+		frame.setTitle("Update Purchases Page");
 	}
 	
 	public static void genDeletePet() {
@@ -176,6 +193,7 @@ public class GenerateFrame {
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
+		frame.setTitle("Delete Pet Page");
 	}
 	
 	public static void genDeleteUser() {
@@ -184,6 +202,7 @@ public class GenerateFrame {
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
+		frame.setTitle("Delete User Page");
 	}
 	
 	public static void genDeletePurchase() {
@@ -192,5 +211,6 @@ public class GenerateFrame {
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
+		frame.setTitle("delete Purchase Page");
 	}
 }
