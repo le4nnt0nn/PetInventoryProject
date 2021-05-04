@@ -124,6 +124,7 @@ public class addPetJF extends JFrame {
 		panel.add(lblPrice);
 		
 		JButton btnFinish = new JButton("Finish");
+		btnFinish.setBackground(Color.WHITE);
 		btnFinish.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
