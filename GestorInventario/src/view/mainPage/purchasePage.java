@@ -137,6 +137,11 @@ public class purchasePage extends JFrame {
 		panel_1.add(btnUpdatePurchase);
 		
 		JButton btnDeletePurchase = new JButton("Delete Purchase");
+		btnDeletePurchase.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new GenerateFrame().genDeleteUser();
+			}
+		});
 		btnDeletePurchase.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {

@@ -7,6 +7,7 @@ import view.dataPage.addPetJF;
 import view.dataPage.addPurchaseJF;
 import view.dataPage.addUserJF;
 import view.dataPage.deletePet;
+import view.dataPage.deleteUser;
 import view.dataPage.listPets;
 import view.dataPage.listPurchases;
 import view.dataPage.listUsers;
@@ -177,7 +178,11 @@ public class GenerateFrame {
 	}
 	
 	public static void genDeleteUser() {
-		
+		deleteUser frame = new deleteUser();
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		frame.setIconImage(icon);
+		frame.getContentPane().setLayout(null);
+		frame.setVisible(true);
 	}
 	
 	public static void genDeletePurchase() {
