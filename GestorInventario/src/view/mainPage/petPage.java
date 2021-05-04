@@ -129,6 +129,11 @@ public class petPage extends JFrame {
 		panel_1.add(btnUpdatePet);
 		
 		JButton btnDeletePet = new JButton("Delete Pet");
+		btnDeletePet.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new GenerateFrame().genDeletePet();
+			}
+		});
 		btnDeletePet.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
