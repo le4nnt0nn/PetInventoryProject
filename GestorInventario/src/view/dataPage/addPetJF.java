@@ -123,8 +123,8 @@ public class addPetJF extends JFrame {
 		lblPrice.setBounds(397, 255, 50, 14);
 		panel.add(lblPrice);
 		
-		JButton btnNewButton = new JButton("Finish");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnFinish = new JButton("Finish");
+		btnFinish.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				//Info to Object Pet
@@ -140,10 +140,10 @@ public class addPetJF extends JFrame {
 				new GenerateFrame().genSucAction();
 			}
 		});
-		btnNewButton.setForeground(Color.BLACK);
-		btnNewButton.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
-		btnNewButton.setBounds(311, 324, 89, 23);
-		panel.add(btnNewButton);
+		btnFinish.setForeground(Color.BLACK);
+		btnFinish.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		btnFinish.setBounds(311, 324, 89, 23);
+		panel.add(btnFinish);
 		
 	}
 }
