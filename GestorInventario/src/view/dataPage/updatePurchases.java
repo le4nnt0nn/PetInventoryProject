@@ -19,12 +19,14 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JScrollPane;
 
 public class updatePurchases extends JFrame {
 
@@ -95,6 +97,7 @@ public class updatePurchases extends JFrame {
 		panel.add(btnSearch);
 		
 		table = new JTable();
+		table.setBounds(10, 109, 509, 241);
 		table.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -112,8 +115,14 @@ public class updatePurchases extends JFrame {
 		String[] purchasesColumns = {"idPurchase","idUser","idPet","datePurchase","TotalPrice"};
 		new Table().showTable(table, "SELECT * FROM purchases;",purchasesColumns);
 		
-		table.setBounds(10, 109, 509, 241);
-		panel.add(table);
+		//Scroll
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 109, 509, 241);
+		panel.add(scrollPane);
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setViewportView(table);
+		
 		
 		JButton btnUpdate = new JButton("Update");
 		btnUpdate.setBackground(Color.WHITE);
