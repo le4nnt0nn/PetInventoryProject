@@ -29,6 +29,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 
 public class listPets extends JFrame {
 
@@ -47,6 +49,7 @@ public class listPets extends JFrame {
 	private JLabel lblSex;
 	private JLabel lblAge;
 	private JLabel lblPrice;
+	private JScrollPane scrollPane;
 
 	/**
 	 * Launch the application.
@@ -81,9 +84,9 @@ public class listPets extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel lblListPetsMODE = new JLabel("List Pets MODE");
+		lblListPetsMODE.setBounds(276, 11, 189, 20);
 		lblListPetsMODE.setForeground(Color.DARK_GRAY);
 		lblListPetsMODE.setFont(new Font("Open Sans", Font.BOLD, 24));
-		lblListPetsMODE.setBounds(276, 11, 189, 20);
 		panel.add(lblListPetsMODE);
 		
 		textFieldSearch = new JTextField();
@@ -92,6 +95,7 @@ public class listPets extends JFrame {
 		textFieldSearch.setColumns(10);
 		
 		JButton btnSearch = new JButton("Search");
+		btnSearch.setBounds(508, 59, 89, 23);
 		btnSearch.setBackground(Color.WHITE);
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -106,10 +110,10 @@ public class listPets extends JFrame {
 		});
 		btnSearch.setForeground(Color.BLACK);
 		btnSearch.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
-		btnSearch.setBounds(508, 59, 89, 23);
 		panel.add(btnSearch);
 		
 		table = new JTable();
+		table.setBounds(10, 109, 509, 241);
 		table.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -128,77 +132,82 @@ public class listPets extends JFrame {
 		//Modelo
 		String[] petsColumns = {"idPet","Species","Breed","Sex","Age","Price"};
 		new Table().showTable(table, "SELECT * FROM pets;",petsColumns);
+		//panel.add(table);
 		
-		
-		table.setBounds(10, 109, 509, 241);
-		panel.add(table);
+		scrollPane = new JScrollPane();
+		panel.add(scrollPane);
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setBounds(10, 109, 509, 241);
+		scrollPane.setViewportView(table);
 		
 		textField = new JTextField();
-		textField.setColumns(10);
 		textField.setBounds(619, 109, 55, 20);
+		textField.setColumns(10);
 		panel.add(textField);
 		
 		textField_1 = new JTextField();
-		textField_1.setColumns(10);
 		textField_1.setBounds(619, 140, 89, 20);
+		textField_1.setColumns(10);
 		panel.add(textField_1);
 		
 		textField_2 = new JTextField();
-		textField_2.setColumns(10);
 		textField_2.setBounds(619, 168, 89, 20);
+		textField_2.setColumns(10);
 		panel.add(textField_2);
 		
 		textField_3 = new JTextField();
-		textField_3.setColumns(10);
 		textField_3.setBounds(619, 194, 55, 20);
+		textField_3.setColumns(10);
 		panel.add(textField_3);
 		
 		textField_4 = new JTextField();
-		textField_4.setColumns(10);
 		textField_4.setBounds(619, 222, 89, 20);
+		textField_4.setColumns(10);
 		panel.add(textField_4);
 		
 		textField_5 = new JTextField();
-		textField_5.setColumns(10);
 		textField_5.setBounds(619, 250, 89, 20);
+		textField_5.setColumns(10);
 		panel.add(textField_5);
 		
 		lblIdpet = new JLabel("idPet");
-		lblIdpet.setFont(new Font("Open Sans", Font.BOLD, 11));
 		lblIdpet.setBounds(560, 112, 46, 14);
+		lblIdpet.setFont(new Font("Open Sans", Font.BOLD, 11));
 		panel.add(lblIdpet);
 		
 		lblSpecies = new JLabel("Species");
-		lblSpecies.setFont(new Font("Open Sans", Font.BOLD, 11));
 		lblSpecies.setBounds(560, 143, 60, 14);
+		lblSpecies.setFont(new Font("Open Sans", Font.BOLD, 11));
 		panel.add(lblSpecies);
 		
 		lblBreed = new JLabel("Breed");
-		lblBreed.setFont(new Font("Open Sans", Font.BOLD, 11));
 		lblBreed.setBounds(560, 171, 55, 14);
+		lblBreed.setFont(new Font("Open Sans", Font.BOLD, 11));
 		panel.add(lblBreed);
 		
 		lblSex = new JLabel("Sex");
-		lblSex.setFont(new Font("Open Sans", Font.BOLD, 11));
 		lblSex.setBounds(560, 197, 46, 14);
+		lblSex.setFont(new Font("Open Sans", Font.BOLD, 11));
 		panel.add(lblSex);
 		
 		lblAge = new JLabel("Age");
-		lblAge.setFont(new Font("Open Sans", Font.BOLD, 11));
 		lblAge.setBounds(560, 225, 46, 14);
+		lblAge.setFont(new Font("Open Sans", Font.BOLD, 11));
 		panel.add(lblAge);
 		
 		lblPrice = new JLabel("Price");
-		lblPrice.setFont(new Font("Open Sans", Font.BOLD, 11));
 		lblPrice.setBounds(560, 253, 60, 14);
+		lblPrice.setFont(new Font("Open Sans", Font.BOLD, 11));
 		panel.add(lblPrice);
 		
 		JLabel lblOrderBy = new JLabel("Order by");
-		lblOrderBy.setFont(new Font("Open Sans", Font.BOLD, 14));
 		lblOrderBy.setBounds(71, 16, 112, 20);
+		lblOrderBy.setFont(new Font("Open Sans", Font.BOLD, 14));
 		panel.add(lblOrderBy);
 		
 		JButton btnAge = new JButton("Age");
+		btnAge.setBounds(109, 37, 89, 23);
 		btnAge.setBackground(Color.WHITE);
 		btnAge.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -213,10 +222,10 @@ public class listPets extends JFrame {
 		});
 		btnAge.setForeground(Color.BLACK);
 		btnAge.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
-		btnAge.setBounds(109, 37, 89, 23);
 		panel.add(btnAge);
 		
 		JButton btnPrice = new JButton("Price");
+		btnPrice.setBounds(59, 75, 89, 23);
 		btnPrice.setBackground(Color.WHITE);
 		btnPrice.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -231,10 +240,10 @@ public class listPets extends JFrame {
 		});
 		btnPrice.setForeground(Color.BLACK);
 		btnPrice.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
-		btnPrice.setBounds(59, 75, 89, 23);
 		panel.add(btnPrice);
 		
 		JButton btnSpecies = new JButton("Species");
+		btnSpecies.setBounds(10, 37, 89, 23);
 		btnSpecies.setBackground(Color.WHITE);
 		btnSpecies.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -249,7 +258,8 @@ public class listPets extends JFrame {
 		});
 		btnSpecies.setForeground(Color.BLACK);
 		btnSpecies.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
-		btnSpecies.setBounds(10, 37, 89, 23);
 		panel.add(btnSpecies);
+		
+		
 	}
 }
