@@ -212,6 +212,17 @@ public class deletePet extends JFrame {
 		panel.add(lblOrderBy);
 		
 		JButton btnAge = new JButton("Age");
+		btnAge.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM pets order by Age;",petsColumns);
+			}
+		});
+		btnAge.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
 		btnAge.setForeground(Color.BLACK);
 		btnAge.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnAge.setBackground(Color.WHITE);
@@ -219,6 +230,17 @@ public class deletePet extends JFrame {
 		panel.add(btnAge);
 		
 		JButton btnPrice = new JButton("Price");
+		btnPrice.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM pets order by Price;",petsColumns);
+			}
+		});
+		btnPrice.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
 		btnPrice.setForeground(Color.BLACK);
 		btnPrice.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnPrice.setBackground(Color.WHITE);
@@ -226,6 +248,17 @@ public class deletePet extends JFrame {
 		panel.add(btnPrice);
 		
 		JButton btnSpecies = new JButton("Species");
+		btnSpecies.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM pets order by Species;",petsColumns);
+			}
+		});
+		btnSpecies.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
 		btnSpecies.setForeground(Color.BLACK);
 		btnSpecies.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnSpecies.setBackground(Color.WHITE);

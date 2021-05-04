@@ -255,6 +255,17 @@ public class deleteUser extends JFrame {
 		panel.add(lblOrderBy);
 		
 		JButton btnLastname = new JButton("Lastname");
+		btnLastname.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM users order by Lastname;",usersColumns);
+			}
+		});
+		btnLastname.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
 		btnLastname.setForeground(Color.BLACK);
 		btnLastname.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnLastname.setBackground(Color.WHITE);
@@ -262,6 +273,17 @@ public class deleteUser extends JFrame {
 		panel.add(btnLastname);
 		
 		JButton btnBirth = new JButton("Birth");
+		btnBirth.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM users order by Birth;",usersColumns);
+			}
+		});
+		btnBirth.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
 		btnBirth.setForeground(Color.BLACK);
 		btnBirth.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnBirth.setBackground(Color.WHITE);
@@ -269,6 +291,17 @@ public class deleteUser extends JFrame {
 		panel.add(btnBirth);
 		
 		JButton btnRole = new JButton("Role");
+		btnRole.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM users order by Role;",usersColumns);
+			}
+		});
+		btnRole.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
 		btnRole.setForeground(Color.BLACK);
 		btnRole.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnRole.setBackground(Color.WHITE);
