@@ -23,8 +23,10 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.JButton;
 import javax.swing.JTable;
+import javax.swing.JScrollPane;
 
 public class deleteUser extends JFrame {
 
@@ -99,6 +101,7 @@ public class deleteUser extends JFrame {
 		panel.add(btnSearch);
 		
 		table = new JTable();
+		table.setBounds(10, 109, 534, 241);
 		table.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -119,8 +122,15 @@ public class deleteUser extends JFrame {
 		//Modelo
 		String[] usersColumns = {"idUser","Username","Passwrod","Role","Name","Lastname","Address","Birth","Phone"};
 		new Table().showTable(table, "SELECT * FROM users;",usersColumns);
-		table.setBounds(10, 109, 534, 241);
-		panel.add(table);
+		
+		//Scroll
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 109, 534, 241);
+		panel.add(scrollPane);
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setViewportView(table);
+		
 		
 		JButton btnDelete = new JButton("Delete");
 		btnDelete.addMouseListener(new MouseAdapter() {
