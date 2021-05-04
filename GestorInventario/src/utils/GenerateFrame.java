@@ -211,6 +211,6 @@ public class GenerateFrame {
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
-		frame.setTitle("delete Purchase Page");
+		frame.setTitle("Delete Purchase Page");
 	}
 }
