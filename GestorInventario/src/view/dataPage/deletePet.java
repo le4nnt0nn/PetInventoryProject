@@ -23,8 +23,10 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.JButton;
 import javax.swing.JTable;
+import javax.swing.JScrollPane;
 
 public class deletePet extends JFrame {
 
@@ -96,6 +98,7 @@ public class deletePet extends JFrame {
 		panel.add(btnSearch);
 		
 		table = new JTable();
+		table.setBounds(10, 109, 509, 241);
 		table.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -111,10 +114,17 @@ public class deletePet extends JFrame {
 			}
 		});
 		//Modelo
-			String[] petsColumns = {"idPet","Species","Breed","Sex","Age","Price"};
-			new Table().showTable(table, "SELECT * FROM pets;",petsColumns);
-		table.setBounds(10, 109, 509, 241);
-		panel.add(table);
+		String[] petsColumns = {"idPet","Species","Breed","Sex","Age","Price"};
+		new Table().showTable(table, "SELECT * FROM pets;",petsColumns);
+		
+		//Scroll
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 109, 509, 241);
+		panel.add(scrollPane);
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setViewportView(table);
+		
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
