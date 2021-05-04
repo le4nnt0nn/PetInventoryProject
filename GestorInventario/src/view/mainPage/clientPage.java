@@ -136,6 +136,11 @@ public class clientPage extends JFrame {
 		panel_1.add(btnUpdateClient);
 		
 		JButton btnDeleteClient = new JButton("Delete Client");
+		btnDeleteClient.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new GenerateFrame().genDeleteUser();
+			}
+		});
 		btnDeleteClient.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {

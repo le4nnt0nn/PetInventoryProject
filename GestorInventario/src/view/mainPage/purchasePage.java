@@ -139,7 +139,7 @@ public class purchasePage extends JFrame {
 		JButton btnDeletePurchase = new JButton("Delete Purchase");
 		btnDeletePurchase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new GenerateFrame().genDeleteUser();
+				new GenerateFrame().genDeletePurchase();
 			}
 		});
 		btnDeletePurchase.addMouseListener(new MouseAdapter() {
