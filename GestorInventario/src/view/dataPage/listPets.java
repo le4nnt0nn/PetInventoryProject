@@ -134,6 +134,7 @@ public class listPets extends JFrame {
 		new Table().showTable(table, "SELECT * FROM pets;",petsColumns);
 		//panel.add(table);
 		
+		//Scroll
 		scrollPane = new JScrollPane();
 		panel.add(scrollPane);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);

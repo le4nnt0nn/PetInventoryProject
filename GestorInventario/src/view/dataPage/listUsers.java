@@ -123,14 +123,13 @@ public class listUsers extends JFrame {
 		String[] usersColumns = {"idUser","Username","Passwrod","Role","Name","Lastname","Address","Birth","Phone"};
 		new Table().showTable(table, "SELECT * FROM users;",usersColumns);
 		
+		//Scroll
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 109, 535, 241);
 		panel.add(scrollPane);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPane.setViewportView(table);
-		
-		//panel.add(table);
 		
 		textField_1 = new JTextField();
 		textField_1.setBounds(623, 106, 55, 20);
