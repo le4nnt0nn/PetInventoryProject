@@ -198,7 +198,7 @@ public class listPets extends JFrame {
 		btnSearch.setBackground(Color.WHITE);
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new Table().showTable(table, "SELECT * FROM pets where idPet='"+value+"' OR Species='"+value+"' OR Breed='"+value+"' OR Sex='"+value+"' OR Age='"+value+"' OR Price='"+value+"';", petsColumns);
+				new Table().findPets(table, value, petsColumns);
 			}
 		});
 		btnSearch.addMouseListener(new MouseAdapter() {
