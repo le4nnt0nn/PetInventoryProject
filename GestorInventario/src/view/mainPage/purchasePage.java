@@ -80,6 +80,7 @@ public class purchasePage extends JFrame {
 		JButton btnShow = new JButton("");
 		btnShow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				dispose();
 				new GenerateFrame().genListPurchases();
 			}
 		});
@@ -103,6 +104,7 @@ public class purchasePage extends JFrame {
 		JButton btnAddPurchase = new JButton("Add Purchase");
 		btnAddPurchase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				dispose();
 				new GenerateFrame().genAddPurchasePage();
 			}
 		});
@@ -121,6 +123,7 @@ public class purchasePage extends JFrame {
 		JButton btnUpdatePurchase = new JButton("Update Purchase");
 		btnUpdatePurchase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				dispose();
 				new GenerateFrame().genUpdatePurchases();
 			}
 		});
@@ -139,6 +142,7 @@ public class purchasePage extends JFrame {
 		JButton btnDeletePurchase = new JButton("Delete Purchase");
 		btnDeletePurchase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				dispose();
 				new GenerateFrame().genDeletePurchase();
 			}
 		});

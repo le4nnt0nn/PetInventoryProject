@@ -72,6 +72,7 @@ public class petPage extends JFrame {
 		JButton btnShow = new JButton("");
 		btnShow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				dispose();
 				new GenerateFrame().genListPets();
 			}
 		});
@@ -95,6 +96,7 @@ public class petPage extends JFrame {
 		JButton btnAddPet = new JButton("Add Pet");
 		btnAddPet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				dispose();
 				new GenerateFrame().genAddPetPage();
 			}
 		});
@@ -113,6 +115,7 @@ public class petPage extends JFrame {
 		JButton btnUpdatePet = new JButton("Update Pet");
 		btnUpdatePet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				dispose();
 				new GenerateFrame().genUpdatePets();
 			}
 		});
@@ -131,6 +134,7 @@ public class petPage extends JFrame {
 		JButton btnDeletePet = new JButton("Delete Pet");
 		btnDeletePet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				dispose();
 				new GenerateFrame().genDeletePet();
 			}
 		});

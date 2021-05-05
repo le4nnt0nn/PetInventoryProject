@@ -79,6 +79,7 @@ public class clientPage extends JFrame {
 		JButton btnShow = new JButton("");
 		btnShow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				dispose();
 				new GenerateFrame().genListUsers();
 			}
 		});
@@ -102,6 +103,7 @@ public class clientPage extends JFrame {
 		JButton btnAddClient = new JButton("Add Client");
 		btnAddClient.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				dispose();
 				new GenerateFrame().genAddUserPage();
 			}
 		});
@@ -120,6 +122,7 @@ public class clientPage extends JFrame {
 		JButton btnUpdateClient = new JButton("Update Client");
 		btnUpdateClient.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				dispose();
 				new GenerateFrame().genUpdateUsers();
 			}
 		});
@@ -138,6 +141,7 @@ public class clientPage extends JFrame {
 		JButton btnDeleteClient = new JButton("Delete Client");
 		btnDeleteClient.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				dispose();
 				new GenerateFrame().genDeleteUser();
 			}
 		});
