@@ -191,8 +191,6 @@ public class listPets extends JFrame {
 		
 		
 		//Search
-		String value = textFieldSearch.getText();
-		
 		JButton btnSearch = new JButton("Search");
 		btnSearch.setBounds(508, 59, 89, 23);
 		btnSearch.setBackground(Color.WHITE);
