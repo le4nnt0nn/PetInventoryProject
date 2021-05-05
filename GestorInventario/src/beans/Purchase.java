@@ -6,22 +6,25 @@ public class Purchase {
 
 	private int idPurchase;
     private int idUser;
+    private int purchasedPet;
     private int idPet;
     private String datePurchase;
     private double totalPrice;
 
     public Purchase() {}
 
-    public Purchase(int idPurchase, int idUser, int idPet, String datePurchase, double totalPrice) {
+    public Purchase(int idPurchase, int idUser, int purchasedPet, int idPet, String datePurchase, double totalPrice) {
         this.idPurchase = idPurchase;
         this.idUser = idUser;
+        this.purchasedPet = purchasedPet;
         this.idPet = idPet;
         this.datePurchase = datePurchase;
         this.totalPrice = totalPrice;
     }
     
-    public Purchase(int idUser, int idPet, String datePurchase, double totalPrice) {
+    public Purchase(int idUser, int purchasedPet, int idPet, String datePurchase, double totalPrice) {
         this.idUser = idUser;
+        this.purchasedPet = purchasedPet;
         this.idPet = idPet;
         this.datePurchase = datePurchase;
         this.totalPrice = totalPrice;
@@ -41,6 +44,14 @@ public class Purchase {
 
     public void setIdClient(int idUser) {
         this.idUser = idUser;
+    }
+    
+    public int getPurchasedPet() {
+        return purchasedPet;
+    }
+
+    public void setPurchasedPet(int purchasedPet) {
+        this.purchasedPet = purchasedPet;
     }
 
     public int getIdPet() {

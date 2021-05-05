@@ -17,7 +17,7 @@ public class Purchases {
 		String datePurchase = purchase.getDatePurchase();
 		double totalPrice = purchase.getTotalPrice();
 		
-		conexion.EjecutarUpdate("INSERT INTO purchases (idUser, idPet, datePurchase, totalPrice) VALUES ('"+idUser+"','"+idPet+"','"+datePurchase+"','"+totalPrice+"');");
+		conexion.EjecutarUpdate("INSERT INTO purchases (idUser,PurchasedPet, idPet, datePurchase, totalPrice) VALUES ('"+idUser+"','"+idPet+"','"+datePurchase+"','"+totalPrice+"');");
 		
 	}
 	
