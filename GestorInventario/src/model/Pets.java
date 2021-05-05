@@ -84,4 +84,25 @@ public class Pets {
 		return pets;
 	}
 	
+	public static ArrayList<Pet> getAllPetsToSearch(String value) {
+		ArrayList<Pet> pets = new ArrayList<Pet>();
+		ResultSet rs = conexion.EjecutarSentencia("SELECT * FROM pets where idPet='"+value+"' OR Species='"+value+"' OR Breed='"+value+"' OR Sex='"+value+"' OR Age='"+value+"' OR Price='"+value+"';");
+		try {
+			
+			while(rs.next()) {
+				int idPet = rs.getInt("idPet");
+				String species = rs.getString("species");
+				String breed = rs.getString("breed");
+				String sex = rs.getString("sex");
+				int age = rs.getInt("age");
+				double price = rs.getDouble("price");
+				pets.add(new Pet(idPet, species, breed, sex, age, price));
+			}
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return pets;
+	}
+	
 }

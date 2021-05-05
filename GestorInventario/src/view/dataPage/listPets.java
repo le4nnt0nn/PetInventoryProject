@@ -93,25 +93,7 @@ public class listPets extends JFrame {
 		textFieldSearch.setBounds(235, 60, 255, 20);
 		panel.add(textFieldSearch);
 		textFieldSearch.setColumns(10);
-		
-		JButton btnSearch = new JButton("Search");
-		btnSearch.setBounds(508, 59, 89, 23);
-		btnSearch.setBackground(Color.WHITE);
-		btnSearch.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-			}
-		});
-		btnSearch.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				new Sound().button_sound();
-			}
-		});
-		btnSearch.setForeground(Color.BLACK);
-		btnSearch.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
-		panel.add(btnSearch);
-		
+			
 		table = new JTable();
 		table.setBounds(10, 109, 509, 241);
 		table.addMouseListener(new MouseAdapter() {
@@ -206,6 +188,28 @@ public class listPets extends JFrame {
 		lblOrderBy.setBounds(71, 16, 112, 20);
 		lblOrderBy.setFont(new Font("Open Sans", Font.BOLD, 14));
 		panel.add(lblOrderBy);
+		
+		
+		//Search
+		String value = textFieldSearch.getText();
+		
+		JButton btnSearch = new JButton("Search");
+		btnSearch.setBounds(508, 59, 89, 23);
+		btnSearch.setBackground(Color.WHITE);
+		btnSearch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM pets where idPet='"+value+"' OR Species='"+value+"' OR Breed='"+value+"' OR Sex='"+value+"' OR Age='"+value+"' OR Price='"+value+"';", petsColumns);
+			}
+		});
+		btnSearch.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnSearch.setForeground(Color.BLACK);
+		btnSearch.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		panel.add(btnSearch);
 		
 		JButton btnAge = new JButton("Age");
 		btnAge.setBounds(109, 37, 89, 23);
