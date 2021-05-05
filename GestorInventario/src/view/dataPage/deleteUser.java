@@ -122,7 +122,7 @@ public class deleteUser extends JFrame {
 		JButton btnSearch = new JButton("Search");
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new Table().showTable(table, "SELECT * FROM users where idUser='"+textFieldSearch.getText()+"' OR username='"+textFieldSearch.getText()+"' OR lastname='"+textFieldSearch.getText()+"' OR role='"+textFieldSearch.getText()+"' OR name='"+textFieldSearch.getText()+"' OR lastname='"+textFieldSearch.getText()+"' OR address='"+textFieldSearch.getText()+"' OR birth='"+textFieldSearch.getText()+"' OR phone='"+textFieldSearch.getText()+"';",usersColumns);
+				new Table().showTable(table, "SELECT * FROM users where idUser='"+textFieldSearch.getText()+"' OR username='"+textFieldSearch.getText()+"' OR password='"+textFieldSearch.getText()+"' OR role='"+textFieldSearch.getText()+"' OR name='"+textFieldSearch.getText()+"' OR lastname='"+textFieldSearch.getText()+"' OR address='"+textFieldSearch.getText()+"' OR birth='"+textFieldSearch.getText()+"' OR phone='"+textFieldSearch.getText()+"';",usersColumns);
 			}
 		});
 		btnSearch.setForeground(Color.BLACK);
