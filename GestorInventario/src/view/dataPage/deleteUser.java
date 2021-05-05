@@ -31,7 +31,7 @@ import javax.swing.JScrollPane;
 public class deleteUser extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField textFieldSearch;
 	private JTable table;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -82,23 +82,11 @@ public class deleteUser extends JFrame {
 		lblDeleteUsersMode.setBounds(253, 11, 255, 38);
 		panel.add(lblDeleteUsersMode);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(235, 60, 255, 20);
-		panel.add(textField);
+		textFieldSearch = new JTextField();
+		textFieldSearch.setColumns(10);
+		textFieldSearch.setBounds(235, 60, 255, 20);
+		panel.add(textFieldSearch);
 		
-		JButton btnSearch = new JButton("Search");
-		btnSearch.setForeground(Color.BLACK);
-		btnSearch.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				new Sound().button_sound();
-			}
-		});
-		btnSearch.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
-		btnSearch.setBackground(Color.WHITE);
-		btnSearch.setBounds(508, 59, 89, 23);
-		panel.add(btnSearch);
 		
 		table = new JTable();
 		table.setBounds(10, 109, 534, 241);
@@ -130,6 +118,25 @@ public class deleteUser extends JFrame {
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPane.setViewportView(table);
+		
+		JButton btnSearch = new JButton("Search");
+		btnSearch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM users where idUser='"+textFieldSearch.getText()+"' OR username='"+textFieldSearch.getText()+"' OR lastname='"+textFieldSearch.getText()+"' OR role='"+textFieldSearch.getText()+"' OR name='"+textFieldSearch.getText()+"' OR lastname='"+textFieldSearch.getText()+"' OR address='"+textFieldSearch.getText()+"' OR birth='"+textFieldSearch.getText()+"' OR phone='"+textFieldSearch.getText()+"';",usersColumns);
+			}
+		});
+		btnSearch.setForeground(Color.BLACK);
+		btnSearch.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnSearch.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		btnSearch.setBackground(Color.WHITE);
+		btnSearch.setBounds(508, 59, 89, 23);
+		panel.add(btnSearch);
+		
 		
 		
 		JButton btnDelete = new JButton("Delete");
