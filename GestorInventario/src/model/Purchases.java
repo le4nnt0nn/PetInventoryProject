@@ -28,7 +28,7 @@ public class Purchases {
 		String datePurchase = purchase.getDatePurchase();
 		double totalPrice = purchase.getTotalPrice();
 		
-		conexion.EjecutarUpdate("UPDATE purchases SET idUser='"+idUser+"',idPet='"+idPet+"',date='"+datePurchase+"',totalPrice='"+totalPrice+"';");
+		conexion.EjecutarUpdate("UPDATE purchases SET idUser='"+idUser+"',idPet='"+idPet+"',datePurchase='"+datePurchase+"',totalPrice='"+totalPrice+"';");
 		
 	}
 	
