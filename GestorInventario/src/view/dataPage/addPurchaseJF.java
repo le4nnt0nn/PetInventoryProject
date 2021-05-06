@@ -122,8 +122,7 @@ public class addPurchaseJF extends JFrame {
 				String datePurchase = textFieldDatePurchase.getText();
 				double totalPrice = Double.parseDouble(textFieldTotalPrice.getText());
 				
-				int idSaved = idPet;
-				Purchase purchase = new Purchase(idUser, idSaved, datePurchase, totalPrice);
+				Purchase purchase = new Purchase(idUser, idPet, datePurchase, totalPrice);
 				new Purchases().addPurchase(purchase);
 				new Pets().deletePet(idPet);
 				
