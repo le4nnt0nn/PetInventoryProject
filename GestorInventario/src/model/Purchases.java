@@ -25,10 +25,10 @@ public class Purchases {
 		int idPurchase = purchase.getIdPurchase();
 		int idUser = purchase.getIdUser();
 		int idPet = purchase.getIdPet();
-		String date = purchase.getDatePurchase();
+		String datePurchase = purchase.getDatePurchase();
 		double totalPrice = purchase.getTotalPrice();
 		
-		conexion.EjecutarUpdate("UPDATE purchases SET idUser='"+idUser+"',idPet='"+idPet+"',date='"+date+"',totalPrice='"+totalPrice+"';");
+		conexion.EjecutarUpdate("UPDATE purchases SET idUser='"+idUser+"',idPet='"+idPet+"',date='"+datePurchase+"',totalPrice='"+totalPrice+"';");
 		
 	}
 	
