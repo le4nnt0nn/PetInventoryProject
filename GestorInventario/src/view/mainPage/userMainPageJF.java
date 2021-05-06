@@ -11,6 +11,8 @@ import sounds.Sound;
 import utils.GenerateFrame;
 
 import java.awt.Color;
+import java.awt.Cursor;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -141,6 +143,17 @@ public class userMainPageJF extends JFrame {
 		panel.add(lblPurchases);
 		
 		JLabel lblGIF = new JLabel("");
+		lblGIF.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				new Sound().barkClicked();
+			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				Cursor cursor = new Cursor(Cursor.HAND_CURSOR);
+				lblGIF.setCursor(cursor);
+			}
+		});
 		lblGIF.setIcon(new ImageIcon(userMainPageJF.class.getResource("/images/doggieUserPage.gif")));
 		lblGIF.setBounds(237, 108, 271, 229);
 		panel.add(lblGIF);

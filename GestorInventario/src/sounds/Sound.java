@@ -59,6 +59,18 @@ public class Sound {
 		}
 		
 	}
+	
+	//Bark sound UserPage
+	public static void barkClicked() {
+		try {
+			File sound = new File("src\\sounds\\doggieBarkUser.wav");
+			Clip c = AudioSystem.getClip();
+			c.open(AudioSystem.getAudioInputStream(sound));
+			c.start();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 
 }
