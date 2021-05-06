@@ -31,7 +31,7 @@ import javax.swing.JScrollPane;
 public class deletePurchase extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField textFieldSearch;
 	private JTable table;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -78,24 +78,11 @@ public class deletePurchase extends JFrame {
 		lblDeletePurchasesMode.setBounds(236, 11, 302, 38);
 		panel.add(lblDeletePurchasesMode);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(235, 60, 255, 20);
-		panel.add(textField);
-		
-		JButton btnSearch = new JButton("Search");
-		btnSearch.setForeground(Color.BLACK);
-		btnSearch.setBackground(Color.WHITE);
-		btnSearch.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				new Sound().button_sound();
-			}
-		});
-		btnSearch.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
-		btnSearch.setBackground(Color.WHITE);
-		btnSearch.setBounds(508, 59, 89, 23);
-		panel.add(btnSearch);
+		textFieldSearch = new JTextField();
+		textFieldSearch.setColumns(10);
+		textFieldSearch.setBounds(235, 60, 255, 20);
+		panel.add(textFieldSearch);
+
 		
 		table = new JTable();
 		table.setBounds(10, 109, 509, 241);
@@ -206,6 +193,26 @@ public class deletePurchase extends JFrame {
 		lblOrderBy.setFont(new Font("Open Sans", Font.BOLD, 14));
 		lblOrderBy.setBounds(71, 11, 112, 20);
 		panel.add(lblOrderBy);
+		
+		
+		JButton btnSearch = new JButton("Search");
+		btnSearch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM purchases where idPurchase='"+textFieldSearch.getText()+"' OR idUser='"+textFieldSearch.getText()+"' OR idPet='"+textFieldSearch.getText()+"' OR datePurchase='"+textFieldSearch.getText()+"' OR totalPrice='"+textFieldSearch.getText()+"';",purchasesColumns);
+			}
+		});
+		btnSearch.setForeground(Color.BLACK);
+		btnSearch.setBackground(Color.WHITE);
+		btnSearch.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnSearch.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		btnSearch.setBackground(Color.WHITE);
+		btnSearch.setBounds(508, 59, 89, 23);
+		panel.add(btnSearch);
 		
 		JButton btnPrice = new JButton("Price");
 		btnPrice.addActionListener(new ActionListener() {
