@@ -1,6 +1,4 @@
-<<<<<<< Updated upstream
-# Gestor de Inventario Project
-=======
+
 ## 🐶 Pets Inventory 🐱
 
  > Pets inventory with SQL and Java.
@@ -38,11 +36,6 @@ Used [MySQL](https://dev.mysql.com/doc/ "MySQL Documentation") and [Java](https:
 ### 🚀 Launch
 
 Only you need its **compile** and **run** the file _Main.java_ or download and execute the [program](https://docs.oracle.com/en/java/ "Download .exe").
-
->>>>>>> Stashed changes
-
-Este proyecto trata sobre la creación de un gestor de inventario, con distitintas opciones para facilitar su uso de cara al usuario.
-Realizado como proyecto final de Programación.
 
 
 
