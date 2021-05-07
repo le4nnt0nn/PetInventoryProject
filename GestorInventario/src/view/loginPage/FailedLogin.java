@@ -84,8 +84,6 @@ public class FailedLogin extends JFrame {
 		btnRetry.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				GenerateFrame gen = new GenerateFrame();
-				gen.genLogin();
 			}
 		});
 		btnRetry.setForeground(Color.BLACK);
