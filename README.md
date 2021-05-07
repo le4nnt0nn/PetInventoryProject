@@ -21,6 +21,14 @@ You can login as **Client** or **Admin**.
 
 >_Client can :_
 * List pets / **own** purchases
+
+#### Extra
+
+1. Tables to show data.
+2. Search bar.
+3. Order by values.
+
+ ***
 ### 📷 Templates
 
 ![LoginPage](./docs/LoginView.png "Login View")
