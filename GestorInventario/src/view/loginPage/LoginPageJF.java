@@ -139,6 +139,7 @@ public class LoginPageJF extends JFrame {
 					}
 					*/
 					new Login().checkUser(usernameField.getText(), passwordField.getText());
+					dispose();
 					
 				}catch(Exception e) {
 					System.out.println(e.getMessage());
