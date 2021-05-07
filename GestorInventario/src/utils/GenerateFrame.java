@@ -21,6 +21,7 @@ import view.mainPage.clientPage;
 import view.mainPage.petPage;
 import view.mainPage.purchasePage;
 import view.mainPage.successfulAction;
+import view.mainPage.userMainPageJF;
 import sounds.Sound;
 
 public class GenerateFrame {
@@ -212,5 +213,14 @@ public class GenerateFrame {
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
 		frame.setTitle("Delete Purchase Page");
+	}
+	
+	public static void genUserMainPage() {
+		userMainPageJF frame = new userMainPageJF();
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		frame.setIconImage(icon);
+		frame.getContentPane().setLayout(null);
+		frame.setVisible(true);
+		frame.setTitle("Main Page");
 	}
 }
