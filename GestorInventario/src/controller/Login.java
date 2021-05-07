@@ -9,8 +9,6 @@ import model.Users;
 import utils.GenerateFrame;
 
 public class Login {
-	public boolean client;
-	public boolean admin;
 	
 	public void checkUser(String username, String password) {
 		User user = new Users().getUserByNamePass(username, password);
@@ -20,12 +18,10 @@ public class Login {
 		}
 		if(user.getRole().equals("client") && user!=null) {
 			System.out.println("CLIENTE");
-			client = true;
 			new GenerateFrame().genUserMainPage();
 			new GenerateFrame().genSucLogin();
 		}else if(user.getRole().equals("admin") && user!=null) { 
 			System.out.println("ADMIN");
-			admin = true;
 			new GenerateFrame().genMainPage();
 			new GenerateFrame().genSucLogin();
 		}
