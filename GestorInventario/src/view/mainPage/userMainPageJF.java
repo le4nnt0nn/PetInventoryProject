@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import beans.User;
 import sounds.Sound;
 import utils.GenerateFrame;
 
@@ -48,7 +49,7 @@ public class userMainPageJF extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public userMainPageJF() {
+	public userMainPageJF(User user) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 758, 426);
 		contentPane = new JPanel();

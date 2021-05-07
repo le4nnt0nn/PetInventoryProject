@@ -20,7 +20,7 @@ public class Login {
 		String userRole = user.getRole();
 		if(userRole.equals("client")) {
 			System.out.println("CLIENTE");
-			new userMainPageJF();
+			new userMainPageJF(user);
 			new GenerateFrame().genSucLogin();
 			
 			return true;
