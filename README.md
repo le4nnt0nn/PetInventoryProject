@@ -19,7 +19,7 @@ You can login as **Client** or **Admin**.
 * Delete pets / users / purchases
 * List pets / users / purchases
 
->Client can :_
+>_Client can :_
 * List pets / **own** purchases
 ### 📷 Templates
 
