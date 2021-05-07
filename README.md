@@ -1,7 +1,7 @@
 
 ## 🐶 Pet Inventory 🐱
 
- > Pets inventory with SQL and Java.
+ > Pet inventory with SQL and Java.
 
  ***
 
