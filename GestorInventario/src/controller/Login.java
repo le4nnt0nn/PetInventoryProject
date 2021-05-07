@@ -17,8 +17,12 @@ public class Login {
 		}
 		if(user.getRole().equals("client") && user!=null) {
 			System.out.println("CLIENTE");
+			new GenerateFrame().genUserMainPage();
+			new GenerateFrame().genSucLogin();
 		}else if(user.getRole().equals("admin") && user!=null) { 
 			System.out.println("ADMIN");
+			new GenerateFrame().genMainPage();
+			new GenerateFrame().genSucLogin();
 		}
 	}
 }
