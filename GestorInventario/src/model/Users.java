@@ -93,5 +93,11 @@ public class Users {
 		}
 		return users;
 	}
+	
+	public User getUserByNamePass(String username, String password) {
+		ResultSet userBD = conexion.EjecutarSentencia("SELECT * FROM users WHERE username='"+username+"' AND password='"+password+"'");
+		User user = new controller.Helper().resultSet2Object(userBD);
+		return user;
+	}
 
 }

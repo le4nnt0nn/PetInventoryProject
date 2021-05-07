@@ -5,24 +5,17 @@ import java.sql.SQLException;
 
 import bbdd.conexion;
 import beans.User;
+import model.Users;
 import utils.GenerateFrame;
 
 public class Login {
 
-	public static void login(String username, String password) {
-		ResultSet rs = conexion.EjecutarSentencia("select * from users where username='"+username+"' and password='"+password+"';");
-		try {
-			if(rs.next() && user.getRole().equals("admin")) {
-				new GenerateFrame().genSucLogin();
-				new GenerateFrame().genMainPage();
-			}else if(rs.next() && user.getRole().equals("client")){
-				new GenerateFrame().genSucLogin();
-				new GenerateFrame().genUserMainPage();
-			}else if(!rs.next()){
-				new GenerateFrame().genFailLogin();
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
+	public void checkUser(String username, String password) {
+		User user = new Users().getUserByNamePass(username, password);
+		if(user.getRole().equals("client")) {
+			System.out.println("CLIENTE");
+		}else if(user.getRole().equals("admin")) { 
+			System.out.println("ADMIN");
 		}
 	}
 }
