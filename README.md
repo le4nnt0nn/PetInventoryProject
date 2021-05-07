@@ -1,5 +1,5 @@
 
-## 🐶 Pets Inventory 🐱
+## 🐶 Pet Inventory 🐱
 
  > Pets inventory with SQL and Java.
 
