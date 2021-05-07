@@ -10,6 +10,7 @@ import javax.swing.border.EmptyBorder;
 import beans.User;
 import sounds.Sound;
 import utils.GenerateFrame;
+import view.dataPage.listPurchasesByUser;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -113,7 +114,7 @@ public class userMainPageJF extends JFrame {
 		btnPurchases.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Sound().enteredOption();
-				new GenerateFrame().genListPurchases();
+				new listPurchasesByUser(user);
 			}
 		});
 		btnPurchases.setIcon(new ImageIcon(userMainPageJF.class.getResource("/images/buttonPurchasesRedo.png")));

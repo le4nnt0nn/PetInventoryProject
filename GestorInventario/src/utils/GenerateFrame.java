@@ -215,13 +215,4 @@ public class GenerateFrame {
 		frame.setVisible(true);
 		frame.setTitle("Delete Purchase Page");
 	}
-
-	public static void genListPurchasesByUser() {
-		listPurchasesByUser frame = new listPurchasesByUser();
-		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
-		frame.setIconImage(icon);
-		frame.getContentPane().setLayout(null);
-		frame.setVisible(true);
-		frame.setTitle("List Purchases Page");
-	}
 }
