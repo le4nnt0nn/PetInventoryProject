@@ -40,8 +40,7 @@ public class listPurchasesByUser extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					listPurchasesByUser frame = new listPurchasesByUser();
-					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
