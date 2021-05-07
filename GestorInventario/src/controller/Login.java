@@ -15,12 +15,14 @@ public class Login {
 		
 		if(user==null) {
 			new GenerateFrame().genFailLogin();
+			return;
 		}
-		if(user.getRole().equals("client") && user!=null) {
+		String userRole = user.getRole();
+		if(userRole.equals("client")) {
 			System.out.println("CLIENTE");
 			new GenerateFrame().genUserMainPage();
 			new GenerateFrame().genSucLogin();
-		}else if(user.getRole().equals("admin") && user!=null) { 
+		}else if(userRole.equals("admin")) { 
 			System.out.println("ADMIN");
 			new GenerateFrame().genMainPage();
 			new GenerateFrame().genSucLogin();
