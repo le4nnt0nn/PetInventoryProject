@@ -9,6 +9,18 @@
 
 Created for the final project of DAW **(Web Application Development)**. 
 
+### 📋 Features
+
+You can login as **Client** or **Admin**. 
+
+>_Administrator can :_
+* Add pets / users / purchases
+* Update pets / users / purchases
+* Delete pets / users / purchases
+* List pets / users / purchases
+
+>Client can :_
+* List pets / **own** purchases
 ### 📷 Templates
 
 ![LoginPage](./docs/LoginView.png "Login View")
@@ -35,7 +47,7 @@ Used [MySQL](https://dev.mysql.com/doc/ "MySQL Documentation") and [Java](https:
 
 ### 🚀 Launch
 
-Only you need its **compile** and **run** the file _Main.java_ or download and execute the [program](https://docs.oracle.com/en/java/ "Download .exe").
+Only you need its **compile** and **run** the file _Main.java_.
 
 
 
