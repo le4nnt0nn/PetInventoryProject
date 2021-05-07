@@ -32,69 +32,73 @@ public class Purchases {
 		
 	}
 	
-public static void deletePurchase(Purchase purchase) {
+	public static void deletePurchase(Purchase purchase) {
 		
 		conexion.EjecutarUpdate("DELETE FROM purchases WHERE idPurchase='"+purchase.getIdPurchase()+"';");
 		
 	}
 
-public Purchase getPurchase(int idPurchaseSelected) {
-	ResultSet rs = conexion.EjecutarSentencia("SELECT * FROM purchases WHERE idPurchase='"+idPurchaseSelected+"';");
-	try {
+	public Purchase getPurchase(int idPurchaseSelected) {
+		ResultSet rs = conexion.EjecutarSentencia("SELECT * FROM purchases WHERE idPurchase='"+idPurchaseSelected+"';");
+		try {
 		
-		if(rs.next()) {
-			int idPurchase = rs.getInt("idPurchase");
-			int idUser = rs.getInt("idUser");
-			int idPet = rs.getInt("idPet");
-			String date = rs.getString("date");
-			double totalPrice = rs.getDouble("totalPrice");
-			Purchase caughtPurchase = new Purchase(idPurchase, idUser, idPet, date, totalPrice);
-			return caughtPurchase;
-		}
+			if(rs.next()) {
+				int idPurchase = rs.getInt("idPurchase");
+				int idUser = rs.getInt("idUser");
+				int idPet = rs.getInt("idPet");
+				String date = rs.getString("date");
+				double totalPrice = rs.getDouble("totalPrice");
+				Purchase caughtPurchase = new Purchase(idPurchase, idUser, idPet, date, totalPrice);
+				return caughtPurchase;
+			}
 		
-	} catch (SQLException e) {
+		} catch (SQLException e) {
 		e.printStackTrace();
-	}
+		}
 	
 		return null;
 	}
 
-public static ArrayList<Purchase> getAllPurchases() {
-	ArrayList<Purchase> purchases = new ArrayList<Purchase>();
-	ResultSet rs = conexion.EjecutarSentencia("SELECT * FROM purchases;");
-	try {
+	public static ArrayList<Purchase> getAllPurchases() {
+		ArrayList<Purchase> purchases = new ArrayList<Purchase>();
+		ResultSet rs = conexion.EjecutarSentencia("SELECT * FROM purchases;");
+		try {
 		
-		while(rs.next()) {
-			int idPurchase = rs.getInt("idPurchase");
-			int idUser = rs.getInt("idUser");
-			int idPet = rs.getInt("idPet");
-			String date = rs.getString("date");
-			double totalPrice = rs.getDouble("totalPrice");
-			purchases.add(new Purchase(idPurchase, idUser, idPet, date, totalPrice));
-		}
+			while(rs.next()) {
+				int idPurchase = rs.getInt("idPurchase");
+				int idUser = rs.getInt("idUser");
+				int idPet = rs.getInt("idPet");
+				String date = rs.getString("date");
+				double totalPrice = rs.getDouble("totalPrice");
+				purchases.add(new Purchase(idPurchase, idUser, idPet, date, totalPrice));
+			}
 		
-	} catch(SQLException e) {
+		} catch(SQLException e) {
 		e.printStackTrace();
-	}
+		}
 		return purchases;
 	}
 
-public static ArrayList<Purchase> getAllPurchasesByUser(int idUser) {
-	ArrayList<Purchase> purchases = new ArrayList<Purchase>();
-	ResultSet rs = conexion.EjecutarSentencia("SELECT * FROM purchases where idUser='"+idUser+"';");
-	try {
+	public static ArrayList<Purchase> getAllPurchasesByUser(int idUser) {
+		ArrayList<Purchase> purchases = new ArrayList<Purchase>();
+		ResultSet rs = conexion.EjecutarSentencia("SELECT * FROM purchases where idUser='"+idUser+"';");
+		try {
 		
-		while(rs.next()) {
-			int idPurchase = rs.getInt("idPurchase");
-			int idPet = rs.getInt("idPet");
-			String date = rs.getString("date");
-			double totalPrice = rs.getDouble("totalPrice");
-			purchases.add(new Purchase(idPurchase, idUser, idPet, date, totalPrice));
-		}
+			while(rs.next()) {
+				int idPurchase = rs.getInt("idPurchase");
+				int idPet = rs.getInt("idPet");
+				String date = rs.getString("date");
+				double totalPrice = rs.getDouble("totalPrice");
+				purchases.add(new Purchase(idPurchase, idUser, idPet, date, totalPrice));
+			}
 		
-	} catch(SQLException e) {
+		} catch(SQLException e) {
 		e.printStackTrace();
-	}
+		}
 		return purchases;
+	}
+	
+	public static void showPurchasesByUser(int idUser) {
+		conexion.EjecutarSentencia("SELECT * FROM purchases where idUser='"+idUser+"';");
 	}
 }
