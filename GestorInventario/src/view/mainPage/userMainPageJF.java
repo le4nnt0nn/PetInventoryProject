@@ -35,8 +35,7 @@ public class userMainPageJF extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					userMainPageJF frame = new userMainPageJF();
-					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

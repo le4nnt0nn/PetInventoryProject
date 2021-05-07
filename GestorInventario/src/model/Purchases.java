@@ -78,4 +78,23 @@ public static ArrayList<Purchase> getAllPurchases() {
 	}
 		return purchases;
 	}
+
+public static ArrayList<Purchase> getAllPurchasesByUser(int idUser) {
+	ArrayList<Purchase> purchases = new ArrayList<Purchase>();
+	ResultSet rs = conexion.EjecutarSentencia("SELECT * FROM purchases where idUser='"+idUser+"';");
+	try {
+		
+		while(rs.next()) {
+			int idPurchase = rs.getInt("idPurchase");
+			int idPet = rs.getInt("idPet");
+			String date = rs.getString("date");
+			double totalPrice = rs.getDouble("totalPrice");
+			purchases.add(new Purchase(idPurchase, idUser, idPet, date, totalPrice));
+		}
+		
+	} catch(SQLException e) {
+		e.printStackTrace();
+	}
+		return purchases;
+	}
 }
