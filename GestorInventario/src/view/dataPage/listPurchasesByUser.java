@@ -8,11 +8,14 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import beans.User;
 import controller.Table;
 
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -51,7 +54,7 @@ public class listPurchasesByUser extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public listPurchasesByUser() {
+	public listPurchasesByUser(User user) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 758, 426);
 		contentPane = new JPanel();
@@ -95,7 +98,7 @@ public class listPurchasesByUser extends JFrame {
 		
 		//Modelo
 		String[] purchasesColumns = {"idPurchase","idUser","idPet","datePurchase","TotalPrice"};
-		new Table().showTable(table,"SELECT * FROM purchases",purchasesColumns);
+		new Table().showTable(table,"SELECT * FROM purchases where idUser='"+user.getIdUser()+"'",purchasesColumns);
 		
 		//Scroll
 		JScrollPane scrollPane = new JScrollPane();
@@ -200,5 +203,12 @@ public class listPurchasesByUser extends JFrame {
 		lblExportText.setFont(new Font("Open Sans", Font.BOLD, 11));
 		lblExportText.setBounds(551, 287, 181, 34);
 		panel.add(lblExportText);
+		
+		
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("List Purchases Page");
 	}
 }
