@@ -11,6 +11,7 @@ import view.dataPage.deletePurchase;
 import view.dataPage.deleteUser;
 import view.dataPage.listPets;
 import view.dataPage.listPurchases;
+import view.dataPage.listPurchasesByUser;
 import view.dataPage.listUsers;
 import view.dataPage.updatePets;
 import view.dataPage.updatePurchases;
@@ -214,13 +215,13 @@ public class GenerateFrame {
 		frame.setVisible(true);
 		frame.setTitle("Delete Purchase Page");
 	}
-	
-	public static void genUserMainPage() {
-		userMainPageJF frame = new userMainPageJF();
+
+	public static void genListPurchasesByUser() {
+		listPurchasesByUser frame = new listPurchasesByUser();
 		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
 		frame.setIconImage(icon);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
-		frame.setTitle("Main Page");
+		frame.setTitle("List Purchases Page");
 	}
 }
