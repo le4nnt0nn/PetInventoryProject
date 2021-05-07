@@ -29,8 +29,6 @@ You can login as **Client** or **Admin**.
 
 ![MainPage](./docs/MainPageView.png "Main Page View")
 
-![MainPageUser](./docs/MainPageUserView.png "Main Page User View")
-
 
 ### 🧪 Technologies
 
