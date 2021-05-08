@@ -3,6 +3,8 @@ package view.loginPage;
 import bbdd.conexion;
 import sounds.Sound;
 import utils.GenerateFrame;
+import beans.User;
+import controller.Login;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -118,9 +120,12 @@ public class LoginPageJF extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				try {
-
-					ResultSet rs = conexion.EjecutarSentencia("select * from logins where username='"+usernameField.getText()+"' and password='"+passwordField.getText()+"';");	
-
+					//!ESTO IRÍA EN EL MODELO DE USERS
+					//ResultSet rs = conexion.EjecutarSentencia("select * from logins where username='"+usernameField.getText()+"' and password='"+passwordField.getText()+"';");	
+					
+					
+					//!LA LÓGICA DE LOGIN IRÍA EN CONTROLADOR
+					/*
 					if(rs.next()) {
 						dispose();
 						gen.genSucLogin();
@@ -130,6 +135,11 @@ public class LoginPageJF extends JFrame {
 						gen.genFailLogin();
 						passwordField.setText(null);
 						usernameField.setText(null);
+						dispose();
+					}
+					*/
+					//new Login().checkUser(usernameField.getText(), passwordField.getText());
+					if(new Login().checkUser(usernameField.getText(), passwordField.getText())==true) {
 						dispose();
 					}
 					

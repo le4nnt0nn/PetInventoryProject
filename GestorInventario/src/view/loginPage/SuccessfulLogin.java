@@ -83,7 +83,6 @@ public class SuccessfulLogin extends JFrame {
 				
 				try {
 					dispose();
-					new GenerateFrame().genMainPage();
 				}catch(Exception e) {
 					e.printStackTrace();
 				}

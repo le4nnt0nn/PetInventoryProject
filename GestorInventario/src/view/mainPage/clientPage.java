@@ -1,6 +1,7 @@
 package view.mainPage;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -8,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import sounds.Sound;
+import utils.GenerateFrame;
 
 import java.awt.Color;
 import javax.swing.JButton;
@@ -18,6 +20,8 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class clientPage extends JFrame {
 
@@ -73,6 +77,12 @@ public class clientPage extends JFrame {
 		panel.add(panel_1);
 		
 		JButton btnShow = new JButton("");
+		btnShow.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				new GenerateFrame().genListUsers();
+			}
+		});
 		btnShow.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -91,6 +101,12 @@ public class clientPage extends JFrame {
 		panel_1.add(btnShow);
 		
 		JButton btnAddClient = new JButton("Add Client");
+		btnAddClient.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				new GenerateFrame().genAddUserPage();
+			}
+		});
 		btnAddClient.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -104,6 +120,12 @@ public class clientPage extends JFrame {
 		panel_1.add(btnAddClient);
 		
 		JButton btnUpdateClient = new JButton("Update Client");
+		btnUpdateClient.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				new GenerateFrame().genUpdateUsers();
+			}
+		});
 		btnUpdateClient.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -117,6 +139,12 @@ public class clientPage extends JFrame {
 		panel_1.add(btnUpdateClient);
 		
 		JButton btnDeleteClient = new JButton("Delete Client");
+		btnDeleteClient.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				new GenerateFrame().genDeleteUser();
+			}
+		});
 		btnDeleteClient.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {

@@ -18,6 +18,14 @@ public class Pet {
         this.age = age;
         this.price = price;
     }
+	
+	public Pet(String species, String breed, String sex, int age, double price) {
+        this.species = species;
+        this.breed = breed;
+        this.sex = sex;
+        this.age = age;
+        this.price = price;
+    }
 
     public int getIdPet() {
         return idPet;

@@ -1,6 +1,7 @@
 package bbdd;
 
 import java.sql.*;
+
 import javax.swing.JOptionPane;
 
 public class conexion {
