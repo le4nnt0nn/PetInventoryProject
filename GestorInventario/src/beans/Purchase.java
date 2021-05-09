@@ -26,6 +26,12 @@ public class Purchase {
         this.datePurchase = datePurchase;
         this.totalPrice = totalPrice;
     }
+    
+    public Purchase(int idPet, String datePurchase, double totalPrice) {
+        this.idPet = idPet;
+        this.datePurchase = datePurchase;
+        this.totalPrice = totalPrice;
+    }
 
     public int getIdPurchase() {
         return idPurchase;

@@ -8,14 +8,19 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import beans.Purchase;
 import beans.User;
 import controller.Table;
+import sounds.Sound;
+import utils.FileGen;
 
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -28,7 +33,7 @@ import javax.swing.JTable;
 public class listPurchasesByUser extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField textFieldSearch;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
@@ -74,10 +79,10 @@ public class listPurchasesByUser extends JFrame {
 		lblListPurchasesMode.setBounds(239, 11, 251, 20);
 		panel.add(lblListPurchasesMode);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(235, 60, 255, 20);
-		panel.add(textField);
+		textFieldSearch = new JTextField();
+		textFieldSearch.setColumns(10);
+		textFieldSearch.setBounds(235, 60, 255, 20);
+		panel.add(textFieldSearch);
 		
 		
 		
@@ -95,7 +100,7 @@ public class listPurchasesByUser extends JFrame {
 				textField_5.setText(model2.getValueAt(selectedRowIndex, 4).toString());
 			}
 		});
-		
+			
 		//Modelo
 		String[] purchasesColumns = {"idPurchase","idUser","idPet","datePurchase","TotalPrice"};
 		new Table().showTable(table,"SELECT * FROM purchases where idUser='"+user.getIdUser()+"'",purchasesColumns);
@@ -164,6 +169,18 @@ public class listPurchasesByUser extends JFrame {
 		panel.add(lblOrderBy);
 		
 		JButton btnSearch = new JButton("Search");
+		btnSearch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM purchases where idPurchase='"+textFieldSearch.getText()+"' OR idUser='"+textFieldSearch.getText()+"' OR idPet='"+textFieldSearch.getText()+"' OR datePurchase='"+textFieldSearch.getText()+"' OR totalPrice='"+textFieldSearch.getText()+"';",purchasesColumns);
+			}
+		});
+		btnSearch.setBackground(Color.WHITE);
+		btnSearch.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
 		btnSearch.setForeground(Color.BLACK);
 		btnSearch.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnSearch.setBackground(Color.WHITE);
@@ -171,6 +188,17 @@ public class listPurchasesByUser extends JFrame {
 		panel.add(btnSearch);
 		
 		JButton btnPrice = new JButton("Price");
+		btnPrice.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM purchases where idUser='"+user.getIdUser()+"' order by TotalPrice;",purchasesColumns);
+			}
+		});
+		btnPrice.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
 		btnPrice.setForeground(Color.BLACK);
 		btnPrice.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnPrice.setBackground(Color.WHITE);
@@ -178,6 +206,17 @@ public class listPurchasesByUser extends JFrame {
 		panel.add(btnPrice);
 		
 		JButton btnDate = new JButton("Date");
+		btnDate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM purchases where idUser='"+user.getIdUser()+"' order by datePurchase;",purchasesColumns);
+			}
+		});
+		btnDate.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
 		btnDate.setForeground(Color.BLACK);
 		btnDate.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnDate.setBackground(Color.WHITE);
@@ -185,6 +224,17 @@ public class listPurchasesByUser extends JFrame {
 		panel.add(btnDate);
 		
 		JButton btnIdpet = new JButton("idPet");
+		btnIdpet.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM purchases where idUser='"+user.getIdUser()+"' order by idPet;",purchasesColumns);
+			}
+		});
+		btnIdpet.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
 		btnIdpet.setForeground(Color.BLACK);
 		btnIdpet.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnIdpet.setBackground(Color.WHITE);
@@ -192,6 +242,20 @@ public class listPurchasesByUser extends JFrame {
 		panel.add(btnIdpet);
 		
 		JButton btnExport = new JButton("Export");
+		btnExport.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//Compra seleccionada a objeto
+				Purchase selectedPurchase = new Purchase(Integer.parseInt(textField_3.getText()),textField_4.getText(),Double.parseDouble(textField_5.getText()));
+				FileGen filegen = new FileGen();
+				filegen.newFileGen(selectedPurchase, user);
+			}
+		});
+		btnExport.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
 		btnExport.setForeground(Color.BLACK);
 		btnExport.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnExport.setBackground(Color.WHITE);
