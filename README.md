@@ -20,7 +20,7 @@ You can login as **Client** or **Admin**.
 * List pets / users / purchases
 
 >_Client can :_
-* List pets / **own** purchases
+* List pets / **own** purchases and **export** them
 
 #### Extra
 
