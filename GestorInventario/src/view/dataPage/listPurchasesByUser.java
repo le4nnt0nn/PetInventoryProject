@@ -8,9 +8,11 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import beans.Purchase;
 import beans.User;
 import controller.Table;
 import sounds.Sound;
+import utils.FileGen;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -98,7 +100,7 @@ public class listPurchasesByUser extends JFrame {
 				textField_5.setText(model2.getValueAt(selectedRowIndex, 4).toString());
 			}
 		});
-		
+			
 		//Modelo
 		String[] purchasesColumns = {"idPurchase","idUser","idPet","datePurchase","TotalPrice"};
 		new Table().showTable(table,"SELECT * FROM purchases where idUser='"+user.getIdUser()+"'",purchasesColumns);
@@ -242,7 +244,10 @@ public class listPurchasesByUser extends JFrame {
 		JButton btnExport = new JButton("Export");
 		btnExport.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				//Compra seleccionada a objeto
+				Purchase selectedPurchase = new Purchase(Integer.parseInt(textField_3.getText()),textField_4.getText(),Double.parseDouble(textField_5.getText()));
+				FileGen filegen = new FileGen();
+				filegen.newFileGen(selectedPurchase, user);
 			}
 		});
 		btnExport.addMouseListener(new MouseAdapter() {
