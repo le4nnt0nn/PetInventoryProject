@@ -58,16 +58,21 @@ public class petPage extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblGIF = new JLabel("");
-		lblGIF.setIcon(new ImageIcon(petPage.class.getResource("/images/doggie_petPage.gif")));
-		lblGIF.setBounds(21, 59, 373, 258);
-		panel.add(lblGIF);
-		
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);
 		panel_1.setBackground(new Color(152, 251, 152));
 		panel_1.setBounds(416, 0, 326, 387);
 		panel.add(panel_1);
+		
+		/*Labels*/
+		
+		JLabel lblGIF = new JLabel("");
+		lblGIF.setIcon(new ImageIcon(petPage.class.getResource("/images/doggie_petPage.gif")));
+		lblGIF.setBounds(21, 59, 373, 258);
+		panel.add(lblGIF);
+		
+		
+		/*Buttons and actions*/
 		
 		JButton btnShow = new JButton("");
 		btnShow.addActionListener(new ActionListener() {

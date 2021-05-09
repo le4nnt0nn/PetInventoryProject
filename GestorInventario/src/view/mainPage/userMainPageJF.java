@@ -70,11 +70,55 @@ public class userMainPageJF extends JFrame {
 		panel_1.setBounds(0, 0, 742, 83);
 		panel.add(panel_1);
 		
+	
+		
+		/*Labels*/
+		
 		JLabel lblUserMode = new JLabel("USER MODE");
 		lblUserMode.setForeground(Color.WHITE);
 		lblUserMode.setFont(new Font("Open Sans", Font.BOLD, 36));
 		lblUserMode.setBounds(264, 11, 222, 66);
 		panel_1.add(lblUserMode);
+		
+		JPanel panel_right = new JPanel();
+		panel_right.setBackground(new Color(152, 251, 152));
+		panel_right.setBounds(538, 156, 128, 151);
+		panel.add(panel_right);
+		
+		JPanel panel_left = new JPanel();
+		panel_left.setBackground(new Color(152, 251, 152));
+		panel_left.setBounds(66, 156, 128, 151);
+		panel.add(panel_left);
+		
+		JLabel lblPets = new JLabel("Pets");
+		lblPets.setForeground(Color.DARK_GRAY);
+		lblPets.setFont(new Font("Open Sans Semibold", Font.PLAIN, 22));
+		lblPets.setBounds(101, 124, 54, 21);
+		panel.add(lblPets);
+		
+		JLabel lblPurchases = new JLabel("Purchases");
+		lblPurchases.setForeground(Color.DARK_GRAY);
+		lblPurchases.setFont(new Font("Open Sans Semibold", Font.PLAIN, 22));
+		lblPurchases.setBounds(538, 124, 128, 21);
+		panel.add(lblPurchases);
+		
+		JLabel lblGIF = new JLabel("");
+		lblGIF.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				new Sound().barkClicked();
+			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				Cursor cursor = new Cursor(Cursor.HAND_CURSOR);
+				lblGIF.setCursor(cursor);
+			}
+		});
+		lblGIF.setIcon(new ImageIcon(userMainPageJF.class.getResource("/images/doggieUserPage.gif")));
+		lblGIF.setBounds(237, 108, 271, 229);
+		panel.add(lblGIF);
+		
+		/*Buttons and actions*/
 		
 		JButton btnPets = new JButton("");
 		btnPets.addMouseListener(new MouseAdapter() {
@@ -123,44 +167,7 @@ public class userMainPageJF extends JFrame {
 		btnPurchases.setBounds(538, 156, 128, 151);
 		panel.add(btnPurchases);
 		
-		JPanel panel_right = new JPanel();
-		panel_right.setBackground(new Color(152, 251, 152));
-		panel_right.setBounds(538, 156, 128, 151);
-		panel.add(panel_right);
-		
-		JPanel panel_left = new JPanel();
-		panel_left.setBackground(new Color(152, 251, 152));
-		panel_left.setBounds(66, 156, 128, 151);
-		panel.add(panel_left);
-		
-		JLabel lblPets = new JLabel("Pets");
-		lblPets.setForeground(Color.DARK_GRAY);
-		lblPets.setFont(new Font("Open Sans Semibold", Font.PLAIN, 22));
-		lblPets.setBounds(101, 124, 54, 21);
-		panel.add(lblPets);
-		
-		JLabel lblPurchases = new JLabel("Purchases");
-		lblPurchases.setForeground(Color.DARK_GRAY);
-		lblPurchases.setFont(new Font("Open Sans Semibold", Font.PLAIN, 22));
-		lblPurchases.setBounds(538, 124, 128, 21);
-		panel.add(lblPurchases);
-		
-		JLabel lblGIF = new JLabel("");
-		lblGIF.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				new Sound().barkClicked();
-			}
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				Cursor cursor = new Cursor(Cursor.HAND_CURSOR);
-				lblGIF.setCursor(cursor);
-			}
-		});
-		lblGIF.setIcon(new ImageIcon(userMainPageJF.class.getResource("/images/doggieUserPage.gif")));
-		lblGIF.setBounds(237, 108, 271, 229);
-		panel.add(lblGIF);
-		
+		/*Constructor*/
 		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
 		this.setIconImage(icon);
 		this.getContentPane().setLayout(null);

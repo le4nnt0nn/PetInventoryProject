@@ -66,16 +66,12 @@ public class addPetJF extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
+		/*TextFields*/
+		
 		textFieldSex = new JTextField();
 		textFieldSex.setBounds(254, 224, 212, 20);
 		panel.add(textFieldSex);
 		textFieldSex.setColumns(10);
-		
-		JLabel lblAddPet = new JLabel("Add Pet MODE");
-		lblAddPet.setForeground(Color.DARK_GRAY);
-		lblAddPet.setFont(new Font("Open Sans", Font.BOLD, 24));
-		lblAddPet.setBounds(275, 11, 178, 20);
-		panel.add(lblAddPet);
 		
 		textFieldSpecies = new JTextField();
 		textFieldSpecies.setBounds(259, 126, 207, 20);
@@ -97,6 +93,14 @@ public class addPetJF extends JFrame {
 		textFieldPrice.setBounds(380, 276, 86, 20);
 		panel.add(textFieldPrice);
 		textFieldPrice.setColumns(10);
+		
+		/*Labels*/
+		
+		JLabel lblAddPet = new JLabel("Add Pet MODE");
+		lblAddPet.setForeground(Color.DARK_GRAY);
+		lblAddPet.setFont(new Font("Open Sans", Font.BOLD, 24));
+		lblAddPet.setBounds(275, 11, 178, 20);
+		panel.add(lblAddPet);
 		
 		JLabel lblSpecies = new JLabel("SPECIES");
 		lblSpecies.setFont(new Font("Open Sans", Font.BOLD, 13));
@@ -123,12 +127,14 @@ public class addPetJF extends JFrame {
 		lblPrice.setBounds(397, 255, 50, 14);
 		panel.add(lblPrice);
 		
+		/*Buttons and actions*/
+		
 		JButton btnFinish = new JButton("Finish");
 		btnFinish.setBackground(Color.WHITE);
 		btnFinish.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				//Info to Object Pet
+				/*Info to object*/
 				String species = textFieldSpecies.getText();
 				String breed = textFieldBreed.getText();
 				String sex = textFieldSex.getText();

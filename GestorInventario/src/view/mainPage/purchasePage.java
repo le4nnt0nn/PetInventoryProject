@@ -66,16 +66,20 @@ public class purchasePage extends JFrame {
 		panel.setBounds(0, 0, 742, 387);
 		contentPane_1.add(panel);
 		
-		JLabel lblGIF = new JLabel("");
-		lblGIF.setIcon(new ImageIcon(purchasePage.class.getResource("/images/doggie_purchasePage.gif")));
-		lblGIF.setBounds(53, 77, 373, 258);
-		panel.add(lblGIF);
-		
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);
 		panel_1.setBackground(new Color(152, 251, 152));
 		panel_1.setBounds(416, 0, 326, 387);
 		panel.add(panel_1);
+		
+		/*Labels*/
+		
+		JLabel lblGIF = new JLabel("");
+		lblGIF.setIcon(new ImageIcon(purchasePage.class.getResource("/images/doggie_purchasePage.gif")));
+		lblGIF.setBounds(53, 77, 373, 258);
+		panel.add(lblGIF);
+		
+		/*Buttons and actions*/
 		
 		JButton btnShow = new JButton("");
 		btnShow.addActionListener(new ActionListener() {

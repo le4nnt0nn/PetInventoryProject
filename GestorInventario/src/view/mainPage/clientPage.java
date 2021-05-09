@@ -64,17 +64,22 @@ public class clientPage extends JFrame {
 		panel.setBackground(new Color(144, 238, 144));
 		panel.setBounds(0, 0, 742, 387);
 		contentPane_1.add(panel);
+			
+		JPanel panel_1 = new JPanel();
+		panel_1.setLayout(null);
+		panel_1.setBackground(new Color(152, 251, 152));
+		panel_1.setBounds(416, 0, 326, 387);
+		panel.add(panel_1);
+		
+		/*Labels*/
 		
 		JLabel lblGIF = new JLabel("");
 		lblGIF.setIcon(new ImageIcon(clientPage.class.getResource("/images/doggie_clientPage.gif")));
 		lblGIF.setBounds(23, 72, 373, 258);
 		panel.add(lblGIF);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setLayout(null);
-		panel_1.setBackground(new Color(152, 251, 152));
-		panel_1.setBounds(416, 0, 326, 387);
-		panel.add(panel_1);
+		
+		/*Buttons and actions*/
 		
 		JButton btnShow = new JButton("");
 		btnShow.addActionListener(new ActionListener() {

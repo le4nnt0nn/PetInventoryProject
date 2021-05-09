@@ -63,6 +63,8 @@ public class FailedLogin extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
+		/*Labels*/
+		
 		JLabel lblFailedLogin = new JLabel("FAILED LOGIN");
 		lblFailedLogin.setForeground(Color.DARK_GRAY);
 		lblFailedLogin.setFont(new Font("Open Sans", Font.BOLD, 36));
@@ -73,6 +75,14 @@ public class FailedLogin extends JFrame {
 		lblDog.setIcon(new ImageIcon(FailedLogin.class.getResource("/images/failed.gif")));
 		lblDog.setBounds(10, 11, 426, 365);
 		panel.add(lblDog);
+		
+		JLabel lblErrorDesc = new JLabel("Error: Invalid login data");
+		lblErrorDesc.setForeground(new Color(255, 255, 255));
+		lblErrorDesc.setFont(new Font("Open Sans", Font.PLAIN, 14));
+		lblErrorDesc.setBounds(506, 200, 171, 40);
+		panel.add(lblErrorDesc);
+	
+		/*Buttons and actions*/
 		
 		JButton btnRetry = new JButton("Retry");
 		btnRetry.addMouseListener(new MouseAdapter() {
@@ -92,10 +102,5 @@ public class FailedLogin extends JFrame {
 		btnRetry.setBounds(525, 112, 118, 31);
 		panel.add(btnRetry);
 		
-		JLabel lblErrorDesc = new JLabel("Error: Invalid login data");
-		lblErrorDesc.setForeground(new Color(255, 255, 255));
-		lblErrorDesc.setFont(new Font("Open Sans", Font.PLAIN, 14));
-		lblErrorDesc.setBounds(506, 200, 171, 40);
-		panel.add(lblErrorDesc);
 	}
 }

@@ -58,6 +58,56 @@ public class MainPageJF extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(0, 0, 742, 83);
+		panel_1.setBackground(new Color(60, 179, 113));
+		panel.add(panel_1);
+		panel_1.setLayout(null);
+		
+		/*Labels*/
+		
+		JLabel lblAdminMode = new JLabel("ADMIN MODE");
+		lblAdminMode.setForeground(Color.WHITE);
+		lblAdminMode.setFont(new Font("Open Sans", Font.BOLD, 36));
+		lblAdminMode.setBounds(248, 11, 275, 66);
+		panel_1.add(lblAdminMode);
+		
+		JPanel panel_right = new JPanel();
+		panel_right.setBackground(new Color(152, 251, 152));
+		panel_right.setBounds(538, 156, 128, 151);
+		panel.add(panel_right);
+		
+		JPanel panel_left = new JPanel();
+		panel_left.setBackground(new Color(152, 251, 152));
+		panel_left.setBounds(66, 156, 128, 151);
+		panel.add(panel_left);
+		
+		JPanel panel_center = new JPanel();
+		panel_center.setBackground(new Color(152, 251, 152));
+		panel_center.setBounds(301, 156, 128, 151);
+		panel.add(panel_center);
+		
+		JLabel lblPets = new JLabel("Pets");
+		lblPets.setForeground(Color.DARK_GRAY);
+		lblPets.setFont(new Font("Open Sans Semibold", Font.PLAIN, 22));
+		lblPets.setBounds(101, 124, 54, 21);
+		panel.add(lblPets);
+		
+		JLabel lblClients = new JLabel("Clients");
+		lblClients.setForeground(Color.DARK_GRAY);
+		lblClients.setFont(new Font("Open Sans Semibold", Font.PLAIN, 22));
+		lblClients.setBounds(328, 124, 73, 21);
+		panel.add(lblClients);
+		
+		JLabel lblPurchases = new JLabel("Purchases");
+		lblPurchases.setForeground(Color.DARK_GRAY);
+		lblPurchases.setFont(new Font("Open Sans Semibold", Font.PLAIN, 22));
+		lblPurchases.setBounds(538, 124, 128, 21);
+		panel.add(lblPurchases);
+		
+		
+		/*Buttons and actions*/
+		
 		JButton btnPets = new JButton("");
 		btnPets.addMouseListener(new MouseAdapter() {
 			@Override
@@ -76,17 +126,6 @@ public class MainPageJF extends JFrame {
 			}
 		});
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(0, 0, 742, 83);
-		panel_1.setBackground(new Color(60, 179, 113));
-		panel.add(panel_1);
-		panel_1.setLayout(null);
-		
-		JLabel lblAdminMode = new JLabel("ADMIN MODE");
-		lblAdminMode.setForeground(Color.WHITE);
-		lblAdminMode.setFont(new Font("Open Sans", Font.BOLD, 36));
-		lblAdminMode.setBounds(248, 11, 275, 66);
-		panel_1.add(lblAdminMode);
 		
 		JButton btnClients = new JButton("");
 		btnClients.addMouseListener(new MouseAdapter() {
@@ -140,37 +179,5 @@ public class MainPageJF extends JFrame {
 		btnPurchases.setBounds(538, 156, 128, 151);
 		panel.add(btnPurchases);
 		
-		JPanel panel_right = new JPanel();
-		panel_right.setBackground(new Color(152, 251, 152));
-		panel_right.setBounds(538, 156, 128, 151);
-		panel.add(panel_right);
-		
-		JPanel panel_left = new JPanel();
-		panel_left.setBackground(new Color(152, 251, 152));
-		panel_left.setBounds(66, 156, 128, 151);
-		panel.add(panel_left);
-		
-		JPanel panel_center = new JPanel();
-		panel_center.setBackground(new Color(152, 251, 152));
-		panel_center.setBounds(301, 156, 128, 151);
-		panel.add(panel_center);
-		
-		JLabel lblPets = new JLabel("Pets");
-		lblPets.setForeground(Color.DARK_GRAY);
-		lblPets.setFont(new Font("Open Sans Semibold", Font.PLAIN, 22));
-		lblPets.setBounds(101, 124, 54, 21);
-		panel.add(lblPets);
-		
-		JLabel lblClients = new JLabel("Clients");
-		lblClients.setForeground(Color.DARK_GRAY);
-		lblClients.setFont(new Font("Open Sans Semibold", Font.PLAIN, 22));
-		lblClients.setBounds(328, 124, 73, 21);
-		panel.add(lblClients);
-		
-		JLabel lblPurchases = new JLabel("Purchases");
-		lblPurchases.setForeground(Color.DARK_GRAY);
-		lblPurchases.setFont(new Font("Open Sans Semibold", Font.PLAIN, 22));
-		lblPurchases.setBounds(538, 124, 128, 21);
-		panel.add(lblPurchases);
 	}
 }

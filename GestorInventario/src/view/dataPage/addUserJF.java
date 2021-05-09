@@ -65,6 +65,8 @@ public class addUserJF extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
+		/*Labels*/
+		
 		JLabel lblAddUser = new JLabel("Add User MODE");
 		lblAddUser.setForeground(Color.DARK_GRAY);
 		lblAddUser.setFont(new Font("Open Sans", Font.BOLD, 24));
@@ -82,21 +84,6 @@ public class addUserJF extends JFrame {
 		lblClientZone.setFont(new Font("Open Sans", Font.BOLD, 16));
 		lblClientZone.setBounds(312, 172, 103, 14);
 		panel.add(lblClientZone);
-		
-		textFieldRole = new JTextField();
-		textFieldRole.setColumns(10);
-		textFieldRole.setBounds(311, 95, 86, 20);
-		panel.add(textFieldRole);
-		
-		textFieldUsername = new JTextField();
-		textFieldUsername.setColumns(10);
-		textFieldUsername.setBounds(217, 141, 124, 20);
-		panel.add(textFieldUsername);
-		
-		textFieldPassw = new JTextField();
-		textFieldPassw.setColumns(10);
-		textFieldPassw.setBounds(381, 141, 124, 20);
-		panel.add(textFieldPassw);
 		
 		JLabel lblRole = new JLabel("ROLE");
 		lblRole.setFont(new Font("Open Sans", Font.BOLD, 13));
@@ -123,6 +110,39 @@ public class addUserJF extends JFrame {
 		lblLastname.setBounds(405, 191, 74, 14);
 		panel.add(lblLastname);
 		
+		JLabel lblAddress = new JLabel("ADDRESS");
+		lblAddress.setFont(new Font("Open Sans", Font.BOLD, 13));
+		lblAddress.setBounds(250, 237, 68, 14);
+		panel.add(lblAddress);
+		
+		JLabel lblBirth = new JLabel("BIRTH");
+		lblBirth.setFont(new Font("Open Sans", Font.BOLD, 13));
+		lblBirth.setBounds(422, 238, 45, 14);
+		panel.add(lblBirth);
+		
+		JLabel lblPhone = new JLabel("PHONE");
+		lblPhone.setFont(new Font("Open Sans", Font.BOLD, 13));
+		lblPhone.setBounds(338, 283, 53, 14);
+		panel.add(lblPhone);
+		
+		
+		/*TextFields*/
+		
+		textFieldRole = new JTextField();
+		textFieldRole.setColumns(10);
+		textFieldRole.setBounds(311, 95, 86, 20);
+		panel.add(textFieldRole);
+		
+		textFieldUsername = new JTextField();
+		textFieldUsername.setColumns(10);
+		textFieldUsername.setBounds(217, 141, 124, 20);
+		panel.add(textFieldUsername);
+		
+		textFieldPassw = new JTextField();
+		textFieldPassw.setColumns(10);
+		textFieldPassw.setBounds(381, 141, 124, 20);
+		panel.add(textFieldPassw);
+		
 		textFieldName = new JTextField();
 		textFieldName.setColumns(10);
 		textFieldName.setBounds(217, 207, 124, 20);
@@ -142,40 +162,27 @@ public class addUserJF extends JFrame {
 		textFieldBirth.setColumns(10);
 		textFieldBirth.setBounds(381, 252, 124, 20);
 		panel.add(textFieldBirth);
-		
-		JLabel lblAddress = new JLabel("ADDRESS");
-		lblAddress.setFont(new Font("Open Sans", Font.BOLD, 13));
-		lblAddress.setBounds(250, 237, 68, 14);
-		panel.add(lblAddress);
-		
-		JLabel lblBirth = new JLabel("BIRTH");
-		lblBirth.setFont(new Font("Open Sans", Font.BOLD, 13));
-		lblBirth.setBounds(422, 238, 45, 14);
-		panel.add(lblBirth);
-		
+			
 		textFieldPhone = new JTextField();
 		textFieldPhone.setColumns(10);
 		textFieldPhone.setBounds(294, 299, 124, 20);
 		panel.add(textFieldPhone);
 		
-		JLabel lblPhone = new JLabel("PHONE");
-		lblPhone.setFont(new Font("Open Sans", Font.BOLD, 13));
-		lblPhone.setBounds(338, 283, 53, 14);
-		panel.add(lblPhone);
+		/*Buttons and actions*/
 		
 		JButton btnFinish = new JButton("Finish");
 		btnFinish.setBackground(Color.WHITE);
 		btnFinish.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				//Info to Object User
+				/*Info to user Object*/
 				
-				//User Zone
+				/*User zone*/
 				String role = textFieldRole.getText();
 				String username = textFieldUsername.getText();
 				String password = textFieldPassw.getText();
 				
-				//Client Zone
+				/*Client zone*/
 				String name = textFieldName.getText();
 				String lastname = textFieldLastName.getText();
 				String address = textFieldAddress.getText();

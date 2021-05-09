@@ -76,17 +76,7 @@ public class deleteUser extends JFrame {
 		panel.setBounds(0, 0, 742, 387);
 		contentPane.add(panel);
 		
-		JLabel lblDeleteUsersMode = new JLabel("Delete Users MODE");
-		lblDeleteUsersMode.setForeground(Color.DARK_GRAY);
-		lblDeleteUsersMode.setFont(new Font("Open Sans", Font.BOLD, 24));
-		lblDeleteUsersMode.setBounds(253, 11, 255, 38);
-		panel.add(lblDeleteUsersMode);
-		
-		textFieldSearch = new JTextField();
-		textFieldSearch.setColumns(10);
-		textFieldSearch.setBounds(235, 60, 255, 20);
-		panel.add(textFieldSearch);
-		
+		/*Table*/
 		
 		table = new JTable();
 		table.setBounds(10, 109, 534, 241);
@@ -107,11 +97,11 @@ public class deleteUser extends JFrame {
 				textField_9.setText(model2.getValueAt(selectedRowIndex, 8).toString());
 			}
 		});
-		//Modelo
+		/*Edit model to table*/
 		String[] usersColumns = {"idUser","Username","Passwrod","Role","Name","Lastname","Address","Birth","Phone"};
 		new Table().showTable(table, "SELECT * FROM users;",usersColumns);
 		
-		//Scroll
+		/*Scroll to table*/
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 109, 534, 241);
 		panel.add(scrollPane);
@@ -119,107 +109,8 @@ public class deleteUser extends JFrame {
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPane.setViewportView(table);
 		
-		JButton btnSearch = new JButton("Search");
-		btnSearch.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				new Table().showTable(table, "SELECT * FROM users where idUser='"+textFieldSearch.getText()+"' OR username='"+textFieldSearch.getText()+"' OR password='"+textFieldSearch.getText()+"' OR role='"+textFieldSearch.getText()+"' OR name='"+textFieldSearch.getText()+"' OR lastname='"+textFieldSearch.getText()+"' OR address='"+textFieldSearch.getText()+"' OR birth='"+textFieldSearch.getText()+"' OR phone='"+textFieldSearch.getText()+"';",usersColumns);
-			}
-		});
-		btnSearch.setForeground(Color.BLACK);
-		btnSearch.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				new Sound().button_sound();
-			}
-		});
-		btnSearch.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
-		btnSearch.setBackground(Color.WHITE);
-		btnSearch.setBounds(508, 59, 89, 23);
-		panel.add(btnSearch);
 		
-		
-		
-		JButton btnDelete = new JButton("Delete");
-		btnDelete.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				new Sound().button_sound();
-			}
-		});
-		btnDelete.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				//Info to Object User
-				
-				//User Zone
-				int idUser = Integer.parseInt(textField_1.getText());
-				String role = textField_2.getText();
-				String username = textField_3.getText();
-				String password = textField_4.getText();
-				
-				//Client Zone
-				String name = textField_5.getText();
-				String lastname = textField_6.getText();
-				String address = textField_7.getText();
-				String birth = textField_8.getText();
-				int phone = Integer.parseInt(textField_9.getText());
-				
-				User user = new User(idUser,username,password,role,name,lastname,address,birth,phone);
-				new Users().deleteUser(user);
-				
-				new GenerateFrame().genSucAction();
-				
-			}
-		});
-		btnDelete.setForeground(Color.BLACK);
-		btnDelete.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
-		btnDelete.setBackground(Color.WHITE);
-		btnDelete.setBounds(589, 353, 89, 23);
-		panel.add(btnDelete);
-		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(625, 93, 55, 20);
-		panel.add(textField_1);
-		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(625, 124, 89, 20);
-		panel.add(textField_2);
-		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(625, 152, 89, 20);
-		panel.add(textField_3);
-		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(625, 178, 55, 20);
-		panel.add(textField_4);
-		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(625, 206, 89, 20);
-		panel.add(textField_5);
-		
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		textField_6.setBounds(625, 234, 89, 20);
-		panel.add(textField_6);
-		
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		textField_7.setBounds(625, 261, 89, 20);
-		panel.add(textField_7);
-		
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
-		textField_8.setBounds(625, 290, 89, 20);
-		panel.add(textField_8);
-		
-		textField_9 = new JTextField();
-		textField_9.setColumns(10);
-		textField_9.setBounds(625, 321, 89, 20);
-		panel.add(textField_9);
+		/*Labels*/
 		
 		JLabel lblIdUser = new JLabel("idUser");
 		lblIdUser.setFont(new Font("Open Sans", Font.BOLD, 11));
@@ -270,6 +161,121 @@ public class deleteUser extends JFrame {
 		lblOrderBy.setFont(new Font("Open Sans", Font.BOLD, 14));
 		lblOrderBy.setBounds(71, 16, 112, 20);
 		panel.add(lblOrderBy);
+
+		JLabel lblDeleteUsersMode = new JLabel("Delete Users MODE");
+		lblDeleteUsersMode.setForeground(Color.DARK_GRAY);
+		lblDeleteUsersMode.setFont(new Font("Open Sans", Font.BOLD, 24));
+		lblDeleteUsersMode.setBounds(253, 11, 255, 38);
+		panel.add(lblDeleteUsersMode);
+		
+		/*TextFields*/
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(625, 93, 55, 20);
+		panel.add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(625, 124, 89, 20);
+		panel.add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(625, 152, 89, 20);
+		panel.add(textField_3);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(625, 178, 55, 20);
+		panel.add(textField_4);
+		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		textField_5.setBounds(625, 206, 89, 20);
+		panel.add(textField_5);
+		
+		textField_6 = new JTextField();
+		textField_6.setColumns(10);
+		textField_6.setBounds(625, 234, 89, 20);
+		panel.add(textField_6);
+		
+		textField_7 = new JTextField();
+		textField_7.setColumns(10);
+		textField_7.setBounds(625, 261, 89, 20);
+		panel.add(textField_7);
+		
+		textField_8 = new JTextField();
+		textField_8.setColumns(10);
+		textField_8.setBounds(625, 290, 89, 20);
+		panel.add(textField_8);
+		
+		textField_9 = new JTextField();
+		textField_9.setColumns(10);
+		textField_9.setBounds(625, 321, 89, 20);
+		panel.add(textField_9);
+		
+		textFieldSearch = new JTextField();
+		textFieldSearch.setColumns(10);
+		textFieldSearch.setBounds(235, 60, 255, 20);
+		panel.add(textFieldSearch);
+		
+		/*Buttons and actions*/
+		
+		JButton btnSearch = new JButton("Search");
+		btnSearch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Table().showTable(table, "SELECT * FROM users where idUser='"+textFieldSearch.getText()+"' OR username='"+textFieldSearch.getText()+"' OR password='"+textFieldSearch.getText()+"' OR role='"+textFieldSearch.getText()+"' OR name='"+textFieldSearch.getText()+"' OR lastname='"+textFieldSearch.getText()+"' OR address='"+textFieldSearch.getText()+"' OR birth='"+textFieldSearch.getText()+"' OR phone='"+textFieldSearch.getText()+"';",usersColumns);
+			}
+		});
+		btnSearch.setForeground(Color.BLACK);
+		btnSearch.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnSearch.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		btnSearch.setBackground(Color.WHITE);
+		btnSearch.setBounds(508, 59, 89, 23);
+		panel.add(btnSearch);
+		
+		JButton btnDelete = new JButton("Delete");
+		btnDelete.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				/*Info to object user*/
+				
+				/*User zone*/
+				int idUser = Integer.parseInt(textField_1.getText());
+				String role = textField_2.getText();
+				String username = textField_3.getText();
+				String password = textField_4.getText();
+				
+				/*Client zone*/
+				String name = textField_5.getText();
+				String lastname = textField_6.getText();
+				String address = textField_7.getText();
+				String birth = textField_8.getText();
+				int phone = Integer.parseInt(textField_9.getText());
+				
+				User user = new User(idUser,username,password,role,name,lastname,address,birth,phone);
+				new Users().deleteUser(user);
+				
+				new GenerateFrame().genSucAction();
+				
+			}
+		});
+		btnDelete.setForeground(Color.BLACK);
+		btnDelete.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		btnDelete.setBackground(Color.WHITE);
+		btnDelete.setBounds(589, 353, 89, 23);
+		panel.add(btnDelete);
 		
 		JButton btnLastname = new JButton("Lastname");
 		btnLastname.addActionListener(new ActionListener() {

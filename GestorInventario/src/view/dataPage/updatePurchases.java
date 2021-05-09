@@ -72,18 +72,7 @@ public class updatePurchases extends JFrame {
 		panel.setBounds(0, 0, 742, 387);
 		contentPane.add(panel);
 		
-		JLabel lblUpdatePurchasesMode = new JLabel("Update Purchases MODE");
-		lblUpdatePurchasesMode.setForeground(Color.DARK_GRAY);
-		lblUpdatePurchasesMode.setFont(new Font("Open Sans", Font.BOLD, 24));
-		lblUpdatePurchasesMode.setBounds(236, 11, 302, 38);
-		panel.add(lblUpdatePurchasesMode);
-		
-		textFieldSearch = new JTextField();
-		textFieldSearch.setColumns(10);
-		textFieldSearch.setBounds(235, 60, 255, 20);
-		panel.add(textFieldSearch);
-		
-		
+		/*Table*/
 		table = new JTable();
 		table.setBounds(10, 109, 509, 241);
 		table.addMouseListener(new MouseAdapter() {
@@ -99,11 +88,11 @@ public class updatePurchases extends JFrame {
 				textField_5.setText(model2.getValueAt(selectedRowIndex, 4).toString());
 			}
 		});
-		//Modelo
+		/*Edit model to table*/
 		String[] purchasesColumns = {"idPurchase","idUser","idPet","datePurchase","TotalPrice"};
 		new Table().showTable(table, "SELECT * FROM purchases;",purchasesColumns);
 		
-		//Scroll
+		/*Scroll to table*/
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 109, 509, 241);
 		panel.add(scrollPane);
@@ -111,58 +100,13 @@ public class updatePurchases extends JFrame {
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPane.setViewportView(table);
 		
-		
-		JButton btnUpdate = new JButton("Update");
-		btnUpdate.setBackground(Color.WHITE);
-		btnUpdate.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				new Sound().button_sound();
-			}
-		});
-		btnUpdate.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				int idPurchase = Integer.parseInt(textField_1.getText());
-				int idUser = Integer.parseInt(textField_2.getText());
-				int idPet = Integer.parseInt(textField_3.getText());
-				String datePurchase = textField_4.getText();
-				double totalPrice = Double.parseDouble(textField_5.getText());
-				
-				Purchase purchase = new Purchase(idPurchase,idUser, idPet, datePurchase, totalPrice);
-				new Purchases().updatePurchase(purchase);
-				
-				new GenerateFrame().genSucAction();
-			}
-		});
-		btnUpdate.setForeground(Color.BLACK);
-		btnUpdate.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
-		btnUpdate.setBounds(577, 302, 89, 23);
-		panel.add(btnUpdate);
-		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(623, 109, 55, 20);
-		panel.add(textField_1);
-		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(623, 140, 55, 20);
-		panel.add(textField_2);
-		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(623, 168, 55, 20);
-		panel.add(textField_3);
-		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(623, 194, 89, 20);
-		panel.add(textField_4);
-		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(623, 222, 89, 20);
-		panel.add(textField_5);
+		/*Labels*/
+
+		JLabel lblUpdatePurchasesMode = new JLabel("Update Purchases MODE");
+		lblUpdatePurchasesMode.setForeground(Color.DARK_GRAY);
+		lblUpdatePurchasesMode.setFont(new Font("Open Sans", Font.BOLD, 24));
+		lblUpdatePurchasesMode.setBounds(236, 11, 302, 38);
+		panel.add(lblUpdatePurchasesMode);
 		
 		JLabel lblIdpurchase = new JLabel("idPurchase");
 		lblIdpurchase.setFont(new Font("Open Sans", Font.BOLD, 11));
@@ -193,6 +137,68 @@ public class updatePurchases extends JFrame {
 		lblOrderBy.setFont(new Font("Open Sans", Font.BOLD, 14));
 		lblOrderBy.setBounds(71, 11, 112, 20);
 		panel.add(lblOrderBy);
+		
+		/*TextFields*/
+		
+		textFieldSearch = new JTextField();
+		textFieldSearch.setColumns(10);
+		textFieldSearch.setBounds(235, 60, 255, 20);
+		panel.add(textFieldSearch);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(623, 109, 55, 20);
+		panel.add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(623, 140, 55, 20);
+		panel.add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(623, 168, 55, 20);
+		panel.add(textField_3);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(623, 194, 89, 20);
+		panel.add(textField_4);
+		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		textField_5.setBounds(623, 222, 89, 20);
+		panel.add(textField_5);
+		
+		/*Buttons and actions*/
+		
+		JButton btnUpdate = new JButton("Update");
+		btnUpdate.setBackground(Color.WHITE);
+		btnUpdate.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnUpdate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int idPurchase = Integer.parseInt(textField_1.getText());
+				int idUser = Integer.parseInt(textField_2.getText());
+				int idPet = Integer.parseInt(textField_3.getText());
+				String datePurchase = textField_4.getText();
+				double totalPrice = Double.parseDouble(textField_5.getText());
+				
+				Purchase purchase = new Purchase(idPurchase,idUser, idPet, datePurchase, totalPrice);
+				new Purchases().updatePurchase(purchase);
+				
+				new GenerateFrame().genSucAction();
+			}
+		});
+		btnUpdate.setForeground(Color.BLACK);
+		btnUpdate.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		btnUpdate.setBounds(577, 302, 89, 23);
+		panel.add(btnUpdate);
+		
 		
 		JButton btnSearch = new JButton("Search");
 		btnSearch.addActionListener(new ActionListener() {
