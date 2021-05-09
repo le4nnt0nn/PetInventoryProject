@@ -11,6 +11,7 @@ import view.mainPage.userMainPageJF;
 
 public class Login {
 	
+	/*Check if user exist and user role*/
 	public boolean checkUser(String username, String password) {
 		User user = new Users().getUserByNamePass(username, password);
 		
@@ -33,6 +34,8 @@ public class Login {
 		}
 		return false;
 	}
+	
+	/*Check user role with boolean*/
 	public boolean checkUserRole(User user) {
 		if(user.getRole().equals("client")) {
 			return false;

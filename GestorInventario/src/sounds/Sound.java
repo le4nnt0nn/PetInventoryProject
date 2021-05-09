@@ -8,7 +8,7 @@ import javax.sound.sampled.Clip;
 public class Sound {
 	
 	
-	//Normal button sound
+	/*Normal button sound*/
 	public static void button_sound() {
 		try {
 			File sound = new File("src\\sounds\\pressButton.wav");
@@ -21,7 +21,7 @@ public class Sound {
 		
 	}
 	
-	//Fail login sound
+	/*Fail login sound*/
 	public static void fail_login() {
 		try {
 			File sound = new File("src\\sounds\\failLogin.wav");
@@ -34,7 +34,7 @@ public class Sound {
 		
 	}
 	
-	//Successful login sound
+	/*Successful login sound*/
 	public static void successfulLogin() {
 		try {
 			File sound = new File("src\\sounds\\successfulLogin.wav");
@@ -47,7 +47,7 @@ public class Sound {
 		
 	}
 	
-	//Entered option sound
+	/*Entered option sound*/
 	public static void enteredOption() {
 		try {
 			File sound = new File("src\\sounds\\enteredOption.wav");
@@ -60,7 +60,7 @@ public class Sound {
 		
 	}
 	
-	//Bark sound UserPage
+	/*Bark sound for userPage*/
 	public static void barkClicked() {
 		try {
 			File sound = new File("src\\sounds\\doggieBarkUser.wav");

@@ -13,7 +13,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 				
-		//conexion a bbdd
+		/*Connection to database*/
 		conexion.Conectar();
 		
 		EventQueue.invokeLater(new Runnable() {
