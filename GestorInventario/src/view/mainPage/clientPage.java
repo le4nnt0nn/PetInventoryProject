@@ -11,6 +11,7 @@ import javax.swing.border.EmptyBorder;
 import sounds.Sound;
 import utils.GenerateFrame;
 import view.dataPage.addPurchaseJF;
+import view.dataPage.deleteUser;
 import view.dataPage.listUsers;
 import view.dataPage.updateUsers;
 
@@ -152,7 +153,7 @@ public class clientPage extends JFrame {
 		btnDeleteClient.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new GenerateFrame().genDeleteUser();
+				new deleteUser();
 			}
 		});
 		btnDeleteClient.addMouseListener(new MouseAdapter() {
