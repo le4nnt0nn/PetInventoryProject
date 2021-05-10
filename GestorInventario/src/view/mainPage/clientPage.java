@@ -10,6 +10,7 @@ import javax.swing.border.EmptyBorder;
 
 import sounds.Sound;
 import utils.GenerateFrame;
+import view.dataPage.addPurchaseJF;
 
 import java.awt.Color;
 import javax.swing.JButton;
@@ -111,7 +112,7 @@ public class clientPage extends JFrame {
 		btnAddClient.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new GenerateFrame().genAddUserPage();
+				new addPurchaseJF();
 			}
 		});
 		btnAddClient.addMouseListener(new MouseAdapter() {

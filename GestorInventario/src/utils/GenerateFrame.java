@@ -28,14 +28,6 @@ import sounds.Sound;
 public class GenerateFrame {
 
 	
-	public static void genAddUserPage() {
-		addUserJF frame = new addUserJF();
-		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
-		frame.setIconImage(icon);
-		frame.getContentPane().setLayout(null);
-		frame.setVisible(true);
-		frame.setTitle("Add User Page");
-	}
 	
 	public static void genAddPurchasePage() {
 		addPurchaseJF frame = new addPurchaseJF();

@@ -17,6 +17,9 @@ import view.mainPage.successfulAction;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -201,6 +204,14 @@ public class addUserJF extends JFrame {
 		btnFinish.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnFinish.setBounds(312, 342, 89, 23);
 		panel.add(btnFinish);
+		
+		/*Constructor*/
+		
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("Add User Page");
 	}
 
 }
