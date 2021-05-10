@@ -7,6 +7,7 @@ import bbdd.conexion;
 import beans.User;
 import model.Users;
 import utils.GenerateFrame;
+import view.loginPage.SuccessfulLogin;
 import view.mainPage.userMainPageJF;
 
 public class Login {
@@ -22,13 +23,13 @@ public class Login {
 		if(userRole.equals("client")) {
 			System.out.println("CLIENTE");
 			new userMainPageJF(user);
-			new GenerateFrame().genSucLogin();
+			new SuccessfulLogin();
 			
 			return true;
 		}else if(userRole.equals("admin")) { 
 			System.out.println("ADMIN");
 			new GenerateFrame().genMainPage();
-			new GenerateFrame().genSucLogin();
+			new SuccessfulLogin();
 			
 			return true;
 		}

@@ -28,18 +28,6 @@ import sounds.Sound;
 public class GenerateFrame {
 
 	
-	public static void genSucLogin() {
-		Sound sound = new Sound();
-		SuccessfulLogin suc = new SuccessfulLogin();
-		sound.successfulLogin();
-		suc.show();
-		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
-		suc.setIconImage(icon);
-		suc.getContentPane().setLayout(null);
-		suc.setVisible(true);
-		suc.setTitle("Succesful Login !");
-	}
-	
 	public static void genSucAction() {
 		Sound sound = new Sound();
 		successfulAction frame = new successfulAction();

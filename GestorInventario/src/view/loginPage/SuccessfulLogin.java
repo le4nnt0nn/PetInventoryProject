@@ -104,5 +104,16 @@ public class SuccessfulLogin extends JFrame {
 		btnContinue.setBounds(308, 109, 118, 31);
 		panel.add(btnContinue);
 		
+		/*Constructor*/
+		
+		Sound sound = new Sound();
+		sound.successfulLogin();
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.show();
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("Succesful Login !");
+		
 	}
 }
