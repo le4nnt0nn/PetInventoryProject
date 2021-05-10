@@ -27,14 +27,6 @@ import sounds.Sound;
 
 public class GenerateFrame {
 
-	public static void genClientPage() {
-		clientPage frame = new clientPage();
-		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
-		frame.setIconImage(icon);
-		frame.getContentPane().setLayout(null);
-		frame.setVisible(true);
-		frame.setTitle("Client Page");
-	}
 	
 	public static void genPurchasePage() {
 		purchasePage frame = new purchasePage();

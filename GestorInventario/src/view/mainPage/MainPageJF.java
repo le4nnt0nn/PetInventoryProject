@@ -102,7 +102,7 @@ public class MainPageJF extends JFrame {
 		btnClients.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Sound().enteredOption();
-				new GenerateFrame().genClientPage();
+				new clientPage();
 			}
 		});
 		btnClients.setIcon(new ImageIcon(MainPageJF.class.getResource("/images/ButtonClientsRedo.png")));
