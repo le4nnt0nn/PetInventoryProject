@@ -102,5 +102,16 @@ public class FailedLogin extends JFrame {
 		btnRetry.setBounds(525, 112, 118, 31);
 		panel.add(btnRetry);
 		
+		/*Constructor*/
+		
+		Sound sound = new Sound();
+		sound.fail_login();
+		this.show();
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("Failed Login ...");
+		
 	}
 }

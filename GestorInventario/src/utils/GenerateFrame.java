@@ -28,18 +28,6 @@ import sounds.Sound;
 public class GenerateFrame {
 
 	
-	public static void genFailLogin() {
-		Sound sound = new Sound();
-		FailedLogin fail = new FailedLogin();
-		sound.fail_login();
-		fail.show();
-		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
-		fail.setIconImage(icon);
-		fail.getContentPane().setLayout(null);
-		fail.setVisible(true);
-		fail.setTitle("Failed Login ...");
-	}
-	
 	public static void genMainPage() {
 		MainPageJF frame = new MainPageJF();
 		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 

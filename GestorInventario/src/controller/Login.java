@@ -7,6 +7,7 @@ import bbdd.conexion;
 import beans.User;
 import model.Users;
 import utils.GenerateFrame;
+import view.loginPage.FailedLogin;
 import view.loginPage.SuccessfulLogin;
 import view.mainPage.userMainPageJF;
 
@@ -17,7 +18,7 @@ public class Login {
 		User user = new Users().getUserByNamePass(username, password);
 		
 		if(user==null) {
-			new GenerateFrame().genFailLogin();
+			new FailedLogin();
 		}
 		String userRole = user.getRole();
 		if(userRole.equals("client")) {
