@@ -16,6 +16,8 @@ import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.BorderFactory;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -161,6 +163,14 @@ public class purchasePage extends JFrame {
 		btnDeletePurchase.setBackground(Color.WHITE);
 		btnDeletePurchase.setBounds(41, 220, 241, 29);
 		panel_1.add(btnDeletePurchase);
+		
+		/*Constructor*/
+		
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("Purchase Page");
 	}
 
 }

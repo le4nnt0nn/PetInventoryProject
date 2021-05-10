@@ -131,7 +131,7 @@ public class MainPageJF extends JFrame {
 		btnPurchases.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Sound().enteredOption();
-				new GenerateFrame().genPurchasePage();
+				new purchasePage();
 			}
 		});
 		btnPurchases.setIcon(new ImageIcon(MainPageJF.class.getResource("/images/buttonPurchasesRedo.png")));
