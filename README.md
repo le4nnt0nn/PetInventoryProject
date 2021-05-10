@@ -42,7 +42,7 @@ You can login as **Client** or **Admin**.
 
 ![PetPage](./docs/PetPageView.png "Pet Page View")
 
-![UserPage](./docs/UserPageView.png "Client Page View")
+![UserPage](./docs/ClientPageView.png "Client Page View")
 
 ![PurchasePage](./docs/PurchasePageView.png "Purchase Page View")
 
