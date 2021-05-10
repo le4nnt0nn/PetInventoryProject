@@ -31,19 +31,24 @@ You can login as **Client** or **Admin**.
  ***
 ### 📷 Templates
 
+#### Login
 ![LoginPage](./docs/LoginView.png "Login View")
 
 ![FailedLogin](./docs/FailedView.png "Failed Login View")
 
-![MainPage](./docs/MainPageView.png "Main Page View")
+#### Admin
 
-![MainPageUser](./docs/MainPageUserView.png "Main Page User View")
+![MainPage](./docs/MainPageView.png "Main Page View")
 
 ![PetPage](./docs/PetPageView.png "Pet Page View")
 
-![UserPage](./docs/UserPageView.png "User Page View")
+![UserPage](./docs/UserPageView.png "Client Page View")
 
 ![PurchasePage](./docs/PurchasePageView.png "Purchase Page View")
+
+#### User
+
+![MainPageUser](./docs/MainPageUserView.png "Main Page User View")
 
 ### 🧪 Technologies
 
