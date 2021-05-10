@@ -12,6 +12,7 @@ import sounds.Sound;
 import utils.GenerateFrame;
 import view.dataPage.addPurchaseJF;
 import view.dataPage.listUsers;
+import view.dataPage.updateUsers;
 
 import java.awt.Color;
 import javax.swing.JButton;
@@ -132,7 +133,7 @@ public class clientPage extends JFrame {
 		btnUpdateClient.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new GenerateFrame().genUpdateUsers();
+				new updateUsers();
 			}
 		});
 		btnUpdateClient.addMouseListener(new MouseAdapter() {
