@@ -28,15 +28,6 @@ import sounds.Sound;
 public class GenerateFrame {
 
 	
-	public static void genUpdatePets() {
-		updatePets frame = new updatePets();
-		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
-		frame.setIconImage(icon);
-		frame.getContentPane().setLayout(null);
-		frame.setVisible(true);
-		frame.setTitle("Update Pets Page");
-	}
-	
 	public static void genUpdateUsers() {
 		updateUsers frame = new updateUsers();
 		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 

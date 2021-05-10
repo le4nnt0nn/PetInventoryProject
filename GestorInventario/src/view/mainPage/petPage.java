@@ -12,6 +12,7 @@ import sounds.Sound;
 import utils.GenerateFrame;
 import view.dataPage.addPetJF;
 import view.dataPage.listPets;
+import view.dataPage.updatePets;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -126,7 +127,7 @@ public class petPage extends JFrame {
 		btnUpdatePet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new GenerateFrame().genUpdatePets();
+				new updatePets();
 			}
 		});
 		btnUpdatePet.addMouseListener(new MouseAdapter() {
