@@ -10,6 +10,7 @@ import javax.swing.border.EmptyBorder;
 
 import sounds.Sound;
 import utils.GenerateFrame;
+import view.dataPage.addPetJF;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -105,7 +106,7 @@ public class petPage extends JFrame {
 		btnAddPet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new GenerateFrame().genAddPetPage();
+				new addPetJF();
 			}
 		});
 		btnAddPet.addMouseListener(new MouseAdapter() {
