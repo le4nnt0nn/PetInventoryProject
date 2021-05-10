@@ -28,15 +28,6 @@ import sounds.Sound;
 public class GenerateFrame {
 
 	
-	public static void genListPets() {
-		listPets frame = new listPets();
-		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
-		frame.setIconImage(icon);
-		frame.getContentPane().setLayout(null);
-		frame.setVisible(true);
-		frame.setTitle("List Pets Page");
-	}
-	
 	public static void genListUsers() {
 		listUsers frame = new listUsers();
 		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
