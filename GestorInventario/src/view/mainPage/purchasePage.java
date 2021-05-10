@@ -13,6 +13,7 @@ import sounds.Sound;
 import utils.GenerateFrame;
 import view.dataPage.addPurchaseJF;
 import view.dataPage.listPurchases;
+import view.dataPage.updatePurchases;
 
 import java.awt.Color;
 import javax.swing.JButton;
