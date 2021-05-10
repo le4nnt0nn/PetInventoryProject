@@ -11,6 +11,7 @@ import javax.swing.border.EmptyBorder;
 import sounds.Sound;
 import utils.GenerateFrame;
 import view.dataPage.addPetJF;
+import view.dataPage.deletePet;
 import view.dataPage.listPets;
 import view.dataPage.updatePets;
 
@@ -146,7 +147,7 @@ public class petPage extends JFrame {
 		btnDeletePet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new GenerateFrame().genDeletePet();
+				new deletePet();
 			}
 		});
 		btnDeletePet.addMouseListener(new MouseAdapter() {
