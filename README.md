@@ -70,7 +70,8 @@ Used [MySQL](https://dev.mysql.com/doc/ "MySQL Documentation") and [Java](https:
 
 Only you need its a database and **compile** and **run** the file _Main.java_.
 
-Try **demo** [here](https://replit.com/@le4nnt0nn/PetInventoryProject "PIP Demo")
+#### Demo
+Try **demo** [here](https://replit.com/@le4nnt0nn/PetInventoryProject "PIP Demo").
 
 
 
