@@ -14,6 +14,9 @@ import utils.GenerateFrame;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
+
 import javax.swing.JButton;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -177,6 +180,14 @@ public class MainPageJF extends JFrame {
 		lblPurchases.setFont(new Font("Open Sans Semibold", Font.PLAIN, 22));
 		lblPurchases.setBounds(538, 124, 128, 21);
 		panel.add(lblPurchases);
+		
+		/*Constructor*/
+		
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("Main Page");
 		
 		
 	}

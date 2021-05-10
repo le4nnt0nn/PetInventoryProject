@@ -9,6 +9,7 @@ import model.Users;
 import utils.GenerateFrame;
 import view.loginPage.FailedLogin;
 import view.loginPage.SuccessfulLogin;
+import view.mainPage.MainPageJF;
 import view.mainPage.userMainPageJF;
 
 public class Login {
@@ -29,7 +30,7 @@ public class Login {
 			return true;
 		}else if(userRole.equals("admin")) { 
 			System.out.println("ADMIN");
-			new GenerateFrame().genMainPage();
+			new MainPageJF();
 			new SuccessfulLogin();
 			
 			return true;
