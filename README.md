@@ -39,6 +39,11 @@ You can login as **Client** or **Admin**.
 
 ![MainPageUser](./docs/MainPageUserView.png "Main Page User View")
 
+![PetPage](./docs/PetPageView.png "Pet Page View")
+
+![UserPage](./docs/UserPageView.png "User Page View")
+
+![PurchasePage](./docs/PurchasePageView.png "Purchase Page View")
 
 ### 🧪 Technologies
 
