@@ -11,6 +11,7 @@ import beans.User;
 import sounds.Sound;
 import utils.GenerateFrame;
 import view.dataPage.listPurchasesByUser;
+import view.dataPage.listUsers;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -86,7 +87,7 @@ public class userMainPageJF extends JFrame {
 		btnPets.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Sound().enteredOption();
-				new GenerateFrame().genListPets();
+				new listUsers();
 			}
 		});
 		btnPets.setIcon(new ImageIcon(userMainPageJF.class.getResource("/images/buttonPetsRedo.png")));
