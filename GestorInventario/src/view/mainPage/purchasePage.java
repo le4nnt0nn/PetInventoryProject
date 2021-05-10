@@ -12,6 +12,7 @@ import javax.swing.border.EmptyBorder;
 import sounds.Sound;
 import utils.GenerateFrame;
 import view.dataPage.addPurchaseJF;
+import view.dataPage.deletePurchase;
 import view.dataPage.listPurchases;
 import view.dataPage.updatePurchases;
 
@@ -152,7 +153,7 @@ public class purchasePage extends JFrame {
 		btnDeletePurchase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new GenerateFrame().genDeletePurchase();
+				new deletePurchase();
 			}
 		});
 		btnDeletePurchase.addMouseListener(new MouseAdapter() {
