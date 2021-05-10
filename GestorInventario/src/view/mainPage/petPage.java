@@ -16,6 +16,9 @@ import javax.swing.JLabel;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
+
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -154,5 +157,13 @@ public class petPage extends JFrame {
 		btnDeletePet.setBackground(Color.WHITE);
 		btnDeletePet.setBounds(41, 220, 241, 29);
 		panel_1.add(btnDeletePet);
+		
+		/*Constructor*/
+		
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("Pet Page");
 	}
 }

@@ -83,7 +83,7 @@ public class MainPageJF extends JFrame {
 		btnPets.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Sound().enteredOption();
-				new GenerateFrame().genPetPage();
+				new petPage();
 			}
 		});
 		
