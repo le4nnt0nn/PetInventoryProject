@@ -59,6 +59,7 @@ public class Purchases {
 		return null;
 	}
 
+	/*Recoge todas las compras y las almacena*/
 	public static ArrayList<Purchase> getAllPurchases() {
 		ArrayList<Purchase> purchases = new ArrayList<Purchase>();
 		ResultSet rs = conexion.EjecutarSentencia("SELECT * FROM purchases;");
@@ -79,6 +80,7 @@ public class Purchases {
 		return purchases;
 	}
 
+	/*Collect all purchases by user and stores them*/ 
 	public static ArrayList<Purchase> getAllPurchasesByUser(int idUser) {
 		ArrayList<Purchase> purchases = new ArrayList<Purchase>();
 		ResultSet rs = conexion.EjecutarSentencia("SELECT * FROM purchases where idUser='"+idUser+"';");
@@ -98,6 +100,7 @@ public class Purchases {
 		return purchases;
 	}
 	
+	/*Collect all purchases by user id*/
 	public static void showPurchasesByUser(int idUser) {
 		conexion.EjecutarSentencia("SELECT * FROM purchases where idUser='"+idUser+"';");
 	}

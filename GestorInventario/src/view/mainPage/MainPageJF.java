@@ -1,6 +1,7 @@
 package view.mainPage;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -9,11 +10,13 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
 import sounds.Sound;
-import utils.GenerateFrame;
 
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
+
 import javax.swing.JButton;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -58,6 +61,14 @@ public class MainPageJF extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(0, 0, 742, 83);
+		panel_1.setBackground(new Color(60, 179, 113));
+		panel.add(panel_1);
+		panel_1.setLayout(null);
+		
+		/*Buttons and actions*/
+		
 		JButton btnPets = new JButton("");
 		btnPets.addMouseListener(new MouseAdapter() {
 			@Override
@@ -72,21 +83,10 @@ public class MainPageJF extends JFrame {
 		btnPets.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Sound().enteredOption();
-				new GenerateFrame().genPetPage();
+				new petPage();
 			}
 		});
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(0, 0, 742, 83);
-		panel_1.setBackground(new Color(60, 179, 113));
-		panel.add(panel_1);
-		panel_1.setLayout(null);
-		
-		JLabel lblAdminMode = new JLabel("ADMIN MODE");
-		lblAdminMode.setForeground(Color.WHITE);
-		lblAdminMode.setFont(new Font("Open Sans", Font.BOLD, 36));
-		lblAdminMode.setBounds(248, 11, 275, 66);
-		panel_1.add(lblAdminMode);
 		
 		JButton btnClients = new JButton("");
 		btnClients.addMouseListener(new MouseAdapter() {
@@ -102,7 +102,7 @@ public class MainPageJF extends JFrame {
 		btnClients.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Sound().enteredOption();
-				new GenerateFrame().genClientPage();
+				new clientPage();
 			}
 		});
 		btnClients.setIcon(new ImageIcon(MainPageJF.class.getResource("/images/ButtonClientsRedo.png")));
@@ -131,7 +131,7 @@ public class MainPageJF extends JFrame {
 		btnPurchases.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Sound().enteredOption();
-				new GenerateFrame().genPurchasePage();
+				new purchasePage();
 			}
 		});
 		btnPurchases.setIcon(new ImageIcon(MainPageJF.class.getResource("/images/buttonPurchasesRedo.png")));
@@ -139,6 +139,8 @@ public class MainPageJF extends JFrame {
 		btnPurchases.setBorder(BorderFactory.createEmptyBorder());
 		btnPurchases.setBounds(538, 156, 128, 151);
 		panel.add(btnPurchases);
+		
+		/*Labels*/
 		
 		JPanel panel_right = new JPanel();
 		panel_right.setBackground(new Color(152, 251, 152));
@@ -154,6 +156,12 @@ public class MainPageJF extends JFrame {
 		panel_center.setBackground(new Color(152, 251, 152));
 		panel_center.setBounds(301, 156, 128, 151);
 		panel.add(panel_center);
+		
+		JLabel lblAdminMode = new JLabel("ADMIN MODE");
+		lblAdminMode.setForeground(Color.WHITE);
+		lblAdminMode.setFont(new Font("Open Sans", Font.BOLD, 36));
+		lblAdminMode.setBounds(248, 11, 275, 66);
+		panel_1.add(lblAdminMode);
 		
 		JLabel lblPets = new JLabel("Pets");
 		lblPets.setForeground(Color.DARK_GRAY);
@@ -172,5 +180,15 @@ public class MainPageJF extends JFrame {
 		lblPurchases.setFont(new Font("Open Sans Semibold", Font.PLAIN, 22));
 		lblPurchases.setBounds(538, 124, 128, 21);
 		panel.add(lblPurchases);
+		
+		/*Constructor*/
+		
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("Main Page");
+		
+		
 	}
 }

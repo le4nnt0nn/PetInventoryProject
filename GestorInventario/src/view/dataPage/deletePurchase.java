@@ -1,6 +1,7 @@
 package view.dataPage;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -12,11 +13,13 @@ import beans.Purchase;
 import controller.Table;
 import model.Purchases;
 import sounds.Sound;
-import utils.GenerateFrame;
+import view.mainPage.successfulAction;
 
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -72,18 +75,8 @@ public class deletePurchase extends JFrame {
 		panel.setBounds(0, 0, 742, 387);
 		contentPane.add(panel);
 		
-		JLabel lblDeletePurchasesMode = new JLabel("Delete Purchases MODE");
-		lblDeletePurchasesMode.setForeground(Color.DARK_GRAY);
-		lblDeletePurchasesMode.setFont(new Font("Open Sans", Font.BOLD, 24));
-		lblDeletePurchasesMode.setBounds(236, 11, 302, 38);
-		panel.add(lblDeletePurchasesMode);
-		
-		textFieldSearch = new JTextField();
-		textFieldSearch.setColumns(10);
-		textFieldSearch.setBounds(235, 60, 255, 20);
-		panel.add(textFieldSearch);
 
-		
+		/*Table*/
 		table = new JTable();
 		table.setBounds(10, 109, 509, 241);
 		table.addMouseListener(new MouseAdapter() {
@@ -99,70 +92,20 @@ public class deletePurchase extends JFrame {
 				textField_5.setText(model2.getValueAt(selectedRowIndex, 4).toString());
 			}
 		});
-		//Modelo
+		/*Edit model to table*/
 		String[] purchasesColumns = {"idPurchase","idUser","idPet","datePurchase","TotalPrice"};
 		new Table().showTable(table, "SELECT * FROM purchases;",purchasesColumns);
 		
-		//Scroll
+		/*Scroll to table*/
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 109, 509, 241);
 		panel.add(scrollPane);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPane.setViewportView(table);
+			
 		
-		
-		JButton btnDelete = new JButton("Delete");
-		btnDelete.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				new Sound().button_sound();
-			}
-		});
-		btnDelete.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				int idPurchase = Integer.parseInt(textField_1.getText());
-				int idUser = Integer.parseInt(textField_2.getText());
-				int idPet = Integer.parseInt(textField_3.getText());
-				String datePurchase = textField_4.getText();
-				double totalPrice = Double.parseDouble(textField_5.getText());
-				
-				Purchase purchase = new Purchase(idPurchase,idUser, idPet, datePurchase, totalPrice);
-				new Purchases().deletePurchase(purchase);
-				
-				new GenerateFrame().genSucAction();
-			}
-		});
-		btnDelete.setForeground(Color.BLACK);
-		btnDelete.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
-		btnDelete.setBackground(Color.WHITE);
-		btnDelete.setBounds(577, 302, 89, 23);
-		panel.add(btnDelete);
-		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(623, 109, 55, 20);
-		panel.add(textField_1);
-		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(623, 140, 55, 20);
-		panel.add(textField_2);
-		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(623, 168, 55, 20);
-		panel.add(textField_3);
-		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(623, 194, 89, 20);
-		panel.add(textField_4);
-		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(623, 222, 89, 20);
-		panel.add(textField_5);
+		/*Labels*/
 		
 		JLabel lblIdpurchase = new JLabel("idPurchase");
 		lblIdpurchase.setFont(new Font("Open Sans", Font.BOLD, 11));
@@ -194,6 +137,45 @@ public class deletePurchase extends JFrame {
 		lblOrderBy.setBounds(71, 11, 112, 20);
 		panel.add(lblOrderBy);
 		
+		JLabel lblDeletePurchasesMode = new JLabel("Delete Purchases MODE");
+		lblDeletePurchasesMode.setForeground(Color.DARK_GRAY);
+		lblDeletePurchasesMode.setFont(new Font("Open Sans", Font.BOLD, 24));
+		lblDeletePurchasesMode.setBounds(236, 11, 302, 38);
+		panel.add(lblDeletePurchasesMode);
+		
+		/*TextFields*/
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(623, 109, 55, 20);
+		panel.add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(623, 140, 55, 20);
+		panel.add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(623, 168, 55, 20);
+		panel.add(textField_3);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(623, 194, 89, 20);
+		panel.add(textField_4);
+		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		textField_5.setBounds(623, 222, 89, 20);
+		panel.add(textField_5);
+		
+		textFieldSearch = new JTextField();
+		textFieldSearch.setColumns(10);
+		textFieldSearch.setBounds(235, 60, 255, 20);
+		panel.add(textFieldSearch);
+		
+		/*Buttons and actions*/
 		
 		JButton btnSearch = new JButton("Search");
 		btnSearch.addActionListener(new ActionListener() {
@@ -267,6 +249,42 @@ public class deletePurchase extends JFrame {
 		btnIdpet.setBackground(Color.WHITE);
 		btnIdpet.setBounds(10, 32, 89, 23);
 		panel.add(btnIdpet);
+		
+		JButton btnDelete = new JButton("Delete");
+		btnDelete.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				new Sound().button_sound();
+			}
+		});
+		btnDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int idPurchase = Integer.parseInt(textField_1.getText());
+				int idUser = Integer.parseInt(textField_2.getText());
+				int idPet = Integer.parseInt(textField_3.getText());
+				String datePurchase = textField_4.getText();
+				double totalPrice = Double.parseDouble(textField_5.getText());
+				
+				Purchase purchase = new Purchase(idPurchase,idUser, idPet, datePurchase, totalPrice);
+				new Purchases().deletePurchase(purchase);
+				
+				new successfulAction();
+			}
+		});
+		btnDelete.setForeground(Color.BLACK);
+		btnDelete.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
+		btnDelete.setBackground(Color.WHITE);
+		btnDelete.setBounds(577, 302, 89, 23);
+		panel.add(btnDelete);
+		
+		/*Constructor*/
+			
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("Delete Purchases Page");
+		
 	}
 
 }

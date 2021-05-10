@@ -1,6 +1,7 @@
 package view.dataPage;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -12,11 +13,13 @@ import beans.Pet;
 import controller.Table;
 import model.Pets;
 import sounds.Sound;
-import utils.GenerateFrame;
+import view.mainPage.successfulAction;
 
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -73,18 +76,7 @@ public class deletePet extends JFrame {
 		panel.setBounds(0, 0, 742, 387);
 		contentPane.add(panel);
 		
-		JLabel lblDeletePetsMode = new JLabel("Delete Pets MODE");
-		lblDeletePetsMode.setForeground(Color.DARK_GRAY);
-		lblDeletePetsMode.setFont(new Font("Open Sans", Font.BOLD, 24));
-		lblDeletePetsMode.setBounds(253, 11, 237, 38);
-		panel.add(lblDeletePetsMode);
-		
-		textFieldSearch = new JTextField();
-		textFieldSearch.setColumns(10);
-		textFieldSearch.setBounds(235, 60, 255, 20);
-		panel.add(textFieldSearch);
-		
-		
+		/*Table*/
 		table = new JTable();
 		table.setBounds(10, 109, 509, 241);
 		table.addMouseListener(new MouseAdapter() {
@@ -101,11 +93,11 @@ public class deletePet extends JFrame {
 				textField_6.setText(model2.getValueAt(selectedRowIndex, 5).toString());
 			}
 		});
-		//Modelo
+		/*Edit model to table*/
 		String[] petsColumns = {"idPet","Species","Breed","Sex","Age","Price"};
 		new Table().showTable(table, "SELECT * FROM pets;",petsColumns);
 		
-		//Scroll
+		/*Scroll to table*/
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 109, 509, 241);
 		panel.add(scrollPane);
@@ -113,36 +105,7 @@ public class deletePet extends JFrame {
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPane.setViewportView(table);
 		
-		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(619, 109, 55, 20);
-		panel.add(textField_1);
-		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(619, 140, 89, 20);
-		panel.add(textField_2);
-		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(619, 168, 89, 20);
-		panel.add(textField_3);
-		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(619, 194, 55, 20);
-		panel.add(textField_4);
-		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(619, 222, 89, 20);
-		panel.add(textField_5);
-		
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		textField_6.setBounds(619, 250, 89, 20);
-		panel.add(textField_6);
+		/*Labels*/
 		
 		JLabel lblIdpet = new JLabel("idPet");
 		lblIdpet.setFont(new Font("Open Sans", Font.BOLD, 11));
@@ -174,6 +137,50 @@ public class deletePet extends JFrame {
 		lblPrice.setBounds(560, 253, 60, 14);
 		panel.add(lblPrice);
 		
+		JLabel lblDeletePetsMode = new JLabel("Delete Pets MODE");
+		lblDeletePetsMode.setForeground(Color.DARK_GRAY);
+		lblDeletePetsMode.setFont(new Font("Open Sans", Font.BOLD, 24));
+		lblDeletePetsMode.setBounds(253, 11, 237, 38);
+		panel.add(lblDeletePetsMode);
+		
+		/*TextFields*/
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(619, 109, 55, 20);
+		panel.add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(619, 140, 89, 20);
+		panel.add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(619, 168, 89, 20);
+		panel.add(textField_3);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(619, 194, 55, 20);
+		panel.add(textField_4);
+		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		textField_5.setBounds(619, 222, 89, 20);
+		panel.add(textField_5);
+		
+		textField_6 = new JTextField();
+		textField_6.setColumns(10);
+		textField_6.setBounds(619, 250, 89, 20);
+		panel.add(textField_6);
+		
+		textFieldSearch = new JTextField();
+		textFieldSearch.setColumns(10);
+		textFieldSearch.setBounds(235, 60, 255, 20);
+		panel.add(textFieldSearch);
+		
+		/*Buttons and actions*/
 
 		JButton btnSearch = new JButton("Search");
 		btnSearch.addActionListener(new ActionListener() {
@@ -214,7 +221,7 @@ public class deletePet extends JFrame {
 				Pet pet = new Pet(idPet,species,breed,sex,age,price);
 				new Pets().deletePet(idPet);
 				
-				new GenerateFrame().genSucAction();
+				new successfulAction();
 			}
 		});
 		btnDelete.setForeground(Color.BLACK);
@@ -281,5 +288,13 @@ public class deletePet extends JFrame {
 		btnSpecies.setBackground(Color.WHITE);
 		btnSpecies.setBounds(10, 37, 89, 23);
 		panel.add(btnSpecies);
+		
+		/*Constructor*/
+		
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("Delete Pets Page");
 	}
 }

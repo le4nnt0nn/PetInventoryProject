@@ -15,6 +15,9 @@ import sounds.Sound;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
+
 import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.JButton;
@@ -79,18 +82,7 @@ public class listPurchases extends JFrame {
 		panel.setBounds(0, 0, 742, 387);
 		contentPane.add(panel);
 		
-		JLabel lblListPurchasesMode = new JLabel("List Purchases MODE");
-		lblListPurchasesMode.setForeground(Color.DARK_GRAY);
-		lblListPurchasesMode.setFont(new Font("Open Sans", Font.BOLD, 24));
-		lblListPurchasesMode.setBounds(239, 11, 251, 20);
-		panel.add(lblListPurchasesMode);
-		
-		textFieldSearch = new JTextField();
-		textFieldSearch.setColumns(10);
-		textFieldSearch.setBounds(235, 60, 255, 20);
-		panel.add(textFieldSearch);
-		
-		
+		/*Table*/
 		
 		table = new JTable();
 		table.setBounds(10, 109, 509, 241);
@@ -108,11 +100,11 @@ public class listPurchases extends JFrame {
 			}
 		});
 		
-		//Modelo
+		/*Edit model to table*/
 		String[] purchasesColumns = {"idPurchase","idUser","idPet","datePurchase","TotalPrice"};
 		new Table().showTable(table, "SELECT * FROM purchases;",purchasesColumns);
 		
-		//Scroll
+		/*Scroll to table*/
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 109, 509, 241);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -120,31 +112,7 @@ public class listPurchases extends JFrame {
 		scrollPane.setViewportView(table);
 		panel.add(scrollPane);
 		
-		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(618, 109, 55, 20);
-		panel.add(textField_1);
-		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(618, 140, 55, 20);
-		panel.add(textField_2);
-		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(618, 168, 55, 20);
-		panel.add(textField_3);
-		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(618, 194, 89, 20);
-		panel.add(textField_4);
-		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(618, 222, 89, 20);
-		panel.add(textField_5);
+		/*Labels*/
 		
 		lblIdpurchase = new JLabel("idPurchase");
 		lblIdpurchase.setFont(new Font("Open Sans", Font.BOLD, 11));
@@ -175,6 +143,46 @@ public class listPurchases extends JFrame {
 		lblOrderBy.setFont(new Font("Open Sans", Font.BOLD, 14));
 		lblOrderBy.setBounds(71, 11, 112, 20);
 		panel.add(lblOrderBy);
+		
+		JLabel lblListPurchasesMode = new JLabel("List Purchases MODE");
+		lblListPurchasesMode.setForeground(Color.DARK_GRAY);
+		lblListPurchasesMode.setFont(new Font("Open Sans", Font.BOLD, 24));
+		lblListPurchasesMode.setBounds(239, 11, 251, 20);
+		panel.add(lblListPurchasesMode);
+		
+		/*TextFields*/
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(618, 109, 55, 20);
+		panel.add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(618, 140, 55, 20);
+		panel.add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(618, 168, 55, 20);
+		panel.add(textField_3);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(618, 194, 89, 20);
+		panel.add(textField_4);
+		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		textField_5.setBounds(618, 222, 89, 20);
+		panel.add(textField_5);
+		
+		textFieldSearch = new JTextField();
+		textFieldSearch.setColumns(10);
+		textFieldSearch.setBounds(235, 60, 255, 20);
+		panel.add(textFieldSearch);
+		
+		/*Buttons and actions*/
 		
 		JButton btnSearch = new JButton("Search");
 		btnSearch.addActionListener(new ActionListener() {
@@ -247,5 +255,13 @@ public class listPurchases extends JFrame {
 		btnIdpet.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnIdpet.setBounds(10, 32, 89, 23);
 		panel.add(btnIdpet);
+		
+		/*Constructor*/
+		
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("List Purchases Page");
 	}
 }

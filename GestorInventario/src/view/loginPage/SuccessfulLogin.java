@@ -9,7 +9,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import sounds.Sound;
-import utils.GenerateFrame;
 
 import javax.swing.JLabel;
 import java.awt.Color;
@@ -60,6 +59,8 @@ public class SuccessfulLogin extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
+		/*Labels*/
+		
 		JLabel lblBird = new JLabel("");
 		lblBird.setIcon(new ImageIcon(SuccessfulLogin.class.getResource("/images/littleBird.gif")));
 		lblBird.setBounds(240, 151, 343, 192);
@@ -70,8 +71,16 @@ public class SuccessfulLogin extends JFrame {
 		lblSucessful.setFont(new Font("Open Sans", Font.BOLD, 36));
 		lblSucessful.setBounds(193, 46, 390, 28);
 		panel.add(lblSucessful);
-		
+			
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(152, 251, 152));
+		panel_1.setBounds(0, 0, 742, 192);
+		panel.add(panel_1);
+				
 		JButton btnContinue = new JButton("Continue");
+				
+		/*Buttons and actions*/
+		
 		btnContinue.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -94,9 +103,16 @@ public class SuccessfulLogin extends JFrame {
 		btnContinue.setBounds(308, 109, 118, 31);
 		panel.add(btnContinue);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(152, 251, 152));
-		panel_1.setBounds(0, 0, 742, 192);
-		panel.add(panel_1);
+		/*Constructor*/
+		
+		Sound sound = new Sound();
+		sound.successfulLogin();
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.show();
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("Succesful Login !");
+		
 	}
 }

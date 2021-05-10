@@ -10,6 +10,7 @@ import beans.User;
 
 public class Helper {
 
+	/*Rs to object*/
 	public User resultSet2Object(ResultSet result){
 		try {
 			if(result.next()) {
@@ -31,6 +32,7 @@ public class Helper {
 		return null;
 	}
 	
+	/*Rs to ArrayList*/
 	public ArrayList ResultSet2ArrayList(ResultSet results) {
 		ArrayList<User> arraylist = new ArrayList<User>();
 		try {

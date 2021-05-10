@@ -10,6 +10,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.sql.ResultSet;
 
 import javax.swing.JTextField;
@@ -83,17 +85,7 @@ public class listPets extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblListPetsMODE = new JLabel("List Pets MODE");
-		lblListPetsMODE.setBounds(276, 11, 189, 20);
-		lblListPetsMODE.setForeground(Color.DARK_GRAY);
-		lblListPetsMODE.setFont(new Font("Open Sans", Font.BOLD, 24));
-		panel.add(lblListPetsMODE);
-		
-		textFieldSearch = new JTextField();
-		textFieldSearch.setBounds(235, 60, 255, 20);
-		panel.add(textFieldSearch);
-		textFieldSearch.setColumns(10);
-			
+		/*Table*/
 		table = new JTable();
 		table.setBounds(10, 109, 509, 241);
 		table.addMouseListener(new MouseAdapter() {
@@ -111,12 +103,12 @@ public class listPets extends JFrame {
 			}
 		});
 		
-		//Modelo
+		/*Edit model to table*/
 		String[] petsColumns = {"idPet","Species","Breed","Sex","Age","Price"};
 		new Table().showTable(table, "SELECT * FROM pets;",petsColumns);
 		//panel.add(table);
 		
-		//Scroll
+		/*Scroll to table*/
 		scrollPane = new JScrollPane();
 		panel.add(scrollPane);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -124,35 +116,7 @@ public class listPets extends JFrame {
 		scrollPane.setBounds(10, 109, 509, 241);
 		scrollPane.setViewportView(table);
 		
-		textField = new JTextField();
-		textField.setBounds(619, 109, 55, 20);
-		textField.setColumns(10);
-		panel.add(textField);
-		
-		textField_1 = new JTextField();
-		textField_1.setBounds(619, 140, 89, 20);
-		textField_1.setColumns(10);
-		panel.add(textField_1);
-		
-		textField_2 = new JTextField();
-		textField_2.setBounds(619, 168, 89, 20);
-		textField_2.setColumns(10);
-		panel.add(textField_2);
-		
-		textField_3 = new JTextField();
-		textField_3.setBounds(619, 194, 55, 20);
-		textField_3.setColumns(10);
-		panel.add(textField_3);
-		
-		textField_4 = new JTextField();
-		textField_4.setBounds(619, 222, 89, 20);
-		textField_4.setColumns(10);
-		panel.add(textField_4);
-		
-		textField_5 = new JTextField();
-		textField_5.setBounds(619, 250, 89, 20);
-		textField_5.setColumns(10);
-		panel.add(textField_5);
+		/*Labels*/
 		
 		lblIdpet = new JLabel("idPet");
 		lblIdpet.setBounds(560, 112, 46, 14);
@@ -189,8 +153,51 @@ public class listPets extends JFrame {
 		lblOrderBy.setFont(new Font("Open Sans", Font.BOLD, 14));
 		panel.add(lblOrderBy);
 		
+		JLabel lblListPetsMODE = new JLabel("List Pets MODE");
+		lblListPetsMODE.setBounds(276, 11, 189, 20);
+		lblListPetsMODE.setForeground(Color.DARK_GRAY);
+		lblListPetsMODE.setFont(new Font("Open Sans", Font.BOLD, 24));
+		panel.add(lblListPetsMODE);
 		
-		//Search
+		/*TextFields*/
+		
+		textField = new JTextField();
+		textField.setBounds(619, 109, 55, 20);
+		textField.setColumns(10);
+		panel.add(textField);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(619, 140, 89, 20);
+		textField_1.setColumns(10);
+		panel.add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(619, 168, 89, 20);
+		textField_2.setColumns(10);
+		panel.add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setBounds(619, 194, 55, 20);
+		textField_3.setColumns(10);
+		panel.add(textField_3);
+		
+		textField_4 = new JTextField();
+		textField_4.setBounds(619, 222, 89, 20);
+		textField_4.setColumns(10);
+		panel.add(textField_4);
+		
+		textField_5 = new JTextField();
+		textField_5.setBounds(619, 250, 89, 20);
+		textField_5.setColumns(10);
+		panel.add(textField_5);
+		
+		textFieldSearch = new JTextField();
+		textFieldSearch.setBounds(235, 60, 255, 20);
+		panel.add(textFieldSearch);
+		textFieldSearch.setColumns(10);
+		
+		/*Buttons and actions*/
+		
 		JButton btnSearch = new JButton("Search");
 		btnSearch.setBounds(508, 59, 89, 23);
 		btnSearch.setBackground(Color.WHITE);
@@ -262,6 +269,14 @@ public class listPets extends JFrame {
 		btnSpecies.setForeground(Color.BLACK);
 		btnSpecies.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		panel.add(btnSpecies);
+		
+		/*Constructor*/
+		
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("List Pets Page");
 		
 		
 	}

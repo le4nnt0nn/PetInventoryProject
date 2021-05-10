@@ -1,6 +1,7 @@
 package view.mainPage;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -9,8 +10,8 @@ import javax.swing.border.EmptyBorder;
 
 import beans.User;
 import sounds.Sound;
-import utils.GenerateFrame;
 import view.dataPage.listPurchasesByUser;
+import view.dataPage.listUsers;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -70,11 +71,7 @@ public class userMainPageJF extends JFrame {
 		panel_1.setBounds(0, 0, 742, 83);
 		panel.add(panel_1);
 		
-		JLabel lblUserMode = new JLabel("USER MODE");
-		lblUserMode.setForeground(Color.WHITE);
-		lblUserMode.setFont(new Font("Open Sans", Font.BOLD, 36));
-		lblUserMode.setBounds(264, 11, 222, 66);
-		panel_1.add(lblUserMode);
+		/*Buttons and actions*/
 		
 		JButton btnPets = new JButton("");
 		btnPets.addMouseListener(new MouseAdapter() {
@@ -90,7 +87,7 @@ public class userMainPageJF extends JFrame {
 		btnPets.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Sound().enteredOption();
-				new GenerateFrame().genListPets();
+				new listUsers();
 			}
 		});
 		btnPets.setIcon(new ImageIcon(userMainPageJF.class.getResource("/images/buttonPetsRedo.png")));
@@ -122,6 +119,15 @@ public class userMainPageJF extends JFrame {
 		btnPurchases.setBorder(BorderFactory.createEmptyBorder());
 		btnPurchases.setBounds(538, 156, 128, 151);
 		panel.add(btnPurchases);
+		
+		
+		/*Labels*/
+		
+		JLabel lblUserMode = new JLabel("USER MODE");
+		lblUserMode.setForeground(Color.WHITE);
+		lblUserMode.setFont(new Font("Open Sans", Font.BOLD, 36));
+		lblUserMode.setBounds(264, 11, 222, 66);
+		panel_1.add(lblUserMode);
 		
 		JPanel panel_right = new JPanel();
 		panel_right.setBackground(new Color(152, 251, 152));
@@ -161,6 +167,8 @@ public class userMainPageJF extends JFrame {
 		lblGIF.setBounds(237, 108, 271, 229);
 		panel.add(lblGIF);
 		
+		
+		/*Constructor*/
 		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
 		this.setIconImage(icon);
 		this.getContentPane().setLayout(null);

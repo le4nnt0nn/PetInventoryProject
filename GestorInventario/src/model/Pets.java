@@ -63,6 +63,7 @@ public class Pets {
 		return null;
 	}
 	
+	/*Collect all pets and stores them*/
 	public static ArrayList<Pet> getAllPets() {
 		ArrayList<Pet> pets = new ArrayList<Pet>();
 		ResultSet rs = conexion.EjecutarSentencia("SELECT * FROM pets;");
@@ -84,6 +85,7 @@ public class Pets {
 		return pets;
 	}
 	
+	/*Collect all pets according to the search value*/
 	public static ArrayList<Pet> getAllPetsToSearch(String value) {
 		ArrayList<Pet> pets = new ArrayList<Pet>();
 		ResultSet rs = conexion.EjecutarSentencia("SELECT * FROM pets where idPet='"+value+"' OR Species='"+value+"' OR Breed='"+value+"' OR Sex='"+value+"' OR Age='"+value+"' OR Price='"+value+"';");

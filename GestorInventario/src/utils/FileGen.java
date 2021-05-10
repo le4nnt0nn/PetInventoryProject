@@ -14,6 +14,7 @@ import beans.User;
 
 public class FileGen {
 
+	/*Stores purchase information in a selected directory by user*/
 	public void newFileGen(Purchase purchase, User user) {
 		
 		JFileChooser f = new JFileChooser();

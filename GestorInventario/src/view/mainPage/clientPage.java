@@ -2,6 +2,7 @@ package view.mainPage;
 
 import java.awt.BorderLayout;
 
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -9,12 +10,17 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import sounds.Sound;
-import utils.GenerateFrame;
+import view.dataPage.addPurchaseJF;
+import view.dataPage.deleteUser;
+import view.dataPage.listUsers;
+import view.dataPage.updateUsers;
 
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.BorderFactory;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -64,23 +70,28 @@ public class clientPage extends JFrame {
 		panel.setBackground(new Color(144, 238, 144));
 		panel.setBounds(0, 0, 742, 387);
 		contentPane_1.add(panel);
-		
-		JLabel lblGIF = new JLabel("");
-		lblGIF.setIcon(new ImageIcon(clientPage.class.getResource("/images/doggie_clientPage.gif")));
-		lblGIF.setBounds(23, 72, 373, 258);
-		panel.add(lblGIF);
-		
+			
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);
 		panel_1.setBackground(new Color(152, 251, 152));
 		panel_1.setBounds(416, 0, 326, 387);
 		panel.add(panel_1);
 		
+		/*Labels*/
+		
+		JLabel lblGIF = new JLabel("");
+		lblGIF.setIcon(new ImageIcon(clientPage.class.getResource("/images/doggie_clientPage.gif")));
+		lblGIF.setBounds(23, 72, 373, 258);
+		panel.add(lblGIF);
+		
+		
+		/*Buttons and actions*/
+		
 		JButton btnShow = new JButton("");
 		btnShow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new GenerateFrame().genListUsers();
+				new listUsers();
 			}
 		});
 		btnShow.addMouseListener(new MouseAdapter() {
@@ -104,7 +115,7 @@ public class clientPage extends JFrame {
 		btnAddClient.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new GenerateFrame().genAddUserPage();
+				new addPurchaseJF();
 			}
 		});
 		btnAddClient.addMouseListener(new MouseAdapter() {
@@ -123,7 +134,7 @@ public class clientPage extends JFrame {
 		btnUpdateClient.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new GenerateFrame().genUpdateUsers();
+				new updateUsers();
 			}
 		});
 		btnUpdateClient.addMouseListener(new MouseAdapter() {
@@ -142,7 +153,7 @@ public class clientPage extends JFrame {
 		btnDeleteClient.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new GenerateFrame().genDeleteUser();
+				new deleteUser();
 			}
 		});
 		btnDeleteClient.addMouseListener(new MouseAdapter() {
@@ -156,6 +167,14 @@ public class clientPage extends JFrame {
 		btnDeleteClient.setBackground(Color.WHITE);
 		btnDeleteClient.setBounds(41, 220, 241, 29);
 		panel_1.add(btnDeleteClient);
+		
+		/*Constructor*/
+		
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("Client Page");
 	}
 
 }

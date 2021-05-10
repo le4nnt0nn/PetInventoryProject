@@ -12,6 +12,7 @@ import model.Pets;
 
 public class Table {
 
+	/*Receive a table and returns it edited with the sql statement*/
 	public static JTable showTable(JTable table, String sql, String[]colNames) {
 		try {
 			DefaultTableModel model = new DefaultTableModel();
@@ -45,30 +46,5 @@ public class Table {
 		return table;
 		
 	}
-	
-	public static JTable findPets(JTable table, String textField, String[]colNames) {
-		ArrayList<Pet> pets = new Pets().getAllPetsToSearch(textField);
-		DefaultTableModel model = new DefaultTableModel();
-		Object[] rows = new Object[6];
 		
-		for(int i=0; i<colNames.length;i++) {
-			model.addColumn(i);
-		}
-		
-		for(int i=0; i<pets.size(); i++) {
-			rows [0] = pets.get(i).getIdPet();
-			rows [1] = pets.get(i).getSpecies();
-			rows [2] = pets.get(i).getBreed();
-			rows [3] = pets.get(i).getSex();
-			rows [4] = pets.get(i).getAge();
-			rows [5] = pets.get(i).getPrice();
-			
-		}
-		model.addRow(rows);
-		table.setModel(model);
-		
-		return table;
-		
-	}
-	
 }

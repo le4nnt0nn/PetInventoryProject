@@ -1,6 +1,7 @@
 package view.dataPage;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -11,11 +12,14 @@ import beans.Pet;
 import beans.Purchase;
 import model.Pets;
 import model.Purchases;
-import utils.GenerateFrame;
+import view.mainPage.successfulAction;
 
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -66,21 +70,13 @@ public class addPurchaseJF extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
+		/*Labels*/
+		
 		JLabel lblAddPurchase = new JLabel("Add Purchase MODE");
 		lblAddPurchase.setForeground(Color.DARK_GRAY);
 		lblAddPurchase.setFont(new Font("Open Sans", Font.BOLD, 24));
 		lblAddPurchase.setBounds(238, 11, 251, 20);
 		panel.add(lblAddPurchase);
-		
-		textFieldDatePurchase = new JTextField();
-		textFieldDatePurchase.setColumns(10);
-		textFieldDatePurchase.setBounds(256, 203, 207, 20);
-		panel.add(textFieldDatePurchase);
-		
-		textFieldTotalPrice = new JTextField();
-		textFieldTotalPrice.setColumns(10);
-		textFieldTotalPrice.setBounds(256, 252, 207, 20);
-		panel.add(textFieldTotalPrice);
 		
 		JLabel lblIduser = new JLabel("ID USER");
 		lblIduser.setFont(new Font("Open Sans", Font.BOLD, 13));
@@ -112,6 +108,20 @@ public class addPurchaseJF extends JFrame {
 		textFieldIdPet.setBounds(377, 142, 86, 20);
 		panel.add(textFieldIdPet);
 		
+		/*TextFields*/
+		
+		textFieldDatePurchase = new JTextField();
+		textFieldDatePurchase.setColumns(10);
+		textFieldDatePurchase.setBounds(256, 203, 207, 20);
+		panel.add(textFieldDatePurchase);
+		
+		textFieldTotalPrice = new JTextField();
+		textFieldTotalPrice.setColumns(10);
+		textFieldTotalPrice.setBounds(256, 252, 207, 20);
+		panel.add(textFieldTotalPrice);
+		
+		/*Buttons and actions*/
+		
 		JButton btnFinish = new JButton("Finish");
 		btnFinish.setBackground(Color.WHITE);
 		btnFinish.addActionListener(new ActionListener() {
@@ -126,7 +136,7 @@ public class addPurchaseJF extends JFrame {
 				new Purchases().addPurchase(purchase);
 				new Pets().deletePet(idPet);
 				
-				new GenerateFrame().genSucAction();
+				new successfulAction();
 				
 			}
 		});
@@ -134,5 +144,13 @@ public class addPurchaseJF extends JFrame {
 		btnFinish.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnFinish.setBounds(313, 312, 89, 23);
 		panel.add(btnFinish);
+		
+		/*Constructor*/
+		
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("Add Purchase Page");
 	}
 }

@@ -6,33 +6,38 @@ import java.sql.SQLException;
 import bbdd.conexion;
 import beans.User;
 import model.Users;
-import utils.GenerateFrame;
+import view.loginPage.FailedLogin;
+import view.loginPage.SuccessfulLogin;
+import view.mainPage.MainPageJF;
 import view.mainPage.userMainPageJF;
 
 public class Login {
 	
+	/*Check if user exist and user role*/
 	public boolean checkUser(String username, String password) {
 		User user = new Users().getUserByNamePass(username, password);
 		
 		if(user==null) {
-			new GenerateFrame().genFailLogin();
+			new FailedLogin();
 		}
 		String userRole = user.getRole();
 		if(userRole.equals("client")) {
 			System.out.println("CLIENTE");
 			new userMainPageJF(user);
-			new GenerateFrame().genSucLogin();
+			new SuccessfulLogin();
 			
 			return true;
 		}else if(userRole.equals("admin")) { 
 			System.out.println("ADMIN");
-			new GenerateFrame().genMainPage();
-			new GenerateFrame().genSucLogin();
+			new MainPageJF();
+			new SuccessfulLogin();
 			
 			return true;
 		}
 		return false;
 	}
+	
+	/*Check user role with boolean*/
 	public boolean checkUserRole(User user) {
 		if(user.getRole().equals("client")) {
 			return false;

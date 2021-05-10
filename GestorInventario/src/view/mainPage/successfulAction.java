@@ -1,6 +1,7 @@
 package view.mainPage;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -8,12 +9,13 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import sounds.Sound;
-import utils.GenerateFrame;
 
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -56,17 +58,14 @@ public class successfulAction extends JFrame {
 		panel.setBounds(0, 0, 742, 387);
 		contentPane.add(panel);
 		panel.setLayout(null);
-		
-		JLabel lblGIF = new JLabel("");
-		lblGIF.setIcon(new ImageIcon(successfulAction.class.getResource("/images/doggieSuccAction.gif")));
-		lblGIF.setBounds(34, 29, 402, 300);
-		panel.add(lblGIF);
-		
+	
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(0, 204, 102));
 		panel_1.setBounds(336, 11, 396, 365);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
+			
+		/*Labels*/
 		
 		JLabel lblSucText = new JLabel("SUCCESSFUL ACTION");
 		lblSucText.setForeground(Color.DARK_GRAY);
@@ -79,6 +78,14 @@ public class successfulAction extends JFrame {
 		lblSuccDesc.setFont(new Font("Open Sans", Font.PLAIN, 14));
 		lblSuccDesc.setBounds(105, 164, 209, 40);
 		panel_1.add(lblSuccDesc);
+		
+		JLabel lblGIF = new JLabel("");
+		lblGIF.setIcon(new ImageIcon(successfulAction.class.getResource("/images/doggieSuccAction.gif")));
+		lblGIF.setBounds(34, 29, 402, 300);
+		panel.add(lblGIF);
+		
+		
+		/*Buttons and actions*/
 		
 		JButton btnOK = new JButton("OK");
 		btnOK.addMouseListener(new MouseAdapter() {
@@ -97,5 +104,16 @@ public class successfulAction extends JFrame {
 		btnOK.setBackground(Color.WHITE);
 		btnOK.setBounds(145, 106, 118, 31);
 		panel_1.add(btnOK);
+		
+		/*Constructor*/
+		
+		Sound sound = new Sound();
+		sound.successfulLogin();
+		this.show();
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("Successful Action !");
 	}
 }

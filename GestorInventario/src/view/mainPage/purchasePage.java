@@ -3,6 +3,7 @@ package view.mainPage;
 import java.awt.BorderLayout;
 
 
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -10,12 +11,17 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import sounds.Sound;
-import utils.GenerateFrame;
+import view.dataPage.addPurchaseJF;
+import view.dataPage.deletePurchase;
+import view.dataPage.listPurchases;
+import view.dataPage.updatePurchases;
 
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.BorderFactory;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -66,22 +72,26 @@ public class purchasePage extends JFrame {
 		panel.setBounds(0, 0, 742, 387);
 		contentPane_1.add(panel);
 		
-		JLabel lblGIF = new JLabel("");
-		lblGIF.setIcon(new ImageIcon(purchasePage.class.getResource("/images/doggie_purchasePage.gif")));
-		lblGIF.setBounds(53, 77, 373, 258);
-		panel.add(lblGIF);
-		
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);
 		panel_1.setBackground(new Color(152, 251, 152));
 		panel_1.setBounds(416, 0, 326, 387);
 		panel.add(panel_1);
 		
+		/*Labels*/
+		
+		JLabel lblGIF = new JLabel("");
+		lblGIF.setIcon(new ImageIcon(purchasePage.class.getResource("/images/doggie_purchasePage.gif")));
+		lblGIF.setBounds(53, 77, 373, 258);
+		panel.add(lblGIF);
+		
+		/*Buttons and actions*/
+		
 		JButton btnShow = new JButton("");
 		btnShow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new GenerateFrame().genListPurchases();
+				new listPurchases();
 			}
 		});
 		btnShow.addMouseListener(new MouseAdapter() {
@@ -105,7 +115,7 @@ public class purchasePage extends JFrame {
 		btnAddPurchase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new GenerateFrame().genAddPurchasePage();
+				new addPurchaseJF();
 			}
 		});
 		btnAddPurchase.addMouseListener(new MouseAdapter() {
@@ -124,7 +134,7 @@ public class purchasePage extends JFrame {
 		btnUpdatePurchase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new GenerateFrame().genUpdatePurchases();
+				new updatePurchases();
 			}
 		});
 		btnUpdatePurchase.addMouseListener(new MouseAdapter() {
@@ -143,7 +153,7 @@ public class purchasePage extends JFrame {
 		btnDeletePurchase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new GenerateFrame().genDeletePurchase();
+				new deletePurchase();
 			}
 		});
 		btnDeletePurchase.addMouseListener(new MouseAdapter() {
@@ -157,6 +167,14 @@ public class purchasePage extends JFrame {
 		btnDeletePurchase.setBackground(Color.WHITE);
 		btnDeletePurchase.setBounds(41, 220, 241, 29);
 		panel_1.add(btnDeletePurchase);
+		
+		/*Constructor*/
+		
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("Purchase Page");
 	}
 
 }

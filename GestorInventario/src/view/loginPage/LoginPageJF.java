@@ -2,7 +2,6 @@ package view.loginPage;
 
 import bbdd.conexion;
 import sounds.Sound;
-import utils.GenerateFrame;
 import beans.User;
 import controller.Login;
 
@@ -39,7 +38,6 @@ public class LoginPageJF extends JFrame {
 	private JTextField usernameField;
 	private JPasswordField passwordField;
 	
-	GenerateFrame gen = new GenerateFrame();
 
 	/**
 	 * Launch the application.
@@ -73,6 +71,8 @@ public class LoginPageJF extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
+		/*Labels*/
+
 		JLabel lblLogin = new JLabel("LOGIN");
 		lblLogin.setForeground(new Color(255, 255, 255));
 		lblLogin.setFont(new Font("Open Sans", Font.BOLD, 36));
@@ -90,15 +90,6 @@ public class LoginPageJF extends JFrame {
 		lblSignIn.setBounds(495, 39, 275, 66);
 		panel.add(lblSignIn);
 		
-		usernameField = new JTextField();
-		usernameField.setBounds(473, 149, 186, 26);
-		panel.add(usernameField);
-		usernameField.setColumns(10);
-		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(473, 228, 186, 26);
-		panel.add(passwordField);
-		
 		JLabel lblUsername = new JLabel("Username");
 		lblUsername.setFont(new Font("Open Sans", Font.PLAIN, 13));
 		lblUsername.setBounds(529, 124, 83, 14);
@@ -109,6 +100,19 @@ public class LoginPageJF extends JFrame {
 		lblPassword.setBounds(529, 203, 83, 14);
 		panel.add(lblPassword);
 		
+		/*TextFields*/
+		
+		usernameField = new JTextField();
+		usernameField.setBounds(473, 149, 186, 26);
+		panel.add(usernameField);
+		usernameField.setColumns(10);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(473, 228, 186, 26);
+		panel.add(passwordField);
+		
+		/*Buttons and actions*/
+			
 		JButton btnSignUp = new JButton("Sign Up");
 		btnSignUp.addMouseListener(new MouseAdapter() {
 			@Override
@@ -120,25 +124,6 @@ public class LoginPageJF extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				try {
-					//!ESTO IRÍA EN EL MODELO DE USERS
-					//ResultSet rs = conexion.EjecutarSentencia("select * from logins where username='"+usernameField.getText()+"' and password='"+passwordField.getText()+"';");	
-					
-					
-					//!LA LÓGICA DE LOGIN IRÍA EN CONTROLADOR
-					/*
-					if(rs.next()) {
-						dispose();
-						gen.genSucLogin();
-						passwordField.setText(null);
-						usernameField.setText(null);
-					}else {
-						gen.genFailLogin();
-						passwordField.setText(null);
-						usernameField.setText(null);
-						dispose();
-					}
-					*/
-					//new Login().checkUser(usernameField.getText(), passwordField.getText());
 					if(new Login().checkUser(usernameField.getText(), passwordField.getText())==true) {
 						dispose();
 					}
@@ -169,5 +154,13 @@ public class LoginPageJF extends JFrame {
 		chckbxShowPssw.setFont(new Font("Open Sans Light", Font.PLAIN, 11));
 		chckbxShowPssw.setBounds(473, 261, 101, 23);
 		panel.add(chckbxShowPssw);
+		
+		/*Constructor*/
+		
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("Login Page");
 	}
 }

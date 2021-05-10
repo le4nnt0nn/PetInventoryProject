@@ -2,6 +2,7 @@ package view.mainPage;
 
 import java.awt.BorderLayout;
 
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -9,13 +10,19 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import sounds.Sound;
-import utils.GenerateFrame;
+import view.dataPage.addPetJF;
+import view.dataPage.deletePet;
+import view.dataPage.listPets;
+import view.dataPage.updatePets;
 
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
+
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -58,22 +65,27 @@ public class petPage extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblGIF = new JLabel("");
-		lblGIF.setIcon(new ImageIcon(petPage.class.getResource("/images/doggie_petPage.gif")));
-		lblGIF.setBounds(21, 59, 373, 258);
-		panel.add(lblGIF);
-		
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);
 		panel_1.setBackground(new Color(152, 251, 152));
 		panel_1.setBounds(416, 0, 326, 387);
 		panel.add(panel_1);
 		
+		/*Labels*/
+		
+		JLabel lblGIF = new JLabel("");
+		lblGIF.setIcon(new ImageIcon(petPage.class.getResource("/images/doggie_petPage.gif")));
+		lblGIF.setBounds(21, 59, 373, 258);
+		panel.add(lblGIF);
+		
+		
+		/*Buttons and actions*/
+		
 		JButton btnShow = new JButton("");
 		btnShow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new GenerateFrame().genListPets();
+				new listPets();
 			}
 		});
 		btnShow.addMouseListener(new MouseAdapter() {
@@ -97,7 +109,7 @@ public class petPage extends JFrame {
 		btnAddPet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new GenerateFrame().genAddPetPage();
+				new addPetJF();
 			}
 		});
 		btnAddPet.addMouseListener(new MouseAdapter() {
@@ -116,7 +128,7 @@ public class petPage extends JFrame {
 		btnUpdatePet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new GenerateFrame().genUpdatePets();
+				new updatePets();
 			}
 		});
 		btnUpdatePet.addMouseListener(new MouseAdapter() {
@@ -135,7 +147,7 @@ public class petPage extends JFrame {
 		btnDeletePet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new GenerateFrame().genDeletePet();
+				new deletePet();
 			}
 		});
 		btnDeletePet.addMouseListener(new MouseAdapter() {
@@ -149,5 +161,13 @@ public class petPage extends JFrame {
 		btnDeletePet.setBackground(Color.WHITE);
 		btnDeletePet.setBounds(41, 220, 241, 29);
 		panel_1.add(btnDeletePet);
+		
+		/*Constructor*/
+		
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("Pet Page");
 	}
 }

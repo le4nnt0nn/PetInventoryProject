@@ -7,19 +7,19 @@ import java.awt.Toolkit;
 
 import bbdd.conexion;
 import view.loginPage.*;
-import utils.GenerateFrame;
+
 
 public class Main {
 	
 	public static void main(String[] args) {
 				
-		//conexion a bbdd
+		/*Connection to database*/
 		conexion.Conectar();
 		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					new GenerateFrame().genLogin();
+					new LoginPageJF();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

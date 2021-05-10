@@ -14,6 +14,9 @@ import sounds.Sound;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
+
 import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.JButton;
@@ -76,17 +79,7 @@ public class listUsers extends JFrame {
 		panel.setBounds(0, 0, 742, 387);
 		contentPane.add(panel);
 		
-		JLabel lblListUsersMode = new JLabel("List Users MODE");
-		lblListUsersMode.setForeground(Color.DARK_GRAY);
-		lblListUsersMode.setFont(new Font("Open Sans", Font.BOLD, 24));
-		lblListUsersMode.setBounds(253, 11, 212, 20);
-		panel.add(lblListUsersMode);
-		
-		textFieldSearch = new JTextField();
-		textFieldSearch.setColumns(10);
-		textFieldSearch.setBounds(235, 60, 255, 20);
-		panel.add(textFieldSearch);
-		
+		/*Table*/
 		
 		table = new JTable();
 		table.setBounds(10, 109, 535, 241);
@@ -107,62 +100,25 @@ public class listUsers extends JFrame {
 				textField_9.setText(model2.getValueAt(selectedRowIndex, 8).toString());
 			}
 		});
-		//Modelo
+		/*Edit model to table*/
 		String[] usersColumns = {"idUser","Username","Passwrod","Role","Name","Lastname","Address","Birth","Phone"};
 		new Table().showTable(table, "SELECT * FROM users;",usersColumns);
 		
-		//Scroll
+		/*Scroll to table*/
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 109, 535, 241);
 		panel.add(scrollPane);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPane.setViewportView(table);
+			
+		/*Labels*/
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(623, 106, 55, 20);
-		panel.add(textField_1);
-		textField_1.setColumns(10);
-		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(623, 137, 89, 20);
-		panel.add(textField_2);
-		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(623, 165, 89, 20);
-		panel.add(textField_3);
-		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(623, 191, 55, 20);
-		panel.add(textField_4);
-		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(623, 219, 89, 20);
-		panel.add(textField_5);
-		
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		textField_6.setBounds(623, 247, 89, 20);
-		panel.add(textField_6);
-		
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		textField_7.setBounds(623, 274, 89, 20);
-		panel.add(textField_7);
-		
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
-		textField_8.setBounds(623, 303, 89, 20);
-		panel.add(textField_8);
-		
-		textField_9 = new JTextField();
-		textField_9.setColumns(10);
-		textField_9.setBounds(623, 334, 89, 20);
-		panel.add(textField_9);
+		JLabel lblListUsersMode = new JLabel("List Users MODE");
+		lblListUsersMode.setForeground(Color.DARK_GRAY);
+		lblListUsersMode.setFont(new Font("Open Sans", Font.BOLD, 24));
+		lblListUsersMode.setBounds(253, 11, 212, 20);
+		panel.add(lblListUsersMode);
 		
 		JLabel lblIdUser = new JLabel("idUser");
 		lblIdUser.setFont(new Font("Open Sans", Font.BOLD, 11));
@@ -215,7 +171,60 @@ public class listUsers extends JFrame {
 		panel.add(lblOrderBy);
 		
 
-		//Search
+		/*TextFields*/
+		
+		textFieldSearch = new JTextField();
+		textFieldSearch.setColumns(10);
+		textFieldSearch.setBounds(235, 60, 255, 20);
+		panel.add(textFieldSearch);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(623, 106, 55, 20);
+		panel.add(textField_1);
+		textField_1.setColumns(10);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(623, 137, 89, 20);
+		panel.add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(623, 165, 89, 20);
+		panel.add(textField_3);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(623, 191, 55, 20);
+		panel.add(textField_4);
+		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		textField_5.setBounds(623, 219, 89, 20);
+		panel.add(textField_5);
+		
+		textField_6 = new JTextField();
+		textField_6.setColumns(10);
+		textField_6.setBounds(623, 247, 89, 20);
+		panel.add(textField_6);
+		
+		textField_7 = new JTextField();
+		textField_7.setColumns(10);
+		textField_7.setBounds(623, 274, 89, 20);
+		panel.add(textField_7);
+		
+		textField_8 = new JTextField();
+		textField_8.setColumns(10);
+		textField_8.setBounds(623, 303, 89, 20);
+		panel.add(textField_8);
+		
+		textField_9 = new JTextField();
+		textField_9.setColumns(10);
+		textField_9.setBounds(623, 334, 89, 20);
+		panel.add(textField_9);
+		
+		/*Buttons and actions*/
+		
 		JButton btnSearch = new JButton("Search");
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -287,6 +296,14 @@ public class listUsers extends JFrame {
 		btnRole.setFont(new Font("Open Sans Semibold", Font.PLAIN, 14));
 		btnRole.setBounds(10, 37, 89, 23);
 		panel.add(btnRole);
+		
+		/*Constructor*/
+		
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("List Users Page");
 		
 	}
 }
