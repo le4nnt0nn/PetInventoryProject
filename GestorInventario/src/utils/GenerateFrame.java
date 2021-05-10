@@ -27,14 +27,6 @@ import sounds.Sound;
 
 public class GenerateFrame {
 
-	public static void genLogin() {
-		LoginPageJF frame = new LoginPageJF();
-		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
-		frame.setIconImage(icon);
-		frame.getContentPane().setLayout(null);
-		frame.setVisible(true);
-		frame.setTitle("Login Page");
-	}
 	
 	public static void genSucLogin() {
 		Sound sound = new Sound();

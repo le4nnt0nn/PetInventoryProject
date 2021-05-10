@@ -156,5 +156,13 @@ public class LoginPageJF extends JFrame {
 		chckbxShowPssw.setFont(new Font("Open Sans Light", Font.PLAIN, 11));
 		chckbxShowPssw.setBounds(473, 261, 101, 23);
 		panel.add(chckbxShowPssw);
+		
+		/*Constructor*/
+		
+		Image icon = Toolkit.getDefaultToolkit().getImage("src\\images\\icon.png"); 
+		this.setIconImage(icon);
+		this.getContentPane().setLayout(null);
+		this.setVisible(true);
+		this.setTitle("Login Page");
 	}
 }

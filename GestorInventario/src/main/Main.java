@@ -19,7 +19,7 @@ public class Main {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					new GenerateFrame().genLogin();
+					new LoginPageJF();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
