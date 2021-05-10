@@ -132,7 +132,7 @@ public class purchasePage extends JFrame {
 		btnUpdatePurchase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new GenerateFrame().genUpdatePurchases();
+				new updatePurchases();
 			}
 		});
 		btnUpdatePurchase.addMouseListener(new MouseAdapter() {
