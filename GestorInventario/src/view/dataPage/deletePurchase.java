@@ -13,6 +13,7 @@ import controller.Table;
 import model.Purchases;
 import sounds.Sound;
 import utils.GenerateFrame;
+import view.mainPage.successfulAction;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -265,7 +266,7 @@ public class deletePurchase extends JFrame {
 				Purchase purchase = new Purchase(idPurchase,idUser, idPet, datePurchase, totalPrice);
 				new Purchases().deletePurchase(purchase);
 				
-				new GenerateFrame().genSucAction();
+				new successfulAction();
 			}
 		});
 		btnDelete.setForeground(Color.BLACK);

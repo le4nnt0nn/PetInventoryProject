@@ -13,6 +13,7 @@ import controller.Table;
 import model.Users;
 import sounds.Sound;
 import utils.GenerateFrame;
+import view.mainPage.successfulAction;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -267,7 +268,7 @@ public class deleteUser extends JFrame {
 				User user = new User(idUser,username,password,role,name,lastname,address,birth,phone);
 				new Users().deleteUser(user);
 				
-				new GenerateFrame().genSucAction();
+				new successfulAction();
 				
 			}
 		});

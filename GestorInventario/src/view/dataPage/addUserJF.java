@@ -12,6 +12,7 @@ import beans.User;
 import model.Pets;
 import model.Users;
 import utils.GenerateFrame;
+import view.mainPage.successfulAction;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -192,7 +193,7 @@ public class addUserJF extends JFrame {
 				User user = new User(username,password,role,name,lastname,address,birth,phone);
 				new Users().addUser(user);
 				
-				new GenerateFrame().genSucAction();
+				new successfulAction();
 				
 			}
 		});

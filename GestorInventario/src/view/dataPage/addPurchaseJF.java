@@ -12,6 +12,7 @@ import beans.Purchase;
 import model.Pets;
 import model.Purchases;
 import utils.GenerateFrame;
+import view.mainPage.successfulAction;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -132,7 +133,7 @@ public class addPurchaseJF extends JFrame {
 				new Purchases().addPurchase(purchase);
 				new Pets().deletePet(idPet);
 				
-				new GenerateFrame().genSucAction();
+				new successfulAction();
 				
 			}
 		});

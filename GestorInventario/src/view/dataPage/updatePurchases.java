@@ -14,6 +14,7 @@ import model.Pets;
 import model.Purchases;
 import sounds.Sound;
 import utils.GenerateFrame;
+import view.mainPage.successfulAction;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -191,7 +192,7 @@ public class updatePurchases extends JFrame {
 				Purchase purchase = new Purchase(idPurchase,idUser, idPet, datePurchase, totalPrice);
 				new Purchases().updatePurchase(purchase);
 				
-				new GenerateFrame().genSucAction();
+				new successfulAction();
 			}
 		});
 		btnUpdate.setForeground(Color.BLACK);

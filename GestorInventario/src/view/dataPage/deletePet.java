@@ -13,6 +13,7 @@ import controller.Table;
 import model.Pets;
 import sounds.Sound;
 import utils.GenerateFrame;
+import view.mainPage.successfulAction;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -218,7 +219,7 @@ public class deletePet extends JFrame {
 				Pet pet = new Pet(idPet,species,breed,sex,age,price);
 				new Pets().deletePet(idPet);
 				
-				new GenerateFrame().genSucAction();
+				new successfulAction();
 			}
 		});
 		btnDelete.setForeground(Color.BLACK);

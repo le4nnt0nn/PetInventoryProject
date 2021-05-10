@@ -14,6 +14,7 @@ import controller.Table;
 import model.Pets;
 import sounds.Sound;
 import utils.GenerateFrame;
+import view.mainPage.successfulAction;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -221,7 +222,7 @@ public class updatePets extends JFrame {
 				Pet pet = new Pet(idPet,species,breed,sex,age,price);
 				new Pets().updatePet(pet);
 				
-				new GenerateFrame().genSucAction();
+				new successfulAction();
 			}
 		});
 		btnUpdate.setForeground(Color.BLACK);

@@ -23,6 +23,7 @@ import java.awt.event.ActionEvent;
 
 import model.Pets;
 import utils.GenerateFrame;
+import view.mainPage.successfulAction;
 
 public class addPetJF extends JFrame {
 
@@ -144,7 +145,7 @@ public class addPetJF extends JFrame {
 				Pet pet = new Pet(species,breed,sex,age,price);
 				new Pets().addPet(pet);
 				
-				new GenerateFrame().genSucAction();
+				new successfulAction();
 			}
 		});
 		btnFinish.setForeground(Color.BLACK);
