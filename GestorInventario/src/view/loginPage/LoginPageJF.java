@@ -2,7 +2,6 @@ package view.loginPage;
 
 import bbdd.conexion;
 import sounds.Sound;
-import utils.GenerateFrame;
 import beans.User;
 import controller.Login;
 
@@ -39,7 +38,6 @@ public class LoginPageJF extends JFrame {
 	private JTextField usernameField;
 	private JPasswordField passwordField;
 	
-	GenerateFrame gen = new GenerateFrame();
 
 	/**
 	 * Launch the application.

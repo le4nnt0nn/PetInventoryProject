@@ -7,7 +7,7 @@ import java.awt.Toolkit;
 
 import bbdd.conexion;
 import view.loginPage.*;
-import utils.GenerateFrame;
+
 
 public class Main {
 	

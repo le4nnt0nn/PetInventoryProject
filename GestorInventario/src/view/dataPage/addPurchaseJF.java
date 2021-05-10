@@ -1,6 +1,7 @@
 package view.dataPage;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -11,7 +12,6 @@ import beans.Pet;
 import beans.Purchase;
 import model.Pets;
 import model.Purchases;
-import utils.GenerateFrame;
 import view.mainPage.successfulAction;
 
 import java.awt.Color;

@@ -1,6 +1,7 @@
 package view.dataPage;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -12,7 +13,6 @@ import beans.User;
 import controller.Table;
 import model.Users;
 import sounds.Sound;
-import utils.GenerateFrame;
 import view.mainPage.successfulAction;
 
 import java.awt.Color;

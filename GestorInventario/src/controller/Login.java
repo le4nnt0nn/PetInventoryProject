@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import bbdd.conexion;
 import beans.User;
 import model.Users;
-import utils.GenerateFrame;
 import view.loginPage.FailedLogin;
 import view.loginPage.SuccessfulLogin;
 import view.mainPage.MainPageJF;

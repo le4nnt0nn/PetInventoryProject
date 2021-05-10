@@ -3,6 +3,7 @@ package view.mainPage;
 import java.awt.BorderLayout;
 
 
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -10,7 +11,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import sounds.Sound;
-import utils.GenerateFrame;
 import view.dataPage.addPurchaseJF;
 import view.dataPage.deletePurchase;
 import view.dataPage.listPurchases;

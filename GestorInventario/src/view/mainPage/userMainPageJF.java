@@ -1,6 +1,7 @@
 package view.mainPage;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -9,7 +10,6 @@ import javax.swing.border.EmptyBorder;
 
 import beans.User;
 import sounds.Sound;
-import utils.GenerateFrame;
 import view.dataPage.listPurchasesByUser;
 import view.dataPage.listUsers;
 

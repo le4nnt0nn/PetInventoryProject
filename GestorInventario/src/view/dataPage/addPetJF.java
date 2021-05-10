@@ -3,6 +3,7 @@ package view.dataPage;
 import java.awt.BorderLayout;
 
 
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -25,7 +26,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import model.Pets;
-import utils.GenerateFrame;
+
 import view.mainPage.successfulAction;
 
 public class addPetJF extends JFrame {

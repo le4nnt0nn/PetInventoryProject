@@ -2,6 +2,7 @@ package view.dataPage;
 
 import java.awt.BorderLayout;
 
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -13,7 +14,6 @@ import beans.Pet;
 import controller.Table;
 import model.Pets;
 import sounds.Sound;
-import utils.GenerateFrame;
 import view.mainPage.successfulAction;
 
 import java.awt.Color;
