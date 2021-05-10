@@ -68,7 +68,7 @@ Used [MySQL](https://dev.mysql.com/doc/ "MySQL Documentation") and [Java](https:
 
 ### 🚀 Launch
 
-Only you need its **compile** and **run** the file _Main.java_.
+Only you need its a database and **compile** and **run** the file _Main.java_.
 
 
 
