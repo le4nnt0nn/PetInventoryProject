@@ -27,6 +27,7 @@ You can login as **Client** or **Admin**.
 1. Tables to show data.
 2. Search bar.
 3. Order by values.
+4. Implemented sounds
 
  ***
 ### 📷 Templates
