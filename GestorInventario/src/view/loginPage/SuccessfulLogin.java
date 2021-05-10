@@ -60,11 +60,6 @@ public class SuccessfulLogin extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(152, 251, 152));
-		panel_1.setBounds(0, 0, 742, 192);
-		panel.add(panel_1);
-		
 		/*Labels*/
 		
 		JLabel lblBird = new JLabel("");
@@ -77,10 +72,16 @@ public class SuccessfulLogin extends JFrame {
 		lblSucessful.setFont(new Font("Open Sans", Font.BOLD, 36));
 		lblSucessful.setBounds(193, 46, 390, 28);
 		panel.add(lblSucessful);
-		
+			
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(152, 251, 152));
+		panel_1.setBounds(0, 0, 742, 192);
+		panel.add(panel_1);
+				
+		JButton btnContinue = new JButton("Continue");
+				
 		/*Buttons and actions*/
 		
-		JButton btnContinue = new JButton("Continue");
 		btnContinue.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
