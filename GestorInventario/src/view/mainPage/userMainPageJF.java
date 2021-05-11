@@ -10,6 +10,7 @@ import javax.swing.border.EmptyBorder;
 
 import beans.User;
 import sounds.Sound;
+import view.dataPage.listPets;
 import view.dataPage.listPurchasesByUser;
 import view.dataPage.listUsers;
 
@@ -87,7 +88,7 @@ public class userMainPageJF extends JFrame {
 		btnPets.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Sound().enteredOption();
-				new listUsers();
+				new listPets();
 			}
 		});
 		btnPets.setIcon(new ImageIcon(userMainPageJF.class.getResource("/images/buttonPetsRedo.png")));
