@@ -9,21 +9,6 @@
 
 Created for the final project of DAW **(Web Application Development)**. 
 
-### 🧪 Technologies
-
-Used [MySQL](https://dev.mysql.com/doc/ "MySQL Documentation") and [Java](https://docs.oracle.com/en/java/ "Java Documentation").
-
-> Used libraries
-
-**Java**
-
-* _javax.swing_
-* _java.awt_
-* _java.sql_
-* _java.io.File_
-* _javax.sound.sampled_
-* _java.util_
-
 ### 🚀 Launch
 
 Only you need its a database and **compile** and **run** the file _Main.java_.
@@ -38,6 +23,23 @@ Try **demo** [here](https://replit.com/@le4nnt0nn/PetInventoryProject "PIP Demo"
 **Demo Client**
 * User : rodri18
 * password : rodri
+
+***
+
+### 🧪 Technologies
+
+Used [MySQL](https://dev.mysql.com/doc/ "MySQL Documentation") and [Java](https://docs.oracle.com/en/java/ "Java Documentation").
+
+> Used libraries
+
+**Java**
+
+* _javax.swing_
+* _java.awt_
+* _java.sql_
+* _java.io.File_
+* _javax.sound.sampled_
+* _java.util_
 
 ### 📋 Features
 
@@ -60,6 +62,7 @@ You can login as **Client** or **Admin**.
 4. Implemented sounds.
 
  ***
+ 
 ### 📷 Templates
 
 #### Login
