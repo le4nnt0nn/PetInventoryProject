@@ -5,6 +5,26 @@
 
  ***
 
+ <div align="center">
+    <h3>🐾 [ Pet Inventory ] 🐾<h3>
+    <h5>Check it in ✅</h5>
+    <h3>
+        <a href="https://view.genial.ly/60990384cffc8f0d31be023c/presentation-pet-inventory-presentacion">
+            Genial.ly
+        </a>
+        <span> | </span>
+         <a href="https://replit.com/@le4nnt0nn/PetInventoryProject">
+            Replit
+        </a>
+        <span> | </span>
+         <a href="https://youtu.be/6GEuHPwKSME">
+            VideoDemo
+        </a>
+    </h3>
+</div>
+
+***
+
 ### 📄 About 
 
 Created for the final project of DAW **(Web Application Development)**. 
@@ -12,9 +32,6 @@ Created for the final project of DAW **(Web Application Development)**.
 ### 🚀 Launch
 
 Only you need its a database and **compile** and **run** the file _Main.java_.
-
-#### Demo
-Try **demo** [here](https://replit.com/@le4nnt0nn/PetInventoryProject "PIP Demo").
 
 **Demo Admin**
 * User : admin
